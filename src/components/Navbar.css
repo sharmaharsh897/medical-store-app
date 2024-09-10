@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: #333;
+    background-color: #9fb6c3;
     height: 60px;
   }
   
@@ -55,7 +55,7 @@
       position: absolute;
       top: 60px;
       right: 0;
-      background-color: #333;
+      background-color: #F9B49B;
       width: 100%;
       display: none;
       text-align: center;
@@ -68,4 +68,9 @@
     .navbar {
       flex-direction: column;
     }
+  }
+
+  .logo-image {
+    width: 200px;  /* Adjust width according to your preference */
+     /* Maintain aspect ratio */
   }

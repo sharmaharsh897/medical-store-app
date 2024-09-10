@@ -6,7 +6,7 @@ function Navbar() {
     <div>
       <nav className="navbar">
       <div className="navbar-logo">
-        <a href="/">MyLogo</a>
+      <img src="/gurudev.png" alt="Logo" className="logo-image" />
       </div>
       <ul className="navbar-links">
         <li><a href="/">Home</a></li>
