@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -10,13 +11,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: #9fb6c3;
-    height: 60px;
+    background-color: #32AEB1;
+    height: 80px;
   }
   
   /* Logo styling */
   .navbar-logo a {
-    color: #fff;
+    color: #333;
     font-size: 24px;
     text-decoration: none;
     font-weight: bold;
@@ -27,6 +28,8 @@
     list-style: none;
     display: flex;
     gap: 20px;
+    font-weight: bold;
+    margin: 20px;
   }
   
   /* Navbar link items */
@@ -36,16 +39,19 @@
   
   /* Navbar link styles */
   .navbar-links a {
-    color: #fff;
+    color: #333;
     text-decoration: none;
     font-size: 16px;
     padding: 10px;
-    transition: color 0.3s ease-in-out;
+    display: inline-block;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform-origin: center;
   }
   
-  /* Hover effect on links */
+  /* Hover effect: only the hovered element grows */
   .navbar-links a:hover {
-    color: #f0a500;
+    color: white;
+    transform: scale(1.3); /* Scale the hovered element */
   }
   
   /* Mobile responsive adjustments */
@@ -55,7 +61,7 @@
       position: absolute;
       top: 60px;
       right: 0;
-      background-color: #F9B49B;
+      background-color: white;
       width: 100%;
       display: none;
       text-align: center;
@@ -69,8 +75,10 @@
       flex-direction: column;
     }
   }
-
+  
+  /* Logo image styling */
   .logo-image {
-    width: 200px;  /* Adjust width according to your preference */
-     /* Maintain aspect ratio */
+    width: 250px;  /* Adjust width according to your preference */
+    height: auto;  /* Maintain aspect ratio */
   }
+  

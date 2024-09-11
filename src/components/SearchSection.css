@@ -1,0 +1,79 @@
+/* Search Section Styles */
+.search-section {
+    text-align: center;
+    padding: 40px;
+    background-color: yellow;
+  }
+  
+  .search-bar h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .search-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .search-input {
+    font-size: 16px;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #f5f5f5;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .search-input:focus {
+    border-color: #008080;
+  }
+  
+  .search-button {
+    background-color: #008080;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .upload-prescription {
+    margin-top: 15px;
+  }
+  
+  .upload-prescription span {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .upload-prescription a {
+    font-size: 16px;
+    color: #008080;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Placeholder fade-in/out effect */
+  .search-input::placeholder {
+    color: #888;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+  }
+  
+  .search-input:focus::placeholder {
+    opacity: 0; /* Hide placeholder when focused */
+  }
+  
+  .fade-in::placeholder {
+    opacity: 1; /* Fade in */
+  }
+  
+  .fade-out::placeholder {
+    opacity: 0; /* Fade out */
+  }
+  
