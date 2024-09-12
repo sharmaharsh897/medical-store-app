@@ -34,7 +34,7 @@ const CarouselComponent = () => {
         <div className="image-container left-image">
           <img
             src={images[(currentIndex - 1 + images.length) % images.length]}
-            alt="left image"
+            alt="left"
             className="carousel-image"
           />
         </div>
@@ -43,7 +43,7 @@ const CarouselComponent = () => {
         <div className="image-container center-image">
           <img
             src={images[currentIndex]}
-            alt="center image"
+            alt="center"
             className="carousel-image"
           />
         </div>
@@ -52,7 +52,7 @@ const CarouselComponent = () => {
         <div className="image-container right-image">
           <img
             src={images[(currentIndex + 1) % images.length]}
-            alt="right image"
+            alt="right"
             className="carousel-image"
           />
         </div>

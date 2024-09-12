@@ -3,56 +3,80 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 600px; /* Carousel takes full width */
+    width: 100%; /* Full width of the container */
     margin: 0 auto;
-  }
-  
-  .carousel-images {
+   
+}
+
+.carousel-images {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position: relative;
-    width: 600px; /* Increased width for better visibility */
-  }
-  
-  .image-container {
+    width: 1000px; /* Adjusted width to give more space */
+}
+
+.image-container {
     position: relative;
     overflow: hidden;
     height: 300px; /* Equal height for all images */
-  }
-  
-  .left-image, .right-image {
-    width: 150px; /* Half of the image visible (150px) */
-  }
-  
-  .center-image {
-    width: 300px; /* Fully visible center image (300px) */
-  }
-  
-  .carousel-image {
-    width: 100%; /* Image takes full width of its container */
-    height: 100%; /* Maintain height consistency */
-    object-fit: cover; /* Ensure images fit the container without distortion */
-  }
-  
-  .arrow {
+}
+
+.left-image, .right-image {
+    width: 600px; /* Left and right images will take half-width and be partially visible */
+    transition: transform 0.5s ease;
+}
+
+.center-image {
+    width: 2000px; /* Fully visible center image */
+    transition: transform 0.5s ease;
+}
+
+.carousel-image {
+    width: 100%; /* Image will fit the container's width */
+    height: 100%; /* Maintain consistent height */
+    object-fit: cover;
+}
+
+.arrow {
     position: absolute;
     top: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: white;
+    color: black;
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 2;
+    z-index: 10; /* Ensure the arrows are on top of the image */
     font-size: 20px;
     transform: translateY(-50%);
-  }
-  
-  .prev {
-    left: 10px; /* Positioned to the left */
-  }
-  
-  .next {
-    right: 10px; /* Positioned to the right */
-  }
-  
+}
+
+.prev {
+    left: 0; /* Position the arrow inside the left image */
+}
+
+.next {
+    right: 0; /* Position the arrow inside the right image */
+}
+
+/* Ensure there's no overlap and there's a gap between the images */
+.carousel-images > .image-container {
+    margin: 0 10px; /* Adds a gap between images */
+    position: relative; /* This ensures arrows are positioned relative to image container */
+}
+
+/* Adjust arrows to appear over the left and right images */
+.image-container .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Ensure the arrows are on top of the image */
+}
+
+.image-container .prev {
+    left: -25px; /* Align the left arrow inside the left image */
+}
+
+.image-container .next {
+    right: -25px; /* Align the right arrow inside the right image */
+}

@@ -1,111 +1,126 @@
-/* Search Section Styles */
 .search-section {
-    text-align: center;
-    padding: 40px;
-    /* background-color: yellow; */
-  }
-  
-  .search-bar h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .search-input-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .search-input {
-    font-size: 16px;
-    padding: 10px;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    background-color: #f5f5f5;
-    outline: none;
-    transition: border-color 0.3s;
-  }
-  
-  .search-input:focus {
-    border-color: #008080;
-  }
-  
-  .search-button {
-    background-color: #008080;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .upload-prescription {
-    margin-top: 15px;
-  }
-  
-  .upload-prescription span {
-    font-size: 16px;
-    margin-right: 10px;
-  }
-  
-  .upload-prescription a {
-    font-size: 16px;
-    color: #008080;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  /* Placeholder fade-in/out effect */
-  .search-input::placeholder {
-    color: #888;
-    opacity: 1;
-    transition: opacity 0.6s ease-in-out;
-  }
-  
-  .search-input:focus::placeholder {
-    opacity: 0; /* Hide placeholder when focused */
-  }
-  
-  .fade-in::placeholder {
-    opacity: 1; /* Fade in */
-  }
-  
-  .fade-out::placeholder {
-    opacity: 0; /* Fade out */
-  }
-  /* Suggestion List Styles */
+  text-align: center;
+  padding: 40px;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  margin-bottom: 20px;
+}
+
+.search-bar h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.search-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.search-input {
+  font-size: 16px;
+  padding: 10px;
+  width: 720px; /* Increased width */
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  background-color: #f5f5f5;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #008080;
+}
+
+.search-button {
+  background-color: #008080;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.upload-prescription {
+  display: flex;
+  align-items: center;
+}
+
+.upload-prescription span {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.upload-prescription a {
+  font-size: 16px;
+  color: #008080;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Placeholder fade-in/out effect */
+.search-input::placeholder {
+  color: #888;
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.search-input:focus::placeholder {
+  opacity: 0; /* Hide placeholder when focused */
+}
+
+.fade-in::placeholder {
+  opacity: 1; /* Fade in */
+}
+
+.fade-out::placeholder {
+  opacity: 0; /* Fade out */
+}
+
+/* Suggestion List Styles */
 .suggestions-list {
-    position: relative;
-    width: 300px;
-    margin: 0 auto;
-  }
-  
-  .suggestions-list ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 1000;
-  }
-  
-  .suggestions-list li {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .suggestions-list li:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 15px;
-  }
+  position: relative;
+  width: 400px; /* Adjusted to match search input width */
+  margin: 0 auto;
+}
+
+.suggestions-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.error-message {
+  color: red;
+  margin-top: 15px;
+}

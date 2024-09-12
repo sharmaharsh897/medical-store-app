@@ -61,7 +61,13 @@ function SearchSection() {
   return (
     <div className="search-section">
       <div className="search-bar">
-        <h2>What are you looking for?</h2>
+        <div className="search-bar-header">
+          <h2>What are you looking for?</h2>
+          <div className="upload-prescription">
+            <span>Order with prescription.</span>
+            <a href="/">UPLOAD NOW &gt;</a>
+          </div>
+        </div>
         <div className="search-input-container">
           <input
             type="text"
@@ -91,10 +97,6 @@ function SearchSection() {
           )}
         </div>
         {error && <div className="error-message">{error}</div>}
-        <div className="upload-prescription">
-          <span>Order with prescription.</span>
-          <a href="/">UPLOAD NOW &gt;</a>
-        </div>
       </div>      
     </div>
   );
