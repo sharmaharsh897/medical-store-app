@@ -2,7 +2,7 @@
 .search-section {
     text-align: center;
     padding: 40px;
-    background-color: yellow;
+    /* background-color: yellow; */
   }
   
   .search-bar h2 {
@@ -76,4 +76,36 @@
   .fade-out::placeholder {
     opacity: 0; /* Fade out */
   }
+  /* Suggestion List Styles */
+.suggestions-list {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+  }
   
+  .suggestions-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+  
+  .suggestions-list li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestions-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 15px;
+  }
