@@ -1,0 +1,101 @@
+.testimonials-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Owner's section */
+  .owner-section h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    padding: 10px;
+  }
+  
+  .owner-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  
+  .owner-image {
+    height: 300px;
+    border-radius: 10px;
+   /* Ensure the image fits within the height of the content */
+  }
+  
+  .owner-paragraph {
+    flex-grow: 1;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    height: 300px;
+  }
+  
+  .quote-box {
+    position: relative;
+    width: 100%;
+  }
+  
+  .quote {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 50px;
+    color: #d3d3d3;
+  }
+  
+  .owner-paragraph p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Adjust the flex layout to align with the content's height */
+  .owner-content {
+    align-items: flex-start; /* Align the image and text based on the content height */
+  }
+  
+  /* Reviews Section */
+  .reviews-section h2 {
+
+    margin-top: 50px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    padding: 10px;
+  }
+  
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .review-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-text {
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .review-author {
+    text-align: right;
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+  }
+  

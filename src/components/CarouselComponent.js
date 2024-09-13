@@ -22,47 +22,48 @@ const CarouselComponent = () => {
   };
 
   return (
-    <div className="carousel-container">
-      {/* Left Arrow */}
-      <div className="arrow prev" onClick={handlePrev}>
-        ⬅
-      </div>
+   <div className="carousel-container">
+  {/* Left Arrow */}
+  <div className="arrow prev" onClick={handlePrev}>
+    ⬅
+  </div>
 
-      {/* Carousel Images */}
-      <div className="carousel-images">
-        {/* Left Image - Half visible */}
-        <div className="image-container left-image">
-          <img
-            src={images[(currentIndex - 1 + images.length) % images.length]}
-            alt="left"
-            className="carousel-image"
-          />
-        </div>
-
-        {/* Center Image - Fully visible */}
-        <div className="image-container center-image">
-          <img
-            src={images[currentIndex]}
-            alt="center"
-            className="carousel-image"
-          />
-        </div>
-
-        {/* Right Image - Half visible */}
-        <div className="image-container right-image">
-          <img
-            src={images[(currentIndex + 1) % images.length]}
-            alt="right"
-            className="carousel-image"
-          />
-        </div>
-      </div>
-
-      {/* Right Arrow */}
-      <div className="arrow next" onClick={handleNext}>
-        ➡
-      </div>
+  {/* Carousel Images */}
+  <div className="carousel-images">
+    
+    {/* Left Image - Half visible */}
+    <div className="image-container left-image">
+      <img
+        src={images[(currentIndex - 1 + images.length) % images.length]}
+        alt="left"
+        className="carousel-image"
+      />
     </div>
+
+    {/* Center Image - Fully visible */}
+    <div className="image-container center-image">
+      <img
+        src={images[currentIndex]}
+        alt="center"
+        className="carousel-image"
+      />
+    </div>
+
+    {/* Right Image - Half visible */}
+    <div className="image-container right-image">
+      <img
+        src={images[(currentIndex + 1) % images.length]}
+        alt="right"
+        className="carousel-image"
+      />
+    </div>
+  </div>
+
+  {/* Right Arrow */}
+  <div className="arrow next" onClick={handleNext}>
+    ➡
+  </div>
+</div>
   );
 };
 
