@@ -1,16 +1,16 @@
 .maps {
     display: flex;
-    justify-content: center; /* Center the map horizontally */
-    align-items: center;     /* Center the map vertically if necessary */       
+    justify-content: center; 
+    align-items: center;            
     padding: 10px;
   }
   
   iframe {
-    width: 75%;             /* Responsive map width */
+    width: 75%;             
     height: 450px;
-    border-radius: 8px;      /* Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for a polished look */
-    border: 0;               /* No border */
+    border-radius: 8px;      
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border: 0;               
     margin-bottom: 10px;
   }
   
