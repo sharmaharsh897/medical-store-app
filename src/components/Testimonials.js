@@ -5,6 +5,11 @@ import ownerImage from '../components/assets/owner.jpg'; // Make sure to add the
 const Testimonials = () => {
   return (
     <div className="testimonials-container">
+        <div className="store-description">
+        <h2>Gwalior's No. 1 Medical Store</h2>
+            <p className='decsription'>
+            At <b>Gurudev Medical Store & Surgical</b>, established in 1975, we take pride in our 50 years of trust and commitment to delivering top-notch healthcare solutions. Our legacy of excellence is built on a deep-rooted presence in the community, offering a comprehensive range of high-quality pharmaceuticals, over-the-counter medications, and health products. Our knowledgeable and friendly staff are dedicated to providing expert advice and personalized care to ensure you and your family receive the best possible service. Trust us to be your reliable partner in health and wellness, where your well-being is our top priority.            </p>
+      </div>
       {/* Owner's Words Section */}
       <div className="owner-section">
         <h2>Some words from owner</h2>
@@ -51,6 +56,7 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

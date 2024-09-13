@@ -99,3 +99,19 @@
     color: #555;
   }
   
+  .store-description{
+    margin-top: 50px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    padding: 10px;
+   
+  }
+
+  .store-description p{
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 90%;
+  }
