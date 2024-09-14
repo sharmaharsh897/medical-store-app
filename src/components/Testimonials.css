@@ -25,6 +25,7 @@
   .owner-image {
     height: 300px;
     border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
    /* Ensure the image fits within the height of the content */
   }
   
@@ -35,6 +36,8 @@
     border-radius: 10px;
     position: relative;
     height: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
   }
   
   .quote-box {
@@ -59,6 +62,16 @@
   /* Adjust the flex layout to align with the content's height */
   .owner-content {
     align-items: flex-start; /* Align the image and text based on the content height */
+  }
+
+  .owner-name {
+    position: absolute;
+    font-style: italic;
+    /* bottom: 10px; */
+    right: 15px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 15px;
   }
   
   /* Reviews Section */

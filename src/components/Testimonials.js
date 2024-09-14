@@ -19,8 +19,9 @@ const Testimonials = () => {
             <div className="quote-box">
               <span className="quote">“</span>
               <p>
-                As the proud owner of Gurudev Medical & Surgical, I am deeply invested in ensuring that our store not only meets but exceeds your expectations. Our mission is rooted in providing you with exceptional healthcare products and personalized service that goes beyond the ordinary. We understand the importance of reliable medications and compassionate support in your health journey. My team and I are dedicated to maintaining the highest standards of quality and service, driven by our commitment to your well-being. We are grateful for your trust and loyalty, and we strive every day to be the trusted partner in your health and wellness.
+                As the proud owner of Gurudev Medical & Surgical, I am deeply invested in ensuring that our store not only meets but exceeds your expectations. Our mission is rooted in providing you with exceptional healthcare products and personalized service that goes beyond the ordinary. We understand the importance of reliable medications and compassionate support in your health journey. My family and I are dedicated to maintaining the highest standards of quality and service, driven by our commitment to your well-being. We are grateful for your trust and loyalty, and we strive every day to be the trusted partner in your health and wellness.
               </p>
+              <span className="owner-name">~ Lokesh Sharma</span>
             </div>
           </div>
         </div>

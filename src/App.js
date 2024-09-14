@@ -1,5 +1,7 @@
 import './App.css';
 import CarouselComponent from './components/CarouselComponent';
+import Footer from './components/Footer';
+
 import MapComponent from './components/MapComponent';
 import Navbar from './components/Navbar';
 import SearchSection from './components/SearchSection'; 
@@ -12,8 +14,8 @@ function App() {
      <SearchSection/> 
      <CarouselComponent/>
      <Testimonials/>
-     <MapComponent/>
-
+     <MapComponent/> 
+     <Footer/>
     </div>
   );
 }
