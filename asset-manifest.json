@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/medical-store-app/static/css/main.18857745.css",
+    "main.js": "/medical-store-app/static/js/main.aae26dba.js",
+    "static/js/453.a12a1529.chunk.js": "/medical-store-app/static/js/453.a12a1529.chunk.js",
+    "static/media/owner.jpg": "/medical-store-app/static/media/owner.6bed7da64259e8cbd379.jpg",
+    "static/media/comp_cod.jpg": "/medical-store-app/static/media/comp_cod.60caa5d069a1bdd7a7fc.jpg",
+    "static/media/comp_50lac.jpg": "/medical-store-app/static/media/comp_50lac.61083ad77dd7212188b0.jpg",
+    "static/media/comp_3step.jpg": "/medical-store-app/static/media/comp_3step.44998a996d7118ad934c.jpg",
+    "static/media/slick.svg": "/medical-store-app/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/medical-store-app/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/medical-store-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/medical-store-app/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/medical-store-app/index.html",
+    "main.18857745.css.map": "/medical-store-app/static/css/main.18857745.css.map",
+    "main.aae26dba.js.map": "/medical-store-app/static/js/main.aae26dba.js.map",
+    "453.a12a1529.chunk.js.map": "/medical-store-app/static/js/453.a12a1529.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18857745.css",
+    "static/js/main.aae26dba.js"
+  ]
+}
