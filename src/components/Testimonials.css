@@ -135,3 +135,71 @@
   .store-description h2{
     color: #4f5860;
   }
+
+  .feedback-form-section {
+    margin-top: 50px;
+    width: 80%;
+   
+  }
+  .feedback-form-section h2{
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #4f5860;
+  }
+
+  .feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .feedback-input {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .feedback-name {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .feedback-submit {
+    width: 150px;
+    padding: 10px 20px;
+    background-color: #4f5860;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .feedback-submit:hover {
+    background-color: #3d474d;
+  }
+  .view-more-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4f5860;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .view-more-btn:hover {
+    background-color: #3d474d;
+  }
+  
+  
