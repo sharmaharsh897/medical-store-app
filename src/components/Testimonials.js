@@ -16,7 +16,7 @@ const Testimonials = () => {
   const [name, setName] = useState("");
 
   // State for managing visible reviews
-  const [visibleReviews, setVisibleReviews] = useState(6); // Start with 6 reviews
+  const [visibleReviews, setVisibleReviews] = useState(4); // Start with 6 reviews
 
   // UseEffect to load reviews from sessionStorage when component mounts
   useEffect(() => {
