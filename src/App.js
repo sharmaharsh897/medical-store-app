@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import CarouselComponent from "./components/CarouselComponent";
 import Footer from "./components/Footer";
 import MapComponent from "./components/MapComponent";
@@ -10,7 +10,7 @@ import LoginForm from "./components/UserLogin"; // Import your login form compon
 
 function App() {
   return (
-    <Router basename="/medical-store-app">
+    <Router>
       <div className="App">
         {/* Navbar remains visible on all routes */}
         <Navbar />
