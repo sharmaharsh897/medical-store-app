@@ -7,7 +7,8 @@ import logoIcon from "../components/assets/gurudev.png";
 function Navbar() {
   const location = useLocation();
 
-  const isHomePage = location.pathname === "/";
+  // Check if the current path is the home route
+  const isHomePage = location.pathname === "/home" || location.pathname === "/";
 
   return (
     <div>
@@ -22,7 +23,7 @@ function Navbar() {
                 Home
               </ScrollLink>
             ) : (
-              <RouterLink to="/">Home</RouterLink>
+              <RouterLink to="/home">Home</RouterLink>
             )}
           </li>
           <li>
@@ -31,7 +32,7 @@ function Navbar() {
                 About
               </ScrollLink>
             ) : (
-              <RouterLink to="/">About</RouterLink>
+              <RouterLink to="/home">About</RouterLink>
             )}
           </li>
           <li>
@@ -40,7 +41,7 @@ function Navbar() {
                 Services
               </ScrollLink>
             ) : (
-              <RouterLink to="/">Services</RouterLink>
+              <RouterLink to="/home">Services</RouterLink>
             )}
           </li>
           <li>
@@ -49,7 +50,7 @@ function Navbar() {
                 Contact Us
               </ScrollLink>
             ) : (
-              <RouterLink to="/">Contact Us</RouterLink>
+              <RouterLink to="/home">Contact Us</RouterLink>
             )}
           </li>
           <li className="dropdown">
