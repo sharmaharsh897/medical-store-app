@@ -1,0 +1,48 @@
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 40px;
+    width: 80%; /* Adjust the width if needed */
+    margin: 0 auto; /* Centers the container horizontally */
+    margin-bottom: 30px;
+  }
+  
+  .service-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .service-icon {
+    width: 80px; /* Adjust the size as needed */
+    height: 80px;
+  }
+
+  .service-icon:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+  }
+  
+  .service-text {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .container{
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .container h2{
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 12%;
+    padding: 10px;
+    color: #4f5860;
+  }
+  

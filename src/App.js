@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import SearchSection from "./components/SearchSection";
 import Testimonials from "./components/Testimonials";
 import LoginForm from "./components/UserLogin"; // Import your login form component
+import Services from "./components/Services";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
                 </section>
                 <section id="about">
                   <Testimonials />
+                </section>
+                <section id="services">
+                  <Services />
                 </section>
                 <section id="contact">
                   <MapComponent />

@@ -35,7 +35,7 @@ const Footer = () => {
             <img src={rupayIcon} alt="Rupay" />
           </div>
           <div className="copyright">
-            &copy; 2024 Gurudev Medical & Surgical Store. All Rights Reserved.
+            &copy; 2025 Gurudev Medical & Surgical Store. All Rights Reserved.
           </div>
         </div>
       </div>
