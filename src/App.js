@@ -8,6 +8,7 @@ import SearchSection from "./components/SearchSection";
 import Testimonials from "./components/Testimonials";
 import LoginForm from "./components/UserLogin"; // Import your login form component
 import Services from "./components/Services";
+import Chatbot from "./components/Chatbot"; // Import the Chatbot component
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
                 <section id="contact">
                   <MapComponent />
                 </section>
+
+                {/* Chatbot only on the home page */}
+                <Chatbot />
               </>
             }
           />

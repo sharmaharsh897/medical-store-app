@@ -5,9 +5,9 @@ import ownerImage from '../components/assets/owner.jpg'; // Ensure the correct p
 const Testimonials = () => {
   // State to hold customer reviews
   const [reviews, setReviews] = useState([
-    { text: "I’ve been a regular customer at Gwalior’s No. 1 Medical Store for years, and I’m always impressed by their professionalism and friendly service. They have a great selection of products, and their staff is always ready to help with any questions. Highly recommended!", author: "Priya Sharma", date: "10 August 2023" },
+    { text: "I’ve been a regular customer at Gurudev Medical Store for years, and I’m always impressed by their professionalism and friendly service. They have a great selection of products, and their staff is always ready to help with any questions. Highly recommended!", author: "Priya Sharma", date: "10 August 2023" },
     { text: "This is my go-to pharmacy for all my family’s needs. The quality of their medicines and the knowledgeable staff make a huge difference. I appreciate their dedication to customer care and the quick service they provide.", author: "Rajesh Patel", date: "22 July 2023" },
-    { text: "Gwalior’s No. 1 Medical Store has always exceeded my expectations. Their staff is not only courteous but also very attentive, ensuring I get the right products every time. It’s reassuring to have such a reliable place for all my health needs.", author: "Anita Verma", date: "15 September 2023" },
+    { text: "Gurudev Medical Store has always exceeded my expectations. Their staff is not only courteous but also very attentive, ensuring I get the right products every time. It’s reassuring to have such a reliable place for all my health needs.", author: "Anita Verma", date: "15 September 2023" },
     { text: "Fantastic service and a great range of products. The team at this store is incredibly helpful and makes sure I leave with everything I need. I wouldn’t trust my health needs to anyone else!", author: "Suresh Kumar", date: "5 June 2023" }
   ]);
 
