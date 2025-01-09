@@ -55,6 +55,52 @@
   cursor: pointer;
 }
 
+.upload-tooltip {
+  position: fixed;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black; /* Plain text color */
+  font-size: 16px; /* Increase font size for visibility */ /* Remove padding */
+  text-align: center; /* Center-align text */
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  animation: fadeInOut 4s ease-in-out;
+  pointer-events: none; 
+}
+
+.upload-tooltip.success {
+  background-color: rgb(127, 244, 127);
+  width: 40% ;
+}
+
+.upload-tooltip.error {
+  background-color: rgb(222, 113, 113);
+  width: 40%;
+
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100%{
+    display: none;
+  }
+}
+
+.upload-label {
+  color: #008080;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
 .upload-prescription {
   display: flex;
   align-items: center;
@@ -123,4 +169,27 @@
 .error-message {
   color: red;
   margin-top: 15px;
+}
+
+.uploaded-file {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.uploaded-file span {
+  margin-right: 10px;
+}
+
+.remove-file-btn {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.remove-file-btn:hover {
+  color: darkred;
 }

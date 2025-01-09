@@ -8,13 +8,18 @@ const Chatbot = () => {
   const [showNotification, setShowNotification] = useState(true);
   const [hasPlayed, setHasPlayed] = useState(false); // Track if sound has played
   const [chat, setChat] = useState([
-    { text: "Hi there! How can I help you?", options: ["Order Medicine", "Consult Doctor", "Know More"] },
+    {
+      text: "Hi there! How can I help you?",
+      options: ["Order Medicine", "Consult Doctor", "Know More"],
+      isUser: false,
+    },
   ]);
 
   useEffect(() => {
     const playSound = () => {
       const audio = new Audio(notificationSound);
-      audio.play()
+      audio
+        .play()
         .then(() => {
           setHasPlayed(true); // Mark sound as played
         })
@@ -23,7 +28,6 @@ const Chatbot = () => {
         });
     };
 
-    // Attempt to play sound on page load if it hasn't played yet
     if (!hasPlayed) {
       playSound();
     }
@@ -34,11 +38,9 @@ const Chatbot = () => {
       }
     };
 
-    // Attach event listeners for interaction
     document.addEventListener("click", enableSoundOnInteraction);
     document.addEventListener("keydown", enableSoundOnInteraction);
 
-    // Cleanup event listeners
     return () => {
       document.removeEventListener("click", enableSoundOnInteraction);
       document.removeEventListener("keydown", enableSoundOnInteraction);
@@ -46,21 +48,38 @@ const Chatbot = () => {
   }, [hasPlayed]);
 
   const handleOptionClick = (option) => {
-    let newMessage = { text: "", options: [] };
+    const userMessage = { text: option, options: [], isUser: true };
+    setChat((prevChat) => [...prevChat, userMessage]);
+
+    let newMessage = { text: "", options: [], isUser: false };
     if (option === "Order Medicine") {
-      newMessage = { text: "You can order medicines online here!", options: ["Go Back", "Exit"] };
+      newMessage = {
+        text: "You can order medicines online here!",
+        options: ["Go Back", "Exit"],
+      };
     } else if (option === "Consult Doctor") {
-      newMessage = { text: "We provide free consultations with experts.", options: ["Go Back", "Exit"] };
+      newMessage = {
+        text: "We provide free consultations with experts.",
+        options: ["Go Back", "Exit"],
+      };
     } else if (option === "Know More") {
-      newMessage = { text: "We offer a wide range of services.", options: ["Go Back", "Exit"] };
+      newMessage = {
+        text: "We offer a wide range of services.",
+        options: ["Go Back", "Exit"],
+      };
     } else if (option === "Go Back") {
-      newMessage = { text: "Hi there! How can I help you?", options: ["Order Medicine", "Consult Doctor", "Know More"] };
+      newMessage = {
+        text: "Hi there! How can I help you?",
+        options: ["Order Medicine", "Consult Doctor", "Know More"],
+      };
     } else if (option === "Exit") {
       setIsOpen(false);
       return;
     }
 
-    setChat([...chat, newMessage]);
+    setTimeout(() => {
+      setChat((prevChat) => [...prevChat, newMessage]);
+    }, 500); // Add a slight delay for better UX
   };
 
   const handleChatbotToggle = () => {
@@ -84,14 +103,24 @@ const Chatbot = () => {
           </div>
           <div className="chatbot-body">
             {chat.map((message, index) => (
-              <div key={index} className="chatbot-message">
+              <div
+                key={index}
+                className={`chatbot-message ${
+                  message.isUser ? "user-message" : "bot-message"
+                }`}
+              >
                 <p>{message.text}</p>
                 <div className="chatbot-options">
-                  {message.options.map((option, idx) => (
-                    <button key={idx} onClick={() => handleOptionClick(option)}>
-                      {option}
-                    </button>
-                  ))}
+                  {!message.isUser &&
+                    message.options.map((option, idx) => (
+                      <button
+                        key={idx}
+                        className="chatbot-option-button"
+                        onClick={() => handleOptionClick(option)}
+                      >
+                        {option}
+                      </button>
+                    ))}
                 </div>
               </div>
             ))}
