@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router";
 import { Link as ScrollLink } from "react-scroll";
 import "./Navbar.css";
 import logoIcon from "../components/assets/gurudev.png";
