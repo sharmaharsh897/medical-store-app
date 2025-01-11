@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-// Import the payment icons from the assets folder
 import gpayIcon from "../components/assets/payment-icons/gpay.png";
 import paytmIcon from "../components/assets/payment-icons/paytm.png";
 import phonepeIcon from "../components/assets/payment-icons/phonepe.png";
