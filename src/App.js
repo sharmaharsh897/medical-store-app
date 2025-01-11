@@ -6,9 +6,9 @@ import MapComponent from "./components/MapComponent";
 import Navbar from "./components/Navbar";
 import SearchSection from "./components/SearchSection";
 import Testimonials from "./components/Testimonials";
-import LoginForm from "./components/UserLogin"; // Import your login form component
+import LoginForm from "./components/UserLogin";
 import Services from "./components/Services";
-import Chatbot from "./components/Chatbot"; // Import the Chatbot component
+import Chatbot from "./components/Chatbot";
 
 function App() {
   return (
