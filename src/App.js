@@ -1,5 +1,5 @@
 import "./App.css";
-import { HashRouter as Router, Route, Routes, Navigate } from "react-router";
+import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import CarouselComponent from "./components/CarouselComponent";
 import Footer from "./components/Footer";
 import MapComponent from "./components/MapComponent";
