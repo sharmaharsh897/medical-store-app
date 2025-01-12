@@ -13,6 +13,8 @@ import Chatbot from "./components/Chatbot";
 function App() {
   return (
     <Router>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
       <div className="App">
         {/* Navbar remains visible on all routes */}
         <Navbar />
