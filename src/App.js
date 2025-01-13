@@ -9,6 +9,7 @@ import Testimonials from "./components/Testimonials";
 import LoginForm from "./components/UserLogin";
 import Services from "./components/Services";
 import Chatbot from "./components/Chatbot";
+import RegisterForm from "./components/UserRegister";
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
 
           {/* Login Route */}
           <Route path="/user-login" element={<LoginForm />} />
+
+               {/* Registration Route */}
+               <Route path="/register" element={<RegisterForm />} />
         </Routes>
 
         {/* Footer remains visible on all routes */}

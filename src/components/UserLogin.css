@@ -52,16 +52,17 @@
 }
 
 .login-button {
-  background-color: #b8e1e2;
+  background-color: #32AEB1; 
   color: white;
   padding: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .login-button:hover {
-  background-color: #32AEB1; 
+  background-color: #0f43c7; 
 }
 
 .separator {
@@ -127,6 +128,7 @@
   margin-top: 20px;
   font-size: 0.9rem;
   color: #666;
+  font-weight: bold;
 }
 
 .logout-hover {

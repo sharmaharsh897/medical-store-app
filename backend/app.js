@@ -13,4 +13,8 @@ app.use(express.json());
 const userRoutes = require("./routes/userRoutes");
 app.use("/api", userRoutes);
 
+// Registration Route (newly added)
+const registerRoutes = require('./routes/registerRoutes'); // registration routes
+app.use('/api/register', registerRoutes);
+
 module.exports = app; // Make sure you export the app

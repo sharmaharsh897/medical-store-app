@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./UserLogin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -96,7 +97,7 @@ const LoginForm = () => {
           <div className="google-text-box">Login with Google</div>
         </button>
         <div className="login-footer">
-          New User? <a href="/">Register</a>
+        New User? <Link to="/register">Create Account</Link>
         </div>
       </div>
 
