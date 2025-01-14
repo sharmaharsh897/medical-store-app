@@ -1,29 +1,36 @@
-const { createUser } = require('../data-access/db'); // ensure db functions are set correctly
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const db = require('../config/dbConfig');
 
 const registerUser = async (req, res) => {
-  const { firstName, lastName, phone, email, password } = req.body;
-
-  if (!firstName || !lastName || !phone || !email || !password) {
-    console.log(firstName);
-    console.log(lastName)
-    console.log(phone)
-    console.log(email)
-    console.log(password)
-
-    return res.status(400).json({ message: "All fields are required." });
-  }
+  const { firstName, lastName, phoneNumber, email, password, confirmPassword } = req.body;
 
   try {
-    const hashedPassword = await bcrypt.hash(password, 10); // Encrypt password
-    const newUser = await createUser(firstName, lastName, phone, email, hashedPassword); // Create user function
+    if (!firstName || !lastName || !phoneNumber || !email || !password || !confirmPassword) {
+      return res.status(400).json({ message: 'All fields are required.' });
+    }
 
-    const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    return res.status(201).json({ message: "User registered successfully.", token });
+    if (password !== confirmPassword) {
+      return res.status(400).json({ message: 'Passwords do not match.' });
+    }
+
+    // Check for existing user
+    const [existingUser] = await db.execute(
+      'SELECT id FROM users WHERE email = ? OR phone_number = ?',
+      [email, phoneNumber]
+    );
+    if (existingUser.length > 0) {
+      return res.status(400).json({ message: 'User already exists.' });
+    }
+
+   // Save password as plain text
+   await db.execute(
+    'INSERT INTO users (first_name, last_name, phone_number, email, password) VALUES (?, ?, ?, ?, ?)',
+    [firstName, lastName, phoneNumber, email, password]
+  );
+
+    return res.status(201).json({ message: 'User registered successfully.' });
   } catch (error) {
-    console.error("Error during registration:", error);
-    return res.status(500).json({ message: "Internal Server Error" });
+    console.error('Error during registration:', error);
+    return res.status(500).json({ message: 'Internal Server Error' });
   }
 };
 
