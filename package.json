@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@react-oauth/google": "^0.12.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -48,5 +49,8 @@
     ]
   },
   "homepage": "https://sharmaharsh897.github.io/medical-store-app",
-  "proxy": "https://example.com"
+  "proxy": "https://example.com",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }

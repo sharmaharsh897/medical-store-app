@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./UserLogin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { useGoogleLogin } from "@react-oauth/google";
 import { Link } from "react-router-dom";
 
 const LoginForm = () => {
@@ -11,6 +12,7 @@ const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState(""); // For displaying error message
   const [errorVisible, setErrorVisible] = useState(false); // To control the visibility of error message tooltip
 
+  // Existing email/password login handler
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -37,17 +39,45 @@ const LoginForm = () => {
     }
   };
 
-  const handleGoogleLogin = () => {
-    console.log("Google Login Clicked");
-  };
+  // Google login handler
+  const handleGoogleLogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      try {
+        const response = await fetch("http://localhost:5000/api/google-login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token: tokenResponse.access_token }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Google login failed");
+        }
+
+        const data = await response.json();
+        console.log("Google Login Successful:", data);
+        // Redirect to home or handle login state
+      } catch (error) {
+        console.error("Error during Google login:", error);
+        setErrorMessage("Google login failed. Please try again.");
+        setErrorVisible(true);
+      }
+    },
+    onError: (error) => {
+      console.error("Google Login Error:", error);
+      setErrorMessage("Google login encountered an error. Please try again.");
+      setErrorVisible(true);
+    },
+  });
 
   // Tooltip fade-out effect
   useEffect(() => {
     if (errorVisible) {
       const timeout = setTimeout(() => {
-        setErrorMessage('');
+        setErrorMessage("");
         setErrorVisible(false); // Hide the error message after 4 seconds
-      }, 4000); // Show for 4 seconds
+      }, 4000);
       return () => clearTimeout(timeout);
     }
   }, [errorVisible]);
@@ -97,16 +127,12 @@ const LoginForm = () => {
           <div className="google-text-box">Login with Google</div>
         </button>
         <div className="login-footer">
-        New User? <Link to="/register">Create Account</Link>
+          New User? <Link to="/register">Create Account</Link>
         </div>
       </div>
 
       {/* Error message tooltip */}
-      {errorVisible && (
-        <div className="login-tooltip error">
-          {errorMessage}
-        </div>
-      )}
+      {errorVisible && <div className="login-tooltip error">{errorMessage}</div>}
     </div>
   );
 };
