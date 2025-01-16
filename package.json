@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.9",
     "cors": "^2.8.5",
+    "google-auth-library": "^9.15.0",
     "medical-store-app": "file:",
     "mysql2": "^3.12.0",
     "react": "^18.3.1",
