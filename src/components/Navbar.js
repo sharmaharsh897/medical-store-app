@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import "./Navbar.css";
@@ -7,11 +7,30 @@ import logoIcon from "../components/assets/gurudev.png";
 function Navbar() {
   const location = useLocation();
 
+  const [isLoading, setIsLoading] = useState(false); // State to control loader visibility
+
   // Check if the current path is the home route
   const isHomePage = location.pathname === "/home" || location.pathname === "/";
 
+  // Handle login button click (simulates login action and shows the loader)
+  const handleLoginClick = () => {
+    setIsLoading(true); // Show the loader
+
+    // Simulate a delay (e.g., an API call) before hiding the loader
+    setTimeout(() => {
+      setIsLoading(false); // Hide the loader after the simulated delay
+    }, 2000); // 2 seconds for demonstration
+  };
+
   return (
     <div>
+      {/* Loader Overlay */}
+      {isLoading && (
+        <div className="loader-overlay">
+          <div className="loader"></div>
+        </div>
+      )}
+
       <nav className="navbar">
         <div className="navbar-logo">
           <img src={logoIcon} alt="Logo" className="logo-image" />
@@ -58,8 +77,18 @@ function Navbar() {
               Login
             </a>
             <div className="dropdown-menu">
-              <RouterLink to="/user-login">User Login</RouterLink>
-              <RouterLink to="/owner-login">Owner Login</RouterLink>
+              <RouterLink
+                to="/user-login"
+                onClick={handleLoginClick} // Show loader when clicked
+              >
+                User Login
+              </RouterLink>
+              <RouterLink
+                to="/owner-login"
+                onClick={handleLoginClick} // Show loader when clicked
+              >
+                Owner Login
+              </RouterLink>
             </div>
           </li>
         </ul>
