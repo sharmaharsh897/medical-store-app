@@ -21,9 +21,17 @@ const loginUser = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials." });
     }
 
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign(
+      { id: user.id, first_name: user.first_name },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
 
-    return res.status(200).json({ message: "Login successful.", token });
+    return res.status(200).json({
+      message: "Login successful.",
+      token,
+      first_name: user.first_name,
+    });
   } catch (error) {
     console.error("Error during login:", error);
     return res.status(500).json({ message: "Internal Server Error" });
@@ -40,19 +48,25 @@ const googleLogin = async (req, res) => {
     });
     const payload = ticket.getPayload();
 
-    // Check if user exists in DB, otherwise create a new user
     const email = payload.email;
     const user = await findUserByEmail(email);
+
     if (!user) {
-      // Create new user logic here
+      // Logic to create a new user
       return res.status(200).json({ message: "New Google user registered" });
     }
 
-    // Generate JWT token for existing user
-    const jwtToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
+    const jwtToken = jwt.sign(
+      { id: user.id, first_name: user.first_name },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+
+    return res.status(200).json({
+      message: "Google login successful",
+      jwtToken,
+      first_name: user.first_name,
     });
-    return res.status(200).json({ message: "Google login successful", jwtToken });
   } catch (error) {
     console.error("Error verifying Google token:", error);
     return res.status(400).json({ message: "Invalid Google token" });

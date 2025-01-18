@@ -3,12 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { GoogleOAuthProvider } from "@react-oauth/google";import reportWebVitals from './reportWebVitals';
+import { UserProvider } from "./context/userContext";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+//   <GoogleOAuthProvider clientId="299877058148-g4ucc8l2pimsdm4t1qcp5mj8974ifega.apps.googleusercontent.com">
+//     <App />
+//   </GoogleOAuthProvider>,
+//  <UserProvider>
+//  <App />
+// </UserProvider>,
+//   document.getElementById("root")
+
   <GoogleOAuthProvider clientId="299877058148-g4ucc8l2pimsdm4t1qcp5mj8974ifega.apps.googleusercontent.com">
-    <App />
-  </GoogleOAuthProvider>,
-  document.getElementById("root")
+    <UserProvider>
+      <App />
+    </UserProvider>
+  </GoogleOAuthProvider>
 
 );
 

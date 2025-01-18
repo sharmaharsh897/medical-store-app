@@ -85,7 +85,7 @@
 
 /* Dropdown menu link hover effect */
 .dropdown-menu a:hover {
-  background-color: #32AEB1;
+  background-color: #32aeb1;
   color: white;
 }
 
@@ -144,7 +144,7 @@
 
 .navbar .dropdown a {
   text-decoration: none;
-  color: #333;;
+  color: #333;
   cursor: pointer;
 }
 
@@ -182,4 +182,51 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.after-login {
+  position: relative;
+  cursor: pointer;
+  top: 10px;
+  color: #333;
+  display: inline-block; /* Ensures transform works */
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; /* Smooth effect */
+}
+.after-login:hover {
+  color: white;
+}
+
+.user-login-icon {
+  position: relative;
+  top: 3px;
+}
+
+.user-login-down-icon {
+  position: relative;
+  top: 1px;
+}
+
+.navbar .dropdown:hover .after-login {
+  display: inline-block;
+  color: #fff;
+  background-color: #32aeb1;
+}
+
+.account-button { /* No button background */
+  border: none; /* No border */
+  padding: 10px 15px; /* Add some padding for clickable area */
+  text-align: left;
+  width: 100%; /* Make it fill the dropdown */
+  color: #333; /* Text color */
+  font-size: 12px; /* Font size */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease; 
+  background-color: #fff; /* Smooth hover effect */
+}
+
+/* Hover effect for logout button */
+.account-button:hover {
+  background-color: #32aeb1; 
+  color: #000; 
 }

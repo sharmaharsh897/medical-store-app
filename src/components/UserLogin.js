@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useGoogleLogin } from "@react-oauth/google";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../context/userContext";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -11,6 +14,9 @@ const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState(""); // For displaying error message
   const [errorVisible, setErrorVisible] = useState(false); // To control the visibility of error message tooltip
+  const { setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+  
 
   // Existing email/password login handler
   const handleLogin = async (e) => {
@@ -23,19 +29,20 @@ const LoginForm = () => {
         },
         body: JSON.stringify({ email, password }),
       });
-
+  
       if (!response.ok) {
-        throw new Error("Invalid credentials"); // Set an error message
+        throw new Error("Invalid credentials");
       }
-
+  
       const data = await response.json();
+      setUser({ first_name: data.first_name });
+      localStorage.setItem("jwtToken", data.token); // Save user data in context
+      navigate("/home"); // Redirect to homepage
       console.log("Login successful:", data);
-      // Redirect to home
-      // window.location.href = "/home";
     } catch (error) {
       console.error("Error during login:", error);
-      setErrorMessage("Incorrect email or password. Please try again."); // Show the error message
-      setErrorVisible(true); // Show the tooltip
+      setErrorMessage("Incorrect email or password. Please try again.");
+      setErrorVisible(true);
     }
   };
 

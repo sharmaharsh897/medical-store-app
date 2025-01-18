@@ -1,6 +1,7 @@
 /*eslint-disable*/
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import './SearchSection.css';
+import { UserContext } from "../context/userContext";
 
 function SearchSection() {
   const [dynamicText, setDynamicText] = useState('Medicine'); // For dynamic placeholder
@@ -11,6 +12,8 @@ function SearchSection() {
   const [uploadMessage, setUploadMessage] = useState(''); // Tooltip message
   const [uploadSuccess, setUploadSuccess] = useState(null); // Track upload success/failure
   const [uploadedFile, setUploadedFile] = useState(null); // Uploaded file state
+  const { user } = useContext(UserContext);
+  
 
   // Dynamic placeholder effect
   useEffect(() => {
@@ -106,7 +109,14 @@ function SearchSection() {
     <div className="search-section">
       <div className="search-bar">
         <div className="search-bar-header">
-          <h2>What are you looking for?</h2>
+
+        {user ? (
+              <span className=""><h2>Hi {user.first_name}, What are you looking for?</h2></span> // Display user name
+            ) : (<h2>What are you looking for?</h2>)
+            
+            }
+
+          
           <div className="upload-prescription">
             <span>Order with prescription.</span>
             <label htmlFor="file-upload" className="upload-label">
