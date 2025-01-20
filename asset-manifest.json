@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/medical-store-app/static/css/main.6e1109c3.css",
-    "main.js": "/medical-store-app/static/js/main.29ae5a18.js",
+    "main.css": "/medical-store-app/static/css/main.4faf3782.css",
+    "main.js": "/medical-store-app/static/js/main.e8fce5ec.js",
     "static/js/453.c0325d81.chunk.js": "/medical-store-app/static/js/453.c0325d81.chunk.js",
     "static/media/bell.mp3": "/medical-store-app/static/media/bell.e82f9eb7666963bbb9e8.mp3",
     "static/media/owner.jpg": "/medical-store-app/static/media/owner.6bed7da64259e8cbd379.jpg",
     "static/media/gurudev.png": "/medical-store-app/static/media/gurudev.70705d4242bad7355c91.png",
+    "static/media/bg2.jpg": "/medical-store-app/static/media/bg2.22eeeb9f3beeabcae43c.jpg",
     "static/media/government.png": "/medical-store-app/static/media/government.3e0ec8a3b129137506b1.png",
     "static/media/allMedicines.png": "/medical-store-app/static/media/allMedicines.c5c94d8f2b95c2374b23.png",
     "static/media/lowCost.png": "/medical-store-app/static/media/lowCost.0f22c82aff7cbcdf0232.png",
+    "static/media/bg3.jpg": "/medical-store-app/static/media/bg3.5fc5286bb7588b63a4e8.jpg",
     "static/media/247.png": "/medical-store-app/static/media/247.8606e31cc9e7331016ba.png",
     "static/media/delivery.png": "/medical-store-app/static/media/delivery.5c097e1304f5031511b5.png",
     "static/media/vaccination.png": "/medical-store-app/static/media/vaccination.63f8017ec2870e8943f3.png",
@@ -27,12 +29,12 @@
     "static/media/slick.ttf": "/medical-store-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/medical-store-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/medical-store-app/index.html",
-    "main.6e1109c3.css.map": "/medical-store-app/static/css/main.6e1109c3.css.map",
-    "main.29ae5a18.js.map": "/medical-store-app/static/js/main.29ae5a18.js.map",
+    "main.4faf3782.css.map": "/medical-store-app/static/css/main.4faf3782.css.map",
+    "main.e8fce5ec.js.map": "/medical-store-app/static/js/main.e8fce5ec.js.map",
     "453.c0325d81.chunk.js.map": "/medical-store-app/static/js/453.c0325d81.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e1109c3.css",
-    "static/js/main.29ae5a18.js"
+    "static/css/main.4faf3782.css",
+    "static/js/main.e8fce5ec.js"
   ]
 }
