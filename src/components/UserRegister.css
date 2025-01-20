@@ -6,6 +6,10 @@
     min-height: 100vh;
     background-color: #f9f9f9;
     font-family: Arial, sans-serif;
+    /* background-image: url(assets/bg3.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;  */
   }
   
   .register-form {
@@ -14,7 +18,11 @@
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
+    background-image: url(assets/bg2.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
   }
   
   .form-title {
@@ -61,3 +69,41 @@
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
   
+  .password-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .toggle-button {
+    margin-left: 8px;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .toggle-button:hover {
+    text-decoration: underline;
+  }
+  
+  .password-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .register-footer{
+    text-align: left;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: bold; 
+  }
