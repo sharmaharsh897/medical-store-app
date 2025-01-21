@@ -107,3 +107,43 @@
     color: #666;
     font-weight: bold; 
   }
+
+  .error-text {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(5px);
+    background-color: rgba(255, 0, 0, 0.9); /* Red background for error */
+    color: #fff; /* White text for contrast */
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  
+  .error-text::before {
+    content: '';
+    position: absolute;
+    top: -6px; /* Adjust based on tooltip size */
+    left: 10px; /* Arrow position relative to tooltip */
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid rgba(255, 0, 0, 0.9); /* Same color as tooltip background */
+  }
+  
+  .form-group {
+    position: relative; /* Needed for positioning error tooltips */
+   
+  }
+
+  .form-group:hover .error-text,
+.form-input:focus + .error-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(5px);
+}
