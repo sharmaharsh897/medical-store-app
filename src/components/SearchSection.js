@@ -1,23 +1,24 @@
 /*eslint-disable*/
-import React, { useState, useEffect, useCallback, useContext } from 'react';
-import './SearchSection.css';
+import React, { useState, useEffect, useCallback, useContext } from "react";
+import "./SearchSection.css";
 import { UserContext } from "../context/userContext";
+import medicines from "../data-access/medicines.json";
 
 function SearchSection() {
-  const [dynamicText, setDynamicText] = useState('Medicine'); // For dynamic placeholder
+  const [dynamicText, setDynamicText] = useState("Medicine"); // For dynamic placeholder
   const [isFocused, setIsFocused] = useState(false); // Detect input focus
-  const [query, setQuery] = useState(''); // User input
+  const [query, setQuery] = useState(""); // User input
   const [suggestions, setSuggestions] = useState([]); // Suggestions list
-  const [error, setError] = useState(''); // Error state
-  const [uploadMessage, setUploadMessage] = useState(''); // Tooltip message
+  const [error, setError] = useState(""); // Error state
+  const [uploadMessage, setUploadMessage] = useState(""); // Tooltip message
   const [uploadSuccess, setUploadSuccess] = useState(null); // Track upload success/failure
   const [uploadedFile, setUploadedFile] = useState(null); // Uploaded file state
   const { user } = useContext(UserContext);
-  
+  const [isSuggestionSelected, setIsSuggestionSelected] = useState(false);
 
   // Dynamic placeholder effect
   useEffect(() => {
-    const placeholders = ['Medicine', 'Health Drinks', 'Surgicals'];
+    const placeholders = ["Medicine", "Health Drinks", "Surgicals"];
     let index = 0;
 
     const changePlaceholder = () => {
@@ -32,57 +33,86 @@ function SearchSection() {
   }, [isFocused]);
 
   // Fetch suggestions
+  // useEffect(() => {
+  //   if (query.length > 0) {
+  //     fetch(`https://rxnav.nlm.nih.gov/REST/rxcui/rxcui=${query}`)
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         console.log("API Response:", data); // Log the API response to check the structure
+
+  //         if (data && data.displayTermsList && data.displayTermsList.term) {
+  //           // Extract display terms from the API response
+  //           const filteredTerms = data.displayTermsList.term; // Directly use the drug names
+  //           console.log("Filtered Terms:", filteredTerms); // Log filtered terms before setting them
+
+  //           // Filter suggestions based on the query
+  //           const matchedSuggestions = filteredTerms.filter((term) =>
+  //             term.toLowerCase().includes(query.toLowerCase())
+  //           );
+
+  //           setSuggestions(matchedSuggestions);
+  //         } else {
+  //           setSuggestions([]);
+  //         }
+  //       })
+  //       .catch(() => {
+  //         setError("Failed to fetch suggestions");
+  //       });
+  //   } else {
+  //     setSuggestions([]);
+  //   }
+  // }, [query]);
+
   useEffect(() => {
+    // Create a deduplicated list of medicines
+    const uniqueMedicines = [...new Set(medicines)];
+  
     if (query.length > 0) {
-      fetch(`https://clinicaltables.nlm.nih.gov/api/rxterms/v3/search?terms=${query}&df=DISPLAY_NAME&ef=STRENGTHS_AND_FORMS,RXCUIS`)
-        .then(response => response.json())
-        .then(data => {
-          console.log('API Response:', data); // Log the API response to check the structure
+      const matchedSuggestions = uniqueMedicines.filter((medicine) =>
+        medicine.toLowerCase().includes(query.toLowerCase())
+      );
   
-          if (data && data[1]) {
-            // Extract display names from the API response
-            const filteredTerms = data[1]; // No need to map, directly use the drug names
-            console.log('Filtered Terms:', filteredTerms); // Log filtered terms before setting them
-  
-            // Filter suggestions based on the query
-            const matchedSuggestions = filteredTerms.filter(term =>
-              term.toLowerCase().includes(query.toLowerCase())
-            );
-  
-            setSuggestions(matchedSuggestions);
-          } else {
-            setSuggestions([]);
-          }
-        })
-        .catch(() => {
-          setError('Failed to fetch suggestions');
-        });
+      // Prevent showing the suggestion list if the query is an exact match
+      if (matchedSuggestions.length === 1 && matchedSuggestions[0] === query) {
+        setSuggestions([]);
+      } else {
+        setSuggestions(matchedSuggestions);
+      }
     } else {
       setSuggestions([]);
     }
   }, [query]);
-  
 
   // Handle suggestion click
   const handleSuggestionClick = useCallback((suggestion) => {
-    setQuery(suggestion);
-    setSuggestions([]);
+    setQuery(suggestion); // Set query to the selected suggestion
+    setSuggestions([]); // Clear the suggestions list
+    setIsSuggestionSelected(true); // Mark as suggestion selected
   }, []);
+
+  const handleInputChange = (e) => {
+    setQuery(e.target.value); // Update the query
+    setIsSuggestionSelected(false); // Reset the flag since user is typing
+    if (e.target.value === "") {
+      setSuggestions([]); // Clear suggestions when input is empty
+    }
+  };
 
   // Handle file upload
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     if (!file) return;
 
-    const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png'];
+    const allowedTypes = ["application/pdf", "image/jpeg", "image/png"];
     if (!allowedTypes.includes(file.type)) {
-      setUploadMessage('Invalid file type. Please upload a PDF or image.');
+      setUploadMessage("Invalid file type. Please upload a PDF or image.");
       setUploadSuccess(false);
       return;
     }
 
-    if (file.size > 5 * 1024 * 1024) { // 5MB size limit
-      setUploadMessage('File size exceeds the 5MB limit.');
+    if (file.size > 5 * 1024 * 1024) {
+      // 5MB size limit
+      setUploadMessage("File size exceeds the 5MB limit.");
       setUploadSuccess(false);
       return;
     }
@@ -98,7 +128,7 @@ function SearchSection() {
   useEffect(() => {
     if (uploadMessage) {
       const timeout = setTimeout(() => {
-        setUploadMessage('');
+        setUploadMessage("");
         setUploadSuccess(null);
       }, 4000); // Clear message after 4 seconds
       return () => clearTimeout(timeout);
@@ -109,14 +139,14 @@ function SearchSection() {
     <div className="search-section">
       <div className="search-bar">
         <div className="search-bar-header">
+          {user ? (
+            <span className="">
+              <h2>Hi {user.first_name}, What are you looking for?</h2>
+            </span>
+          ) : (
+            <h2>What are you looking for?</h2>
+          )}
 
-        {user ? (
-              <span className=""><h2>Hi {user.first_name}, What are you looking for?</h2></span> // Display user name
-            ) : (<h2>What are you looking for?</h2>)
-            
-            }
-
-          
           <div className="upload-prescription">
             <span>Order with prescription.</span>
             <label htmlFor="file-upload" className="upload-label">
@@ -126,7 +156,7 @@ function SearchSection() {
               id="file-upload"
               type="file"
               accept=".pdf, .jpg, .jpeg, .png"
-              style={{ display: 'none' }}
+              style={{ display: "none" }}
               onChange={handleFileUpload}
             />
           </div>
@@ -139,28 +169,33 @@ function SearchSection() {
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={handleInputChange}
           />
           <button className="search-button">Search</button>
         </div>
         <div className="suggestions-list">
-          {suggestions.length > 0 ? (
+          {suggestions.length > 0 && query ? (
             <ul>
               {suggestions.map((suggestion, index) => (
-                <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
+                <li
+                  key={index}
+                  onClick={() => handleSuggestionClick(suggestion)}
+                >
                   {suggestion}
                 </li>
               ))}
             </ul>
           ) : (
-            query && <p>No suggestions found</p>
+            query &&
+            !isSuggestionSelected &&
+            suggestions.length === 0 && <p>No suggestions found</p>
           )}
         </div>
         {error && <div className="error-message">{error}</div>}
       </div>
       {uploadMessage && (
         <div
-          className={`upload-tooltip ${uploadSuccess ? 'success' : 'error'}`}
+          className={`upload-tooltip ${uploadSuccess ? "success" : "error"}`}
         >
           {uploadMessage}
         </div>
