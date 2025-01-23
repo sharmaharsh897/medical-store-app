@@ -92,7 +92,7 @@ const Chatbot = () => {
       {!isOpen && (
         <button className="chatbot-toggle" onClick={handleChatbotToggle}>
           <img src={logoIcon} alt="Logo" className="logo-image" />
-          {showNotification && <div className="notification-badge">!</div>}
+          {showNotification && <div className="notification-badge">1</div>}
         </button>
       )}
       {isOpen && (

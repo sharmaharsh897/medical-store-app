@@ -12,15 +12,16 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(""); // For displaying error message
-  const [errorVisible, setErrorVisible] = useState(false); // To control the visibility of error message tooltip
+  const [errorMessage, setErrorMessage] = useState("");
+  const [errorVisible, setErrorVisible] = useState(false);
+  const [loading, setLoading] = useState(false); // Loader state
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
-  
 
   // Existing email/password login handler
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true); // Show loader
     try {
       const response = await fetch("http://localhost:5000/api/login", {
         method: "POST",
@@ -29,22 +30,36 @@ const LoginForm = () => {
         },
         body: JSON.stringify({ email, password }),
       });
-  
+
       if (!response.ok) {
         throw new Error("Invalid credentials");
       }
-  
+
       const data = await response.json();
       setUser({ first_name: data.first_name });
-      localStorage.setItem("jwtToken", data.token); // Save user data in context
-      navigate("/home"); // Redirect to homepage
+      localStorage.setItem("jwtToken", data.token);
+      setTimeout(() => {
+        setLoading(false); // Hide loader after 2 seconds
+        navigate("/home");
+      }, 2000);
       console.log("Login successful:", data);
     } catch (error) {
+      setLoading(false); // Hide loader on error
       console.error("Error during login:", error);
       setErrorMessage("Incorrect email or password. Please try again.");
       setErrorVisible(true);
     }
   };
+
+  useEffect(() => {
+    if (errorVisible) {
+      const timeout = setTimeout(() => {
+        setErrorMessage("");
+        setErrorVisible(false);
+      }, 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [errorVisible]);
 
   // Google login handler
   const handleGoogleLogin = useGoogleLogin({
@@ -90,7 +105,13 @@ const LoginForm = () => {
   }, [errorVisible]);
 
   return (
-    <div className="login-container">
+    <div>
+    {loading && (
+      <div className="loader-overlay">
+        <div className="loader"></div>
+      </div>
+    )}
+     <div className="login-container">
       <div className="login-card">
         <h2 className="login-title">Login</h2>
         <form onSubmit={handleLogin} className="login-form">
@@ -140,6 +161,7 @@ const LoginForm = () => {
 
       {/* Error message tooltip */}
       {errorVisible && <div className="login-tooltip error">{errorMessage}</div>}
+    </div>
     </div>
   );
 };

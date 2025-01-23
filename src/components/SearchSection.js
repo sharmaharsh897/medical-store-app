@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback, useContext } from "react";
 import "./SearchSection.css";
 import { UserContext } from "../context/userContext";
 import medicines from "../data-access/medicines.json";
+import { MdCancel } from "react-icons/md";
 
 function SearchSection() {
   const [dynamicText, setDynamicText] = useState("Medicine"); // For dynamic placeholder
@@ -66,12 +67,12 @@ function SearchSection() {
   useEffect(() => {
     // Create a deduplicated list of medicines
     const uniqueMedicines = [...new Set(medicines)];
-  
+
     if (query.length > 0) {
       const matchedSuggestions = uniqueMedicines.filter((medicine) =>
         medicine.toLowerCase().includes(query.toLowerCase())
       );
-  
+
       // Prevent showing the suggestion list if the query is an exact match
       if (matchedSuggestions.length === 1 && matchedSuggestions[0] === query) {
         setSuggestions([]);
@@ -135,6 +136,26 @@ function SearchSection() {
     }
   }, [uploadMessage]);
 
+  const handleSearchButtonClick = () => {
+    if (query.trim() === "") {
+      // If the input field is empty, prompt the user to enter something
+      alert("Please enter something in the search bar.");
+    } else {
+      // Add the "active" effect to the button
+      const searchButton = document.querySelector(".search-button");
+      searchButton.classList.add("active");
+
+      // Remove the active class after the animation
+      setTimeout(() => {
+        searchButton.classList.remove("active");
+      }, 200); // Time should match the transition duration
+
+      // Proceed with search logic if input is not empty
+      console.log("Search button clicked with query:", query);
+      // Add search logic here if needed
+    }
+  };
+
   return (
     <div className="search-section">
       <div className="search-bar">
@@ -171,7 +192,18 @@ function SearchSection() {
             value={query}
             onChange={handleInputChange}
           />
-          <button className="search-button">Search</button>
+          {query && (
+            <button
+              className="clear-button"
+              onClick={() => setQuery("")} // Clears the input
+              type="button"
+            >
+              <MdCancel />
+            </button>
+          )}
+          <button onClick={handleSearchButtonClick} className="search-button">
+            Search
+          </button>
         </div>
         <div className="suggestions-list">
           {suggestions.length > 0 && query ? (
@@ -185,6 +217,7 @@ function SearchSection() {
                 </li>
               ))}
             </ul>
+            
           ) : (
             query &&
             !isSuggestionSelected &&

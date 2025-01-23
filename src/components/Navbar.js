@@ -26,19 +26,25 @@ function Navbar() {
   };
 
   const logoutUser = () => {
-    // Remove user data from session storage
-    sessionStorage.removeItem("user");
-    
     if (window.confirm("Are you sure you want to logout?")) {
-      // Remove user data from session storage
-      sessionStorage.removeItem("user");
-      console.log("User logged out");
-      // Redirect to the home or login page
-      window.location.href = "/"; // Adjust as per your routing
+      setIsLoading(true); // Show the loader during logout
+  
+      // Simulate a delay for logout action
+      setTimeout(() => {
+        // Remove user data from session storage
+        sessionStorage.removeItem("user");
+        console.log("User logged out");
+  
+        setIsLoading(false); // Hide the loader after logout
+        // Redirect to the home or login page
+        window.location.href = "/"; // Adjust as per your routing
+      }, 2000); // Adjust the timeout duration if needed
+    } else {
+      // User canceled logout, no action needed
+      console.log("User canceled logout");
     }
-    // Redirect to the home or login page
-    window.location.href = "/"; // Adjust as per your routing
   };
+  
 
   return (
     <div>

@@ -4,7 +4,6 @@
   align-items: center;
   height: calc(100vh - 120px); /* Adjust based on your navbar/footer height */
   background-color: #f8f9fa;
-  background-image: url(assets/bg3.jpg);
   background-repeat: no-repeat; 
   background-size: cover; /* Ensures the image covers the entire container */
   background-position: center; /* Centers the image */
@@ -178,5 +177,29 @@
   }
   10%, 90% {
     opacity: 1;
+  }
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px); /* Adjust based on your layout */
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

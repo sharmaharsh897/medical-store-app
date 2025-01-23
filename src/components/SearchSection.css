@@ -28,6 +28,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
+  position: relative;
 }
 
 .search-input {
@@ -54,6 +55,13 @@
   border-radius: 25px;
   margin-left: 10px;
   cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.search-button:active {
+  transform: scale(0.8); /* Slightly shrinks the button */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a small shadow to indicate the press */
 }
 
 .upload-tooltip {
@@ -143,14 +151,35 @@
     left: 0;
     width: 720px;
     margin-right: 90px;
-    margin-top: -15px;
+    margin-top: -28px;
     background-color: #fff;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 25px 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     max-height: 200px;
     overflow-y: auto;
-    z-index: 1000;
-}
+    padding-right: 10px; /* Space for the scrollbar */
+  }
+  
+  /* Custom scrollbar */
+  .suggestions-list::-webkit-scrollbar {
+      width: 4px; /* Width of the scrollbar */
+      border-radius: 25px; /* Match the border radius of the container */
+  }
+  
+  .suggestions-list::-webkit-scrollbar-track {
+      background: transparent; /* No background on track */
+      border-radius: 25px; /* Ensure track respects border radius */
+  }
+  
+  .suggestions-list::-webkit-scrollbar-thumb {
+      background-color: black; /* Black color for the scrollbar */
+      border-radius: 25px; /* Ensure thumb respects border radius */
+      cursor: pointer;
+  }
+  
+  .suggestions-list::-webkit-scrollbar-thumb:hover {
+      background-color: #333; /* Darken on hover */
+  }
 
 .suggestions-list ul {
   list-style-type: none;
@@ -160,6 +189,7 @@
 
 .suggestions-list li {
   padding: 10px;
+  margin-top: 11px;
   cursor: pointer;
 }
 
@@ -193,4 +223,27 @@
 
 .remove-file-btn:hover {
   color: darkred;
+}
+
+.clear-button {
+  position: absolute;
+  right: 115px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+  top: 22px;
+}
+
+.clear-button:hover {
+  color: #333;
+}
+
+.separator-line {
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
 }
