@@ -62,7 +62,7 @@ function Navbar() {
         <ul className="navbar-links">
           <li>
             {isHomePage ? (
-              <ScrollLink to="home" smooth={true} duration={100}>
+              <ScrollLink to="home" smooth={true} duration={500}>
                 Home
               </ScrollLink>
             ) : (
@@ -71,7 +71,7 @@ function Navbar() {
           </li>
           <li>
             {isHomePage ? (
-              <ScrollLink to="about" smooth={true} duration={100}>
+              <ScrollLink to="about" smooth={true} duration={500}>
                 About
               </ScrollLink>
             ) : (
@@ -80,7 +80,7 @@ function Navbar() {
           </li>
           <li>
             {isHomePage ? (
-              <ScrollLink to="services" smooth={true} duration={100}>
+              <ScrollLink to="services" smooth={true} duration={500}>
                 Services
               </ScrollLink>
             ) : (
@@ -89,7 +89,7 @@ function Navbar() {
           </li>
           <li>
             {isHomePage ? (
-              <ScrollLink to="contact" smooth={true} duration={100}>
+              <ScrollLink to="contact" smooth={true} duration={500}>
                 Contact Us
               </ScrollLink>
             ) : (
@@ -106,16 +106,16 @@ function Navbar() {
                 />
                 <div className="dropdown-menu">
                   <button className="account-button">
-                    View Profile
+                  <RouterLink to="">Profile</RouterLink>
                   </button>
                   <button className="account-button">
-                    My Orders
+                  <RouterLink to="">My Orders</RouterLink>
                   </button>
                   <button className="account-button">
-                    Change Password
+                  <RouterLink to="/change-password">Change Password</RouterLink>
                   </button>
                   <button onClick={logoutUser} className="account-button">
-                  Logout
+                  <RouterLink>Logout</RouterLink>
                   </button>
                 </div>
               </span> // Display user name

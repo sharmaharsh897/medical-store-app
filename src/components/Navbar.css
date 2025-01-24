@@ -196,6 +196,7 @@
   color: white;
 }
 
+
 .user-login-icon {
   position: relative;
   top: 3px;
@@ -212,21 +213,27 @@
   background-color: #32aeb1;
 }
 
-.account-button { /* No button background */
-  border: none; /* No border */
-  padding: 10px 15px; /* Add some padding for clickable area */
-  text-align: left;
-  width: 100%; /* Make it fill the dropdown */
-  color: #333; /* Text color */
-  font-size: 12px; /* Font size */
+.account-button {
+  /* Existing styles */
+  border: none;
+  width: 100%;
+  color: #333;
+  font-size: 400px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s ease; 
-  background-color: #fff; /* Smooth hover effect */
+  transition: background-color 0.2s ease; /* Only background-color transition */
+  background-color: #fff;
 }
 
-/* Hover effect for logout button */
+/* Remove scale or transform effect */
 .account-button:hover {
-  background-color: #32aeb1; 
-  color: #000; 
+  background-color: #32aeb1;
+  color: #000;
+  transform: none; /* Ensure no scaling or transform */
+}
+
+/* Prevent general link hover effects from applying */
+.navbar-links a:hover,
+.navbar-links .account-button:hover {
+  transform: none !important;
 }

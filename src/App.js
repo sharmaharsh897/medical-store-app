@@ -1,5 +1,10 @@
-import "./App.css";
-import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import React, { useContext } from "react";
+import {
+  HashRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import CarouselComponent from "./components/CarouselComponent";
 import Footer from "./components/Footer";
 import MapComponent from "./components/MapComponent";
@@ -10,11 +15,22 @@ import LoginForm from "./components/UserLogin";
 import Services from "./components/Services";
 import Chatbot from "./components/Chatbot";
 import RegisterForm from "./components/UserRegister";
+import ChangePassword from "./components/ChangePassword";
+import { UserContext } from "./context/userContext";
+
+// Protected Route Wrapper
+function ProtectedRoute({ children }) {
+  const { user } = useContext(UserContext);
+  return user ? children : <Navigate to="/user-login" replace />;
+}
 
 function App() {
   return (
     <Router>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      />
 
       <div className="App">
         {/* Navbar remains visible on all routes */}
@@ -53,8 +69,18 @@ function App() {
           {/* Login Route */}
           <Route path="/user-login" element={<LoginForm />} />
 
-               {/* Registration Route */}
-               <Route path="/register" element={<RegisterForm />} />
+          {/* Registration Route */}
+          <Route path="/register" element={<RegisterForm />} />
+
+          {/* Change Password Route (Protected) */}
+          <Route
+            path="/change-password"
+            element={
+              <ProtectedRoute>
+                <ChangePassword />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
 
         {/* Footer remains visible on all routes */}

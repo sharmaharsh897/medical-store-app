@@ -51,7 +51,7 @@
     ]
   },
   "homepage": "https://sharmaharsh897.github.io/medical-store-app",
-  "proxy": "https://example.com",
+  "proxy": "http://localhost:5000",
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }
