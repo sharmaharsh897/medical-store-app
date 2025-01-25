@@ -8,11 +8,40 @@ function ChangePassword() {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [errors, setErrors] = useState({});
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false); // For spinner
+  const [loading, setLoading] = useState(false);
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
+
+  const validateForm = () => {
+    const newErrors = {};
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    // Current Password validation
+    if (!currentPassword.trim()) {
+      newErrors.currentPassword = "Current password is required.";
+    }
+
+    // New Password validation
+    if (!newPassword.trim()) {
+      newErrors.newPassword = "New password is required.";
+    } else if (!passwordRegex.test(newPassword)) {
+      newErrors.newPassword =
+        "Password must be at least 8 characters long, include one uppercase letter, one lowercase letter, one digit, and one special character.";
+    }
+
+    // Confirm Password validation
+    if (!confirmPassword.trim()) {
+      newErrors.confirmPassword = "Confirm password is required.";
+    } else if (newPassword !== confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0; // Returns true if no errors
+  };
 
   useEffect(() => {
     if (!user) {
@@ -34,8 +63,7 @@ function ChangePassword() {
   const handlePasswordChange = async (e) => {
     e.preventDefault();
 
-    if (newPassword !== confirmPassword) {
-      setError("New password and confirm password do not match.");
+    if (!validateForm()) {
       return;
     }
 
@@ -53,7 +81,7 @@ function ChangePassword() {
       );
 
       setMessage(response.data.message);
-      setLoading(true); // Show loader spinner
+      setLoading(true);
 
       // Redirect to home after 2 seconds
       setTimeout(() => {
@@ -82,9 +110,13 @@ function ChangePassword() {
             type="password"
             id="currentPassword"
             value={currentPassword}
-            onChange={(e) => setCurrentPassword(e.target.value)}
+            onChange={(e) => {
+              setCurrentPassword(e.target.value);
+              setErrors({ ...errors, currentPassword: "" });
+            }}
             required
           />
+          {errors.currentPassword && <p className="error-text">{errors.currentPassword}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="newPassword">New Password</label>
@@ -92,9 +124,13 @@ function ChangePassword() {
             type="password"
             id="newPassword"
             value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
+            onChange={(e) => {
+              setNewPassword(e.target.value);
+              setErrors({ ...errors, newPassword: "" });
+            }}
             required
           />
+          {errors.newPassword && <p className="error-text">{errors.newPassword}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="confirmPassword">Confirm New Password</label>
@@ -102,9 +138,13 @@ function ChangePassword() {
             type="password"
             id="confirmPassword"
             value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            onChange={(e) => {
+              setConfirmPassword(e.target.value);
+              setErrors({ ...errors, confirmPassword: "" });
+            }}
             required
           />
+          {errors.confirmPassword && <p className="error-text">{errors.confirmPassword}</p>}
         </div>
         <button type="submit" disabled={loading}>
           {loading ? "Processing..." : "Change Password"}
