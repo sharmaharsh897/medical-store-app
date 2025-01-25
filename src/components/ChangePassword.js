@@ -10,10 +10,10 @@ function ChangePassword() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-  const { user } = useContext(UserContext); // Get user context
+  const [loading, setLoading] = useState(false); // For spinner
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
-  // Redirect if not logged in
   useEffect(() => {
     if (!user) {
       alert("Please log in to access this page.");
@@ -21,46 +21,59 @@ function ChangePassword() {
     }
   }, [user, navigate]);
 
+  useEffect(() => {
+    if (message || error) {
+      const timer = setTimeout(() => {
+        setMessage("");
+        setError("");
+      }, 4000); // Message disappears after 4 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [message, error]);
+
   const handlePasswordChange = async (e) => {
     e.preventDefault();
-  
-    console.log("Password change initiated.");
-    console.log("Current password:", currentPassword);
-    console.log("New password:", newPassword);
-    console.log("Confirm password:", confirmPassword);
-  
+
     if (newPassword !== confirmPassword) {
       setError("New password and confirm password do not match.");
-      console.log("Error: Passwords do not match.");
       return;
     }
-  
+
     try {
-      const token = localStorage.getItem("token"); // Consistent with UserLogin.js
-      console.log("Token retrieved from localStorage:", token);
-      
+      const token = localStorage.getItem("token");
       if (!token) {
         setError("User is not authenticated. Please log in again.");
-        console.log("Error: No token available.");
         return;
       }
-  
+
       const response = await axios.put(
         "/api/change-password",
         { currentPassword, newPassword, confirmPassword },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-  
-      console.log("Response from API:", response.data);
+
       setMessage(response.data.message);
+      setLoading(true); // Show loader spinner
+
+      // Redirect to home after 2 seconds
+      setTimeout(() => {
+        setLoading(false);
+        navigate("/");
+      }, 2000);
     } catch (err) {
-      console.error("Error during password change:", err.response?.data || err.message);
       setError(err.response?.data?.message || "An error occurred. Please try again.");
     }
   };
 
   return (
     <div className="change-password-container">
+      {loading && (
+        <div className="spinner-container">
+          <div className="spinner"></div>
+        </div>
+      )}
+      {message && <div className="popup success-popup">{message}</div>}
+      {error && <div className="popup error-popup">{error}</div>}
       <h2>Change Password</h2>
       <form onSubmit={handlePasswordChange}>
         <div className="form-group">
@@ -93,11 +106,10 @@ function ChangePassword() {
             required
           />
         </div>
-        <button type="submit">Change Password</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Processing..." : "Change Password"}
+        </button>
       </form>
-
-      {message && <p className="success-message">{message}</p>}
-      {error && <p className="error-message">{error}</p>}
     </div>
   );
 }
