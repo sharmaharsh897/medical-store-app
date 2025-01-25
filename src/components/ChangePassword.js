@@ -24,34 +24,38 @@ function ChangePassword() {
   const handlePasswordChange = async (e) => {
     e.preventDefault();
   
-    // Validate new password and confirm password match
+    console.log("Password change initiated.");
+    console.log("Current password:", currentPassword);
+    console.log("New password:", newPassword);
+    console.log("Confirm password:", confirmPassword);
+  
     if (newPassword !== confirmPassword) {
       setError("New password and confirm password do not match.");
+      console.log("Error: Passwords do not match.");
       return;
     }
   
     try {
-      setError("");
-      setMessage("Changing password...");
-      console.log("Changing password...");
-  
-      const token = localStorage.getItem("token"); // Fetch the token from storage
+      const token = localStorage.getItem("token"); // Consistent with UserLogin.js
+      console.log("Token retrieved from localStorage:", token);
+      
       if (!token) {
         setError("User is not authenticated. Please log in again.");
-        setMessage("");
+        console.log("Error: No token available.");
         return;
       }
   
       const response = await axios.put(
         "/api/change-password",
         { currentPassword, newPassword, confirmPassword },
-        { headers: { Authorization: `Bearer ${token}` } } // Include the token in headers with Bearer prefix
+        { headers: { Authorization: `Bearer ${token}` } }
       );
   
+      console.log("Response from API:", response.data);
       setMessage(response.data.message);
     } catch (err) {
+      console.error("Error during password change:", err.response?.data || err.message);
       setError(err.response?.data?.message || "An error occurred. Please try again.");
-      setMessage("");
     }
   };
 

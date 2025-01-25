@@ -30,14 +30,15 @@ const LoginForm = () => {
         },
         body: JSON.stringify({ email, password }),
       });
-
+      
+  
       if (!response.ok) {
         throw new Error("Invalid credentials");
       }
-
+  
       const data = await response.json();
       setUser({ first_name: data.first_name });
-      localStorage.setItem("jwtToken", data.token);
+      localStorage.setItem("token", data.token); // Use "token" as the key
       setTimeout(() => {
         setLoading(false); // Hide loader after 2 seconds
         navigate("/home");
@@ -49,7 +50,9 @@ const LoginForm = () => {
       setErrorMessage("Incorrect email or password. Please try again.");
       setErrorVisible(true);
     }
+    
   };
+  
 
   useEffect(() => {
     if (errorVisible) {
