@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import './UserRegister.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "./UserRegister.css";
 import { Link } from "react-router-dom";
-
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    phoneNumber: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const [errors, setErrors] = useState({});
+  const [notification, setNotification] = useState(null); // Notification state
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
   const navigate = useNavigate();
 
@@ -24,49 +24,50 @@ const RegisterForm = () => {
     const nameRegex = /^[a-zA-Z ]+$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[6-9]\d{9}$/; // Indian phone numbers
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const passwordRegex =
+      /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     // First Name validation
     if (!formData.firstName.trim()) {
-      newErrors.firstName = 'First Name is required.';
+      newErrors.firstName = "First Name is required.";
     } else if (!nameRegex.test(formData.firstName)) {
-      newErrors.firstName = 'First Name can only contain letters.';
+      newErrors.firstName = "First Name can only contain letters.";
     }
 
     // Last Name validation
     if (!formData.lastName.trim()) {
-      newErrors.lastName = 'Last Name is required.';
+      newErrors.lastName = "Last Name is required.";
     } else if (!nameRegex.test(formData.lastName)) {
-      newErrors.lastName = 'Last Name can only contain letters.';
+      newErrors.lastName = "Last Name can only contain letters.";
     }
 
     // Phone Number validation
     if (!formData.phoneNumber.trim()) {
-      newErrors.phoneNumber = 'Phone Number is required.';
+      newErrors.phoneNumber = "Phone Number is required.";
     } else if (!phoneRegex.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = 'Enter a valid 10-digit phone number.';
+      newErrors.phoneNumber = "Enter a valid 10-digit phone number.";
     }
 
     // Email validation
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required.';
+      newErrors.email = "Email is required.";
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Enter a valid email address.';
+      newErrors.email = "Enter a valid email address.";
     }
 
     // Password validation
     if (!formData.password.trim()) {
-      newErrors.password = 'Password is required.';
+      newErrors.password = "Password is required.";
     } else if (!passwordRegex.test(formData.password)) {
       newErrors.password =
-        'Password must be at least 8 characters long, include one uppercase letter, one lowercase letter, one digit, and one special character.';
+        "Password must be at least 8 characters long, include one uppercase letter, one lowercase letter, one digit, and one special character.";
     }
 
     // Confirm Password validation
     if (!formData.confirmPassword.trim()) {
-      newErrors.confirmPassword = 'Confirm Password is required.';
+      newErrors.confirmPassword = "Confirm Password is required.";
     } else if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match.';
+      newErrors.confirmPassword = "Passwords do not match.";
     }
 
     setErrors(newErrors);
@@ -75,7 +76,7 @@ const RegisterForm = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: '' }); // Clear the error for the current field
+    setErrors({ ...errors, [e.target.name]: "" }); // Clear the error for the current field
   };
 
   const handleSubmit = async (e) => {
@@ -85,19 +86,32 @@ const RegisterForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/register', formData); // Update URL to match backend
-      alert(response.data.message);
+      const response = await axios.post(
+        "http://localhost:5000/api/register",
+        formData
+      );
+      setNotification({ type: "success", message: response.data.message });
       if (response.data.redirect) {
-        navigate(response.data.redirect);
+        setTimeout(() => navigate(response.data.redirect), 4000); // Redirect after notification disappears
       }
     } catch (error) {
-      console.error('Error during registration:', error);
-      alert(error.response?.data?.message || 'Registration failed.');
+      setNotification({
+        type: "error",
+        message: error.response?.data?.message || "Registration failed.",
+      });
     }
+
+    // Clear the notification after 4 seconds
+    setTimeout(() => setNotification(null), 4000);
   };
 
   return (
     <div className="register-container">
+      {notification && (
+        <div className={`notification ${notification.type}`}>
+          {notification.message}
+        </div>
+      )}
       <form className="register-form" onSubmit={handleSubmit}>
         <h2 className="form-title">Register</h2>
         <div className="form-group">
@@ -131,7 +145,9 @@ const RegisterForm = () => {
             value={formData.phoneNumber}
             onChange={handleChange}
           />
-          {errors.phoneNumber && <p className="error-text">{errors.phoneNumber}</p>}
+          {errors.phoneNumber && (
+            <p className="error-text">{errors.phoneNumber}</p>
+          )}
         </div>
         <div className="form-group">
           <input
@@ -148,7 +164,7 @@ const RegisterForm = () => {
           <div className="password-wrapper">
             <input
               className="form-input"
-              type={showPassword ? 'text' : 'password'}
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Password"
               value={formData.password}
@@ -158,7 +174,7 @@ const RegisterForm = () => {
               className="material-symbols-outlined password-toggle"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? 'visibility_off' : 'visibility'}
+              {showPassword ? "visibility_off" : "visibility"}
             </span>
           </div>
           {errors.password && <p className="error-text">{errors.password}</p>}
@@ -167,7 +183,7 @@ const RegisterForm = () => {
           <div className="password-wrapper">
             <input
               className="form-input"
-              type={showPassword ? 'text' : 'password'}
+              type={showPassword ? "text" : "password"}
               name="confirmPassword"
               placeholder="Confirm Password"
               value={formData.confirmPassword}
@@ -177,10 +193,12 @@ const RegisterForm = () => {
               className="material-symbols-outlined password-toggle"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? 'visibility_off' : 'visibility'}
+              {showPassword ? "visibility_off" : "visibility"}
             </span>
           </div>
-          {errors.confirmPassword && <p className="error-text">{errors.confirmPassword}</p>}
+          {errors.confirmPassword && (
+            <p className="error-text">{errors.confirmPassword}</p>
+          )}
         </div>
         <button className="form-button" type="submit">
           Register
