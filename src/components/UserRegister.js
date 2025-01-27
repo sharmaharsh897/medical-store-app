@@ -17,7 +17,14 @@ const RegisterForm = () => {
   const [errors, setErrors] = useState({});
   const [notification, setNotification] = useState(null); // Notification state
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [loading, setLoading] = useState(false); // Loader spinner state
   const navigate = useNavigate();
+
+  const Spinner = () => (
+    <div className="spinner-container">
+      <div className="spinner"></div>
+    </div>
+  );
 
   const validateForm = () => {
     const newErrors = {};
@@ -82,31 +89,34 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) {
-      return; // Stop submission if validation fails
+      return;
     }
-
+  
+    setLoading(true); // Show spinner while making API call
     try {
       const response = await axios.post(
         "http://localhost:5000/api/register",
         formData
       );
       setNotification({ type: "success", message: response.data.message });
-      if (response.data.redirect) {
-        setTimeout(() => navigate(response.data.redirect), 4000); // Redirect after notification disappears
-      }
+  
+      // Keep the spinner visible for 4 seconds before redirecting
+      setTimeout(() => {
+        setLoading(false); // Hide spinner
+        navigate("/user-login");
+      }, 3000);
     } catch (error) {
       setNotification({
         type: "error",
         message: error.response?.data?.message || "Registration failed.",
       });
+      setLoading(false); // Hide spinner immediately on error
     }
-
-    // Clear the notification after 4 seconds
-    setTimeout(() => setNotification(null), 4000);
   };
-
+  
   return (
     <div className="register-container">
+      {loading && <Spinner />}
       {notification && (
         <div className={`notification ${notification.type}`}>
           {notification.message}
@@ -200,8 +210,8 @@ const RegisterForm = () => {
             <p className="error-text">{errors.confirmPassword}</p>
           )}
         </div>
-        <button className="form-button" type="submit">
-          Register
+        <button className="form-button" type="submit" disabled={loading}>
+          {loading ? "Processing..." : "Register"}
         </button>
 
         <div className="separator">
