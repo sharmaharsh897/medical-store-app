@@ -1,0 +1,239 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar container */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #32AEB1;
+    height: 80px;
+  }
+  
+  /* Logo styling */
+  .navbar-logo a {
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Navbar links container */
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+    margin: 20px;
+  }
+  
+  /* Navbar link items */
+  .navbar-links li {
+    position: relative; /* To allow dropdown positioning */
+  }
+  
+  /* Navbar link styles */
+  .navbar-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: inline-block;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform-origin: center;
+  }
+  
+  /* Hover effect for all navbar links */
+  .navbar-links a:hover {
+    color: white;
+    transform: scale(1.3); /* Scale the hovered element */
+  }
+  
+  /* Dropdown menu styling */
+  .navbar-links .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    width: 100px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+  }
+  
+  /* Show dropdown menu on hover */
+  .navbar-links li:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Dropdown menu links */
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 11px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  /* Dropdown menu link hover effect */
+  .dropdown-menu a:hover {
+    background-color: #32aeb1;
+    color: white;
+  }
+  
+  /* Mobile responsive adjustments */
+  @media (max-width: 768px) {
+    .navbar-links {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: white;
+      width: 100%;
+      display: none;
+      text-align: center;
+    }
+  
+    .navbar-links.show {
+      display: flex;
+    }
+  
+    .navbar {
+      flex-direction: column;
+    }
+  }
+  
+  /* Logo image styling */
+  .logo-image {
+    width: 250px; /* Adjust width according to your preference */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .navbar-links a,
+  .navbar-links .dropdown-menu a {
+    cursor: pointer; /* Ensure the pointer cursor */
+  }
+  
+  .navbar .dropdown {
+    position: relative;
+  }
+  
+  .navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 4px;
+  }
+  
+  .navbar .dropdown:hover .dropdown-menu {
+    display: inline-block;
+    color: #fff;
+  }
+  
+  .navbar .dropdown a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .navbar .dropdown a:hover {
+    color: #fff; /* Adjust to your theme color */
+  }
+  
+  /* Loader Overlay */
+  .loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+  }
+  
+  .loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .after-login {
+    position: relative;
+    cursor: pointer;
+    top: 10px;
+    color: #333;
+    display: inline-block; /* Ensures transform works */
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; /* Smooth effect */
+  }
+  .after-login:hover {
+    color: white;
+  }
+  
+  
+  .user-login-icon {
+    position: relative;
+    top: 3px;
+  }
+  
+  .user-login-down-icon {
+    position: relative;
+    top: 1px;
+  }
+  
+  .navbar .dropdown:hover .after-login {
+    display: inline-block;
+    color: #fff;
+    background-color: #32aeb1;
+  }
+  
+  .account-button {
+    /* Existing styles */
+    border: none;
+    width: 100%;
+    color: #333;
+    font-size: 400px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* Only background-color transition */
+    background-color: #fff;
+  }
+  
+  /* Remove scale or transform effect */
+  .account-button:hover {
+    background-color: #32aeb1;
+    color: #000;
+    transform: none; /* Ensure no scaling or transform */
+  }
+  
+  /* Prevent general link hover effects from applying */
+  .navbar-links a:hover,
+  .navbar-links .account-button:hover {
+    transform: none !important;
+  }
