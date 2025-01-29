@@ -1,4 +1,4 @@
-const { findUserByEmail } = require("../data-access/db");
+const { findUserByEmail, createUser } = require("../data-access/db");
 const jwt = require("jsonwebtoken");
 const { OAuth2Client } = require("google-auth-library");
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
@@ -37,25 +37,42 @@ const loginUser = async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
-
 const googleLogin = async (req, res) => {
   const { token } = req.body;
 
+  if (!token) {
+    return res.status(400).json({ message: "Google token is required." });
+  }
+
   try {
+    // Verify the Google ID token (not the access token)
     const ticket = await client.verifyIdToken({
-      idToken: token,
-      audience: process.env.GOOGLE_CLIENT_ID,
+      idToken: token, // Use the ID token for verification
+      audience: process.env.GOOGLE_CLIENT_ID, // Your Google OAuth Client ID
     });
+
     const payload = ticket.getPayload();
+    console.log("Google Token Payload:", payload); // Debugging log
 
     const email = payload.email;
-    const user = await findUserByEmail(email);
+
+    // Check if the user already exists in the database
+    let user = await findUserByEmail(email);
 
     if (!user) {
-      // Logic to create a new user
-      return res.status(200).json({ message: "New Google user registered" });
+      // Create new user if not found
+      const newUser = {
+        first_name: payload.given_name,
+        last_name: payload.family_name,
+        email: payload.email,
+        profile_picture: payload.picture,
+        password: null, // No password for Google login
+      };
+
+      user = await createUser(newUser);
     }
 
+    // Generate JWT token
     const jwtToken = jwt.sign(
       { id: user.id, first_name: user.first_name },
       process.env.JWT_SECRET,
@@ -63,14 +80,15 @@ const googleLogin = async (req, res) => {
     );
 
     return res.status(200).json({
-      message: "Google login successful",
+      message: "Google login successful.",
       jwtToken,
       first_name: user.first_name,
     });
   } catch (error) {
     console.error("Error verifying Google token:", error);
-    return res.status(400).json({ message: "Invalid Google token" });
+    return res.status(400).json({ message: "Invalid Google token." });
   }
 };
+
 
 module.exports = { loginUser, googleLogin };

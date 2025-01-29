@@ -196,6 +196,9 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .view-more-btn:hover {
