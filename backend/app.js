@@ -13,6 +13,10 @@ app.use(express.json());
 const userRoutes = require("./routes/userRoutes");
 app.use("/api", userRoutes);
 
+// app.js
+const ownerRoutes = require("./routes/ownerRoutes");
+app.use("/api", ownerRoutes); // This mounts the routes under /api
+
 // Registration Route (newly added)
 const registerRoutes = require('./routes/registerRoutes'); // registration routes
 app.use('/api/register', registerRoutes);

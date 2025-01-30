@@ -17,6 +17,7 @@ import Chatbot from "./components/Chatbot";
 import RegisterForm from "./components/UserRegister";
 import ChangePassword from "./components/ChangePassword";
 import { UserContext } from "./context/userContext";
+import OwnerLoginForm from "./components/OwnerLogin";
 
 // Protected Route Wrapper
 function ProtectedRoute({ children }) {
@@ -68,6 +69,7 @@ function App() {
 
           {/* Login Route */}
           <Route path="/user-login" element={<LoginForm />} />
+          <Route path="/owner-login" element={<OwnerLoginForm />} />
 
           {/* Registration Route */}
           <Route path="/register" element={<RegisterForm />} />

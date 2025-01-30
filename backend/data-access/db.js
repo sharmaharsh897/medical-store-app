@@ -9,6 +9,14 @@ const findUserByEmail = async (email) => {
   
 };
 
+const findAdminByEmail = async (email) => {
+  const query = "SELECT * FROM admin WHERE email = ?";
+  console.log("Finding admin by email:", email);
+  const [rows] = await db.execute(query, [email]);
+  return rows[0]; // Returns the first matching user or undefined
+  
+};
+
 // Create a new user
 const createUser = async (user) => {
   const query = `
@@ -28,4 +36,4 @@ const createUser = async (user) => {
   return { id: result.insertId, ...user }; // Return created user details
 };
 
-module.exports = { findUserByEmail, createUser };
+module.exports = { findUserByEmail, createUser, findAdminByEmail };
