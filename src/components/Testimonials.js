@@ -40,9 +40,10 @@ const Testimonials = () => {
   // UseEffect to load reviews from sessionStorage when component mounts
   useEffect(() => {
     if (user) {
-      const fullName = user.first_name && user.last_name 
-        ? `${user.first_name} ${user.last_name}` 
-        : user.first_name || "";
+      const fullName =
+        user.first_name && user.last_name
+          ? `${user.first_name} ${user.last_name}`
+          : user.first_name || "";
       setName(fullName);
     }
   }, [user]);
@@ -77,6 +78,10 @@ const Testimonials = () => {
   // Handle "View More" button click
   const handleViewMore = () => {
     setVisibleReviews((prev) => prev + 2); // Increment visible reviews by 2
+  };
+
+  const handleViewLess = () => {
+    setVisibleReviews(4); // Increment visible reviews by 2
   };
 
   return (
@@ -140,11 +145,18 @@ const Testimonials = () => {
         </div>
 
         {/* "View More" button: only show if there are more reviews to display */}
-        {visibleReviews < reviews.length && (
-          <button onClick={handleViewMore} className="view-more-btn">
-            View More
-          </button>
-        )}
+        <div className="reviews-buttons">
+          {visibleReviews < reviews.length && (
+            <button onClick={handleViewMore} className="view-more-btn">
+              View More
+            </button>
+          )}
+          {visibleReviews > reviews.length && (
+            <button onClick={handleViewLess} className="view-less-btn">
+              View Less
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Feedback Form Section */}
