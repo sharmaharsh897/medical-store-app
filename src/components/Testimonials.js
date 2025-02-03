@@ -3,8 +3,48 @@ import "./Testimonials.css";
 import ownerImage from "../components/assets/owner.jpg"; // Ensure the correct path to the owner's image
 import { UserContext } from "../context/userContext";
 
+const StarRatingBar = ({ reviews }) => {
+  const ratingCounts = [5, 4, 3, 2, 1].map((star) => ({
+    star,
+    count: reviews.filter((r) => r.rating === star).length,
+  }));
+  const maxCount = Math.max(...ratingCounts.map((r) => r.count), 1);
+  return (
+    <div className="rating-bar-container">
+      {ratingCounts.map(({ star, count }) => (
+        <div key={star} className="rating-row">
+          <span className="star-label">{star} ★</span>
+          <div className="rating-bar">
+            <div
+              className="filled-bar"
+              style={{ width: `${(count / maxCount) * 100}%` }}
+            ></div>
+          </div>
+          <span className="count">({count})</span>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const Testimonials = () => {
   const { user } = useContext(UserContext);
+
+  const StarRating = ({ rating, setRating }) => {
+    return (
+      <div className="star-rating">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <span
+            key={star}
+            className={star <= rating ? "star filled" : "star"}
+            onClick={() => setRating(star)}
+          >
+            ★
+          </span>
+        ))}
+      </div>
+    );
+  };
 
   // State to hold customer reviews
   const [reviews, setReviews] = useState([
@@ -12,27 +52,32 @@ const Testimonials = () => {
       text: "I’ve been a regular customer at Gurudev Medical Store for years, and I’m always impressed by their professionalism and friendly service. They have a great selection of products, and their staff is always ready to help with any questions. Highly recommended!",
       author: "Priya Sharma",
       date: "10 August 2023",
+      rating: 5,
     },
     {
       text: "This is my go-to pharmacy for all my family’s needs. The quality of their medicines and the knowledgeable staff make a huge difference. I appreciate their dedication to customer care and the quick service they provide.",
       author: "Rajesh Patel",
       date: "22 July 2023",
+      rating: 4,
     },
     {
       text: "Gurudev Medical Store has always exceeded my expectations. Their staff is not only courteous but also very attentive, ensuring I get the right products every time. It’s reassuring to have such a reliable place for all my health needs.",
       author: "Anita Verma",
       date: "15 September 2023",
+      rating: 5,
     },
     {
       text: "Fantastic service and a great range of products. The team at this store is incredibly helpful and makes sure I leave with everything I need. I wouldn’t trust my health needs to anyone else!",
       author: "Suresh Kumar",
       date: "5 June 2023",
+      rating: 5,
     },
   ]);
 
   // State to hold form input
   const [feedback, setFeedback] = useState("");
   const [name, setName] = useState("");
+  const [rating, setRating]= useState(0);
 
   // State for managing visible reviews
   const [visibleReviews, setVisibleReviews] = useState(4); // Start with 6 reviews
@@ -62,7 +107,7 @@ const Testimonials = () => {
       // Add new feedback to the reviews list
       const newReviews = [
         ...reviews,
-        { text: feedback, author: name, date: currentDate },
+        { text: feedback, author: name, date: currentDate, rating: rating },
       ];
       setReviews(newReviews);
 
@@ -72,6 +117,7 @@ const Testimonials = () => {
       // Clear form input
       setFeedback("");
       setName("");
+      setRating(0);
     }
   };
 
@@ -83,6 +129,15 @@ const Testimonials = () => {
   const handleViewLess = () => {
     setVisibleReviews(4); // Increment visible reviews by 2
   };
+
+  const getRatingDistribution = () => {
+    const distribution = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+    reviews.forEach((review) => distribution[review.rating]++);
+    return distribution;
+  };
+
+  const ratingDistribution = getRatingDistribution();
+  const maxRatingCount = Math.max(...Object.values(ratingDistribution));
 
   return (
     <div className="testimonials-container">
@@ -130,12 +185,27 @@ const Testimonials = () => {
         </div>
       </div>
 
-      {/* Customer Reviews Section */}
-      <div className="reviews-section">
+       {/* Customer Reviews Section */}
+       <div className="rating-bars">
+  {Object.entries(ratingDistribution).reverse().map(([stars, count]) => (
+    <div key={stars} className="rating-bar">
+      <span>{stars} ★</span>
+      <div className="bar">
+        <div className="fill" style={{ width: `${(count / maxRatingCount) * 100}%` }}></div>
+      </div>
+      <span>({count})</span>
+    </div>
+  ))}
+</div>
+       <div className="reviews-section">
         <h2>What our customers have to say:</h2>
         <div className="reviews-grid">
           {reviews.slice(0, visibleReviews).map((review, index) => (
             <div key={index} className="review-box">
+              <div className="review-stars">
+                {"★".repeat(review.rating)}
+                {"☆".repeat(5 - review.rating)}
+              </div>
               <p className="review-text">“{review.text}”</p>
               <p className="review-author">
                 {review.author}, {review.date}
@@ -144,14 +214,13 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* "View More" button: only show if there are more reviews to display */}
         <div className="reviews-buttons">
           {visibleReviews < reviews.length && (
             <button onClick={handleViewMore} className="view-more-btn">
               View More
             </button>
           )}
-          {visibleReviews > reviews.length && (
+          {visibleReviews > 4 && (
             <button onClick={handleViewLess} className="view-less-btn">
               View Less
             </button>
@@ -167,7 +236,7 @@ const Testimonials = () => {
             type="text"
             className="feedback-name"
             placeholder="Your Name"
-            value={name} // Ensures it's pre-filled when the user logs in
+            value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
@@ -178,6 +247,10 @@ const Testimonials = () => {
             onChange={(e) => setFeedback(e.target.value)}
             required
           ></textarea>
+
+          {/* Star Rating Input */}
+          <StarRating rating={rating} setRating={setRating} />
+
           <button type="submit" className="feedback-submit">
             Post
           </button>

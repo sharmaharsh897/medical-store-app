@@ -222,5 +222,67 @@
   .view-less-btn:hover {
     background-color: #3d474d;
   }
+
+  .star-rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .star {
+    font-size: 24px;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
+  .star:hover {
+    color: orange;
+  }
+  
+  .review-stars {
+    font-size: 20px;
+    color: gold;
+    margin-bottom: 5px;
+  }
+
+  /* Star Rating Bar Section */
+.rating-bars {
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.rating-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.rating-bar span {
+  min-width: 40px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bar {
+  flex-grow: 1;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: #f39c12; /* Star color */
+  transition: width 0.3s ease-in-out;
+}
+  
   
   
