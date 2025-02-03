@@ -11,7 +11,7 @@ const loginAdmin = async (req, res) => {
   
     try {
       const user = await findAdminByEmail(email);
-      console.log("user",user)
+      console.log("admin details:",user)
   
       if (!user) {
         console.log("User not found for email:", email);
@@ -19,7 +19,7 @@ const loginAdmin = async (req, res) => {
       }
 
       if(user){
-        console.log("user found",email)
+        console.log("admin found",email)
       }
   
       if (user.password !== password) {
