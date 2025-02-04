@@ -251,38 +251,97 @@
     margin-bottom: 5px;
   }
 
-  /* Star Rating Bar Section */
-.rating-bars {
-  max-width: 80%;
-  margin: 20px auto;
-}
+  .rating-bars {
+    max-width: 80%;
+    margin: 20px auto;
+  }
 
-.rating-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 5px;
-}
-
-.rating-bar span {
-  min-width: 40px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.bar {
-  flex-grow: 1;
-  height: 10px;
-  background-color: #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.fill {
-  height: 100%;
-  background-color: #f39c12; /* Star color */
-  transition: width 0.3s ease-in-out;
-}
+  .rating-text {
+    font-size: 16px;
+    margin: 0 10px; /* Adding some space around the text */
+  }
   
+  .rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
   
+  .rating-bar span {
+    min-width: 40px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .bar {
+    flex-grow: 1;
+    height: 12px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px; /* Adding padding to the left and right side of the bar */
+    position: relative;
+  }
+  .fill {
+    height: 100%;
+    background-color: #32AEB1;
+    border-radius: 5px;
+  }
+
+  .rating-summary {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .left-side {
+    width: 30%;
+    text-align: center;
+  }
+  
+  .separator {
+    border-left: 2px solid #ddd;
+    height: auto;
+    margin-top: 10px;
+    padding-right: 20px;
+  }
+  
+  .right-side {
+    width: 70%;
+    text-align: left;
+  }
+  
+  .rating-bar-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* To space out the stars and the number */
+    margin-bottom: 10px;
+    font-weight: bold; /* Making the text bold */
+  }
+  
+  .bar {
+    flex-grow: 1;
+    height: 12px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  .fill {
+    height: 100%;
+    background-color: #32AEB1; /* Color for rating bar */
+  }
+  
+  .average-rating {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  h3 {
+    font-size: 20px;
+    color: #4f5860;
+  }
   

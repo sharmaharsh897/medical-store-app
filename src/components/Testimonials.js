@@ -2,30 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./Testimonials.css";
 import ownerImage from "../components/assets/owner.jpg"; // Ensure the correct path to the owner's image
 import { UserContext } from "../context/userContext";
-
-const StarRatingBar = ({ reviews }) => {
-  const ratingCounts = [5, 4, 3, 2, 1].map((star) => ({
-    star,
-    count: reviews.filter((r) => r.rating === star).length,
-  }));
-  const maxCount = Math.max(...ratingCounts.map((r) => r.count), 1);
-  return (
-    <div className="rating-bar-container">
-      {ratingCounts.map(({ star, count }) => (
-        <div key={star} className="rating-row">
-          <span className="star-label">{star} ★</span>
-          <div className="rating-bar">
-            <div
-              className="filled-bar"
-              style={{ width: `${(count / maxCount) * 100}%` }}
-            ></div>
-          </div>
-          <span className="count">({count})</span>
-        </div>
-      ))}
-    </div>
-  );
-};
+import reviews from "../data-access/reviews";
 
 const Testimonials = () => {
   const { user } = useContext(UserContext);
@@ -47,37 +24,12 @@ const Testimonials = () => {
   };
 
   // State to hold customer reviews
-  const [reviews, setReviews] = useState([
-    {
-      text: "I’ve been a regular customer at Gurudev Medical Store for years, and I’m always impressed by their professionalism and friendly service. They have a great selection of products, and their staff is always ready to help with any questions. Highly recommended!",
-      author: "Priya Sharma",
-      date: "10 August 2023",
-      rating: 5,
-    },
-    {
-      text: "This is my go-to pharmacy for all my family’s needs. The quality of their medicines and the knowledgeable staff make a huge difference. I appreciate their dedication to customer care and the quick service they provide.",
-      author: "Rajesh Patel",
-      date: "22 July 2023",
-      rating: 4,
-    },
-    {
-      text: "Gurudev Medical Store has always exceeded my expectations. Their staff is not only courteous but also very attentive, ensuring I get the right products every time. It’s reassuring to have such a reliable place for all my health needs.",
-      author: "Anita Verma",
-      date: "15 September 2023",
-      rating: 5,
-    },
-    {
-      text: "Fantastic service and a great range of products. The team at this store is incredibly helpful and makes sure I leave with everything I need. I wouldn’t trust my health needs to anyone else!",
-      author: "Suresh Kumar",
-      date: "5 June 2023",
-      rating: 5,
-    },
-  ]);
+  const [reviewsState, setReviews] = useState(reviews);
 
   // State to hold form input
   const [feedback, setFeedback] = useState("");
   const [name, setName] = useState("");
-  const [rating, setRating]= useState(0);
+  const [rating, setRating] = useState(0);
 
   // State for managing visible reviews
   const [visibleReviews, setVisibleReviews] = useState(4); // Start with 6 reviews
@@ -106,7 +58,7 @@ const Testimonials = () => {
 
       // Add new feedback to the reviews list
       const newReviews = [
-        ...reviews,
+        ...reviewsState,
         { text: feedback, author: name, date: currentDate, rating: rating },
       ];
       setReviews(newReviews);
@@ -132,12 +84,24 @@ const Testimonials = () => {
 
   const getRatingDistribution = () => {
     const distribution = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
-    reviews.forEach((review) => distribution[review.rating]++);
+    reviewsState.forEach((review) => {
+      if (review.rating >= 1 && review.rating <= 5) {
+        distribution[review.rating]++;
+      }
+    });
     return distribution;
   };
 
   const ratingDistribution = getRatingDistribution();
   const maxRatingCount = Math.max(...Object.values(ratingDistribution));
+
+  const getAverageRating = () => {
+    const totalRatings = reviewsState.reduce(
+      (sum, review) => sum + review.rating,
+      0
+    );
+    return (totalRatings / reviewsState.length).toFixed(1); // To round the result to 1 decimal place
+  };
 
   return (
     <div className="testimonials-container">
@@ -157,7 +121,6 @@ const Testimonials = () => {
           priority.
         </p>
       </div>
-
       {/* Owner's Words Section */}
       <div className="owner-section">
         <h2>Some words from the owner</h2>
@@ -185,22 +148,40 @@ const Testimonials = () => {
         </div>
       </div>
 
-       {/* Customer Reviews Section */}
-       <div className="rating-bars">
-  {Object.entries(ratingDistribution).reverse().map(([stars, count]) => (
-    <div key={stars} className="rating-bar">
-      <span>{stars} ★</span>
-      <div className="bar">
-        <div className="fill" style={{ width: `${(count / maxRatingCount) * 100}%` }}></div>
-      </div>
-      <span>({count})</span>
-    </div>
-  ))}
-</div>
-       <div className="reviews-section">
+      <div className="reviews-section">
         <h2>What our customers have to say:</h2>
+        <div className="rating-summary">
+          {/* Left Side (30%) */}
+          <div className="left-side">
+            <h3>Most trusted and chosen by customers</h3>
+            <p className="average-rating">{getAverageRating()}</p>
+            <p>Average Rating</p>
+          </div>
+
+          <div className="separator"></div>
+
+          {/* Right Side (70%) */}
+          <div className="right-side">
+  {Object.entries(ratingDistribution)
+    .reverse() // Reversing the order here
+    .map(([stars, count]) => {
+      const barWidth = (count / maxRatingCount) * 100;
+      return (
+        <div key={stars} className="rating-bar-row">
+          <span className="rating-text">{stars} ★</span>
+          <div className="bar">
+            <div className="fill" style={{ width: `${barWidth}%` }}></div>
+          </div>
+          <span className="rating-text">({count})</span>
+        </div>
+      );
+    })}
+</div>
+
+        </div>
+
         <div className="reviews-grid">
-          {reviews.slice(0, visibleReviews).map((review, index) => (
+          {reviewsState.slice(0, visibleReviews).map((review, index) => (
             <div key={index} className="review-box">
               <div className="review-stars">
                 {"★".repeat(review.rating)}
@@ -215,7 +196,7 @@ const Testimonials = () => {
         </div>
 
         <div className="reviews-buttons">
-          {visibleReviews < reviews.length && (
+          {visibleReviews < reviewsState.length && (
             <button onClick={handleViewMore} className="view-more-btn">
               View More
             </button>
@@ -227,7 +208,6 @@ const Testimonials = () => {
           )}
         </div>
       </div>
-
       {/* Feedback Form Section */}
       <div className="feedback-form-section">
         <h2>Wanna say something about us?</h2>
