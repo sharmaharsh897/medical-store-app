@@ -9,8 +9,25 @@ import logoIcon from "../components/assets/gurudev.png";
 import { UserContext } from "../context/userContext";
 import { FaUserCircle } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
+import axios from "axios";
+
 
 const INACTIVITY_TIMEOUT = 1 * 60 * 1000; // 2 minutes in milliseconds
+
+const fetchUserProfile = async () => {
+  try {
+    const token = sessionStorage.getItem("authToken"); // Fetch the token from sessionStorage
+    const response = await axios.get("http://localhost:5000/api/profile", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log("User Profile:", response.data);
+    // Handle the profile data (e.g., display it in a modal or redirect to a profile page)
+  } catch (error) {
+    console.error("Error fetching user profile:", error.response?.data || error.message);
+  }
+};
 
 function Navbar() {
   const { user } = useContext(UserContext);
@@ -140,9 +157,9 @@ function Navbar() {
                 <FaUserCircle className="user-login-icon" /> {user.first_name}
                 <FaCaretDown className="user-login-down-icon" />
                 <div className="dropdown-menu">
-                  <button className="account-button">
-                    <RouterLink to="">Profile</RouterLink>
-                  </button>
+                <button className="account-button" onClick={fetchUserProfile}>
+    <RouterLink to="/profile">Profile</RouterLink>
+  </button>
                   <button className="account-button">
                     <RouterLink to="">My Orders</RouterLink>
                   </button>

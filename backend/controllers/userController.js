@@ -1,7 +1,22 @@
-const { findUserByEmail, createUser } = require("../data-access/db");
+const { findUserByEmail, createUser, db } = require("../data-access/db");
 const jwt = require("jsonwebtoken");
 const { OAuth2Client } = require("google-auth-library");
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+
+const getProfile = (req, res) => {
+  try {
+    // Simulated user data; replace with DB query as needed
+    const userProfile = {
+      name: "John Doe",
+      email: "john.doe@example.com",
+      phone: "123-456-7890",
+    };
+    res.status(200).json(userProfile);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Failed to fetch user profile" });
+  }
+};
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
@@ -91,4 +106,4 @@ const googleLogin = async (req, res) => {
 };
 
 
-module.exports = { loginUser, googleLogin };
+module.exports = { loginUser, getProfile, googleLogin };
