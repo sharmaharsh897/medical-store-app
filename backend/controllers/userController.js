@@ -5,7 +5,6 @@ const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const getProfile = (req, res) => {
   try {
-    // Simulated user data; replace with DB query as needed
     const userProfile = {
       name: "John Doe",
       email: "john.doe@example.com",
