@@ -42,24 +42,42 @@ function Navbar() {
 
   useEffect(() => {
     if (user) {
+      console.log("User detected, starting inactivity timer");
       startInactivityTimer();
+  
       window.addEventListener("mousemove", resetInactivityTimer);
       window.addEventListener("keydown", resetInactivityTimer);
+  
+      return () => {
+        console.log("Cleaning up inactivity timer and event listeners");
+        clearInactivityTimer();
+        window.removeEventListener("mousemove", resetInactivityTimer);
+        window.removeEventListener("keydown", resetInactivityTimer);
+      };
     }
+  }, [user]); 
 
-    return () => {
-      clearInactivityTimer();
-      window.removeEventListener("mousemove", resetInactivityTimer);
-      window.removeEventListener("keydown", resetInactivityTimer);
-    };
-  }, [user]);
+  useEffect(() => {
+    if (showSessionModal) {
+      console.log("Session modal is visible, clearing inactivity timer");
+      clearInactivityTimer(); // Stop the timer while modal is visible
+    }
+  }, [showSessionModal]);
 
+  const handleSessionExtend = () => {
+    console.log("Extending session");
+    setShowSessionModal(false); // Close modal
+    startInactivityTimer(); // Restart the timer
+  };
+  
   const startInactivityTimer = () => {
-    clearInactivityTimer();
+    console.log("Clearing and starting a new inactivity timer");
+    clearInactivityTimer(); // Clear existing timer
     const id = setTimeout(() => {
-      setShowSessionModal(true); // Trigger session timeout modal
+      console.log("Session timeout triggered");
+      setShowSessionModal(true); // Show session timeout modal
     }, INACTIVITY_TIMEOUT);
-    setTimeoutId(id);
+    setTimeoutId(id); // Save new timer ID
   };
 
   const resetInactivityTimer = () => {
@@ -70,6 +88,7 @@ function Navbar() {
 
   const clearInactivityTimer = () => {
     if (timeoutId) {
+      console.log("Clearing existing inactivity timer");
       clearTimeout(timeoutId);
       setTimeoutId(null);
     }
@@ -95,10 +114,6 @@ function Navbar() {
     }, 2000);
   };
 
-  const handleSessionExtend = () => {
-    setShowSessionModal(false);
-    startInactivityTimer();
-  };
 
   return (
     <div>
