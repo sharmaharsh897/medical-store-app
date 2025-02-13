@@ -12,7 +12,7 @@ import { FaCaretDown } from "react-icons/fa";
 import axios from "axios";
 
 
-const INACTIVITY_TIMEOUT = 1 * 60 * 1000; // 2 minutes in milliseconds
+const INACTIVITY_TIMEOUT = 5 * 60 * 1000; // 2 minutes in milliseconds
 
 const fetchUserProfile = async () => {
   try {
@@ -71,7 +71,6 @@ function Navbar() {
   };
   
   const startInactivityTimer = () => {
-    console.log("Clearing and starting a new inactivity timer");
     clearInactivityTimer(); // Clear existing timer
     const id = setTimeout(() => {
       console.log("Session timeout triggered");
@@ -88,7 +87,6 @@ function Navbar() {
 
   const clearInactivityTimer = () => {
     if (timeoutId) {
-      console.log("Clearing existing inactivity timer");
       clearTimeout(timeoutId);
       setTimeoutId(null);
     }
@@ -169,7 +167,7 @@ function Navbar() {
           <li className="dropdown">
             {user ? (
               <span className="after-login">
-                <FaUserCircle className="user-login-icon" /> {user.first_name}
+                <FaUserCircle className="user-login-icon" /> {user.first_name} {user.last_name}
                 <FaCaretDown className="user-login-down-icon" />
                 <div className="dropdown-menu">
                 <button className="account-button" onClick={fetchUserProfile}>
