@@ -92,7 +92,6 @@ function Navbar() {
     }
   };
 
-  // Handle login button click (simulates login action and shows the loader)
   const handleLoginClick = () => {
     setIsLoading(true); // Show the loader
 
