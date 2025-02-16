@@ -12,11 +12,11 @@ const Modal = ({ show, onClose, onConfirm }) => {
         <h3>Confirm Logout</h3>
         <p>Are you sure you want to logout?</p>
         <div className="modal-actions">
+        <button className="btn-confirm" onClick={onConfirm}>
+            Yes
+          </button>
           <button className="btn-cancel" onClick={onClose}>
             No
-          </button>
-          <button className="btn-confirm" onClick={onConfirm}>
-            Yes
           </button>
         </div>
       </div>

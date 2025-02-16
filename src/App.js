@@ -18,6 +18,7 @@ import RegisterForm from "./components/UserRegister";
 import ChangePassword from "./components/ChangePassword";
 import { UserContext } from "./context/userContext";
 import OwnerLoginForm from "./components/OwnerLogin";
+import UserProfile from "./components/UserProfile";
 
 // Protected Route Wrapper
 function ProtectedRoute({ children }) {
@@ -69,6 +70,7 @@ function App() {
 
           {/* Login Route */}
           <Route path="/user-login" element={<LoginForm />} />
+          <Route path="/profile" element={<UserProfile />} />
           <Route path="/owner-login" element={<OwnerLoginForm />} />
 
           {/* Registration Route */}

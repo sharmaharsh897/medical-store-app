@@ -1,15 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import './UserProfile.css';
+import SessionModal from "./SessionModal";
+
 const UserProfile = () => {
-  const [selectedOption, setSelectedOption] = useState('basicProfile');
+  const [selectedOption, setSelectedOption] = useState("basicProfile");
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/profile')
-      .then((response) => response.json())
+    const token = localStorage.getItem("token");
+
+    fetch("http://localhost:5000/api/profile", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Unauthorized");
+        return response.json();
+      })
       .then((data) => setUserData(data))
-      .catch((error) => console.error('Error fetching user profile:', error));
+      .catch((error) => console.error("Error fetching user profile:", error));
   }, []);
+  
 
 
   const renderContent = () => {
