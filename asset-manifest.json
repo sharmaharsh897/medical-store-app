@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/medical-store-app/static/css/main.c755ff6f.css",
-    "main.js": "/medical-store-app/static/js/main.5c900f8c.js",
+    "main.css": "/medical-store-app/static/css/main.ed68b6c7.css",
+    "main.js": "/medical-store-app/static/js/main.b30404be.js",
     "static/js/453.c0325d81.chunk.js": "/medical-store-app/static/js/453.c0325d81.chunk.js",
     "static/media/bell.mp3": "/medical-store-app/static/media/bell.e82f9eb7666963bbb9e8.mp3",
     "static/media/owner.jpg": "/medical-store-app/static/media/owner.6bed7da64259e8cbd379.jpg",
@@ -28,12 +28,12 @@
     "static/media/slick.ttf": "/medical-store-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/medical-store-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/medical-store-app/index.html",
-    "main.c755ff6f.css.map": "/medical-store-app/static/css/main.c755ff6f.css.map",
-    "main.5c900f8c.js.map": "/medical-store-app/static/js/main.5c900f8c.js.map",
+    "main.ed68b6c7.css.map": "/medical-store-app/static/css/main.ed68b6c7.css.map",
+    "main.b30404be.js.map": "/medical-store-app/static/js/main.b30404be.js.map",
     "453.c0325d81.chunk.js.map": "/medical-store-app/static/js/453.c0325d81.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c755ff6f.css",
-    "static/js/main.5c900f8c.js"
+    "static/css/main.ed68b6c7.css",
+    "static/js/main.b30404be.js"
   ]
 }
