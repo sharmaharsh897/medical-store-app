@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './Carousel.css'; // Import the CSS
+import React, { useState, useEffect } from "react";
+import "./Carousel.css"; // Import the CSS
 
 // Importing images
-import image1 from '../components/assets/comp_3step.jpg';
-import image2 from '../components/assets/comp_50lac.jpg';
-import image3 from '../components/assets/comp_cod.jpg';
+import image1 from "../components/assets/comp_3step.jpg";
+import image2 from "../components/assets/comp_50lac.jpg";
+import image3 from "../components/assets/comp_cod.jpg";
 
 const images = [image1, image2, image3];
 
@@ -21,49 +21,53 @@ const CarouselComponent = () => {
     );
   };
 
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
-   <div className="carousel-container">
-  {/* Left Arrow */}
-  <div className="arrow prev" onClick={handlePrev}>
-    ⬅
-  </div>
+    <div className="carousel-container">
+      {/* Left Arrow */}
+      <div className="arrow prev" onClick={handlePrev}>
+        ⬅
+      </div>
 
-  {/* Carousel Images */}
-  <div className="carousel-images">
-    
-    {/* Left Image - Half visible */}
-    <div className="image-container left-image">
-      <img
-        src={images[(currentIndex - 1 + images.length) % images.length]}
-        alt="left"
-        className="carousel-image"
-      />
+      {/* Carousel Images */}
+      <div className="carousel-images">
+        {/* Left Image - Smaller */}
+        <div className="image-container left-image">
+          <img
+            src={images[(currentIndex - 1 + images.length) % images.length]}
+            alt="left"
+            className="carousel-image"
+          />
+        </div>
+
+        {/* Center Image - Larger */}
+        <div className="image-container center-image">
+          <img src={images[currentIndex]} alt="center" className="carousel-image" />
+        </div>
+
+        {/* Right Image - Smaller */}
+        <div className="image-container right-image">
+          <img
+            src={images[(currentIndex + 1) % images.length]}
+            alt="right"
+            className="carousel-image"
+          />
+        </div>
+      </div>
+
+      {/* Right Arrow */}
+      <div className="arrow next" onClick={handleNext}>
+        ➡
+      </div>
     </div>
-
-    {/* Center Image - Fully visible */}
-    <div className="image-container center-image">
-      <img
-        src={images[currentIndex]}
-        alt="center"
-        className="carousel-image"
-      />
-    </div>
-
-    {/* Right Image - Half visible */}
-    <div className="image-container right-image">
-      <img
-        src={images[(currentIndex + 1) % images.length]}
-        alt="right"
-        className="carousel-image"
-      />
-    </div>
-  </div>
-
-  {/* Right Arrow */}
-  <div className="arrow next" onClick={handleNext}>
-    ➡
-  </div>
-</div>
   );
 };
 

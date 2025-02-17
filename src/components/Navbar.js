@@ -12,7 +12,7 @@ import { FaCaretDown } from "react-icons/fa";
 import axios from "axios";
 
 
-const INACTIVITY_TIMEOUT = .1 * 60 * 1000; // 2 minutes in milliseconds
+const INACTIVITY_TIMEOUT = 2 * 60 * 1000; // 2 minutes in milliseconds
 
 const fetchUserProfile = async () => {
   try {
