@@ -8,24 +8,17 @@ const Chatbot = () => {
   const [showNotification, setShowNotification] = useState(true);
   const [hasPlayed, setHasPlayed] = useState(false); // Track if sound has played
   const [chat, setChat] = useState([
-    {
-      text: "Hi there! How can I help you?",
-      options: ["Order Medicine", "Consult Doctor", "Know More"],
-      isUser: false,
-    },
+    { text: "Hi there! How can I assist you today?", isUser: false },
   ]);
+  const [userInput, setUserInput] = useState(""); // Store user input
 
   useEffect(() => {
     const playSound = () => {
       const audio = new Audio(notificationSound);
       audio
         .play()
-        .then(() => {
-          setHasPlayed(true); // Mark sound as played
-        })
-        .catch(() => {
-          console.log("Autoplay failed. Waiting for user interaction.");
-        });
+        .then(() => setHasPlayed(true)) // Mark sound as played
+        .catch(() => console.log("Autoplay failed. Waiting for user interaction."));
     };
 
     if (!hasPlayed) {
@@ -47,44 +40,36 @@ const Chatbot = () => {
     };
   }, [hasPlayed]);
 
-  const handleOptionClick = (option) => {
-    const userMessage = { text: option, options: [], isUser: true };
+  const predefinedResponses = {
+    "order medicine": "You can order medicines online through our website!",
+    "consult doctor": "We provide free consultations with medical experts.",
+    "know more": "We offer a wide range of healthcare services.",
+    "hello": "Hello! How can I assist you today?",
+    "hi": "Hi there! Feel free to ask any question.",
+    "goodbye": "Goodbye! Have a great day!",
+  };
+
+  const handleUserInput = (e) => {
+    e.preventDefault();
+    if (!userInput.trim()) return;
+
+    const userMessage = { text: userInput, isUser: true };
     setChat((prevChat) => [...prevChat, userMessage]);
 
-    let newMessage = { text: "", options: [], isUser: false };
-    if (option === "Order Medicine") {
-      newMessage = {
-        text: "You can order medicines online here!",
-        options: ["Go Back", "Exit"],
-      };
-    } else if (option === "Consult Doctor") {
-      newMessage = {
-        text: "We provide free consultations with experts.",
-        options: ["Go Back", "Exit"],
-      };
-    } else if (option === "Know More") {
-      newMessage = {
-        text: "We offer a wide range of services.",
-        options: ["Go Back", "Exit"],
-      };
-    } else if (option === "Go Back") {
-      newMessage = {
-        text: "Hi there! How can I help you?",
-        options: ["Order Medicine", "Consult Doctor", "Know More"],
-      };
-    } else if (option === "Exit") {
-      setIsOpen(false);
-      return;
-    }
+    // Convert input to lowercase for better matching
+    const lowerCaseInput = userInput.toLowerCase();
+    const botResponse = predefinedResponses[lowerCaseInput] || "Sorry, I don't have an answer for that. Try asking something else.";
 
     setTimeout(() => {
-      setChat((prevChat) => [...prevChat, newMessage]);
-    }, 500); // Add a slight delay for better UX
+      setChat((prevChat) => [...prevChat, { text: botResponse, isUser: false }]);
+    }, 500);
+
+    setUserInput(""); // Clear input field
   };
 
   const handleChatbotToggle = () => {
     setIsOpen(true);
-    setShowNotification(false); // Hide notification once chatbot is opened
+    setShowNotification(false);
   };
 
   return (
@@ -103,27 +88,21 @@ const Chatbot = () => {
           </div>
           <div className="chatbot-body">
             {chat.map((message, index) => (
-              <div
-                key={index}
-                className={`chatbot-message ${
-                  message.isUser ? "user-message" : "bot-message"
-                }`}
-              >
+              <div key={index} className={`chatbot-message ${message.isUser ? "user-message" : "bot-message"}`}>
                 <p>{message.text}</p>
-                <div className="chatbot-options">
-                  {!message.isUser &&
-                    message.options.map((option, idx) => (
-                      <button
-                        key={idx}
-                        className="chatbot-option-button"
-                        onClick={() => handleOptionClick(option)}
-                      >
-                        {option}
-                      </button>
-                    ))}
-                </div>
               </div>
             ))}
+          </div>
+          <div className="chatbot-input">
+            <form onSubmit={handleUserInput}>
+              <input
+                type="text"
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                placeholder="Type your question..."
+              />
+              <button type="submit">Send</button>
+            </form>
           </div>
         </div>
       )}

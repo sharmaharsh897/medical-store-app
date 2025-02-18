@@ -5,10 +5,16 @@
     z-index: 1000;
   }
 
-  .chatbot-container:hover {
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
-    border-radius: 50%;
-  }
+  /* Glow effect only when the chatbot is closed */
+.chatbot-container:not(.open) .chatbot-toggle:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+/* Remove the glow effect from the chatbot box */
+.chatbot-box {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Keeps original shadow */
+}
   
   .chatbot-toggle {
     background-color: #32aeb1;
@@ -129,4 +135,40 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
+}
+
+.chatbot-input {
+  padding: 10px;
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.chatbot-input button {
+  background-color: #32aeb1;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.chatbot-input button:hover {
+  background-color: #288a8d;
+  transform: scale(1.05);
+}
+
+.chatbot-input button:active {
+  background-color: #1f7274;
+  transform: scale(0.95);
 }
