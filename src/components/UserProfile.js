@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import './UserProfile.css';
-import SessionModal from "./SessionModal";
+import React, { useState, useEffect } from "react";
+import "./UserProfile.css";
 
 const UserProfile = () => {
   const [selectedOption, setSelectedOption] = useState("basicProfile");
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token"); // or sessionStorage.getItem("token")
 
     fetch("http://localhost:5000/api/profile", {
       method: "GET",
@@ -23,12 +22,10 @@ const UserProfile = () => {
       .then((data) => setUserData(data))
       .catch((error) => console.error("Error fetching user profile:", error));
   }, []);
-  
-
 
   const renderContent = () => {
     switch (selectedOption) {
-      case 'basicProfile':
+      case "basicProfile":
         return (
           <div>
             <h3>Basic Profile Details</h3>
@@ -43,13 +40,13 @@ const UserProfile = () => {
             )}
           </div>
         );
-      case 'avatar':
+      case "avatar":
         return <div>Avatar Section</div>;
-      case 'myAddresses':
+      case "myAddresses":
         return <div>My Addresses</div>;
-      case 'myOrders':
+      case "myOrders":
         return <div>My Orders</div>;
-      case 'changePassword':
+      case "changePassword":
         return <div>Change Password Form</div>;
       default:
         return <div>Select an option</div>;
@@ -65,9 +62,9 @@ const UserProfile = () => {
           <li>
             <button
               className={`sidebar-item ${
-                selectedOption === 'basicProfile' ? 'active' : ''
+                selectedOption === "basicProfile" ? "active" : ""
               }`}
-              onClick={() => setSelectedOption('basicProfile')}
+              onClick={() => setSelectedOption("basicProfile")}
             >
               Basic Profile
             </button>
@@ -75,9 +72,9 @@ const UserProfile = () => {
           <li>
             <button
               className={`sidebar-item ${
-                selectedOption === 'avatar' ? 'active' : ''
+                selectedOption === "avatar" ? "active" : ""
               }`}
-              onClick={() => setSelectedOption('avatar')}
+              onClick={() => setSelectedOption("avatar")}
             >
               Avatar
             </button>
@@ -85,9 +82,9 @@ const UserProfile = () => {
           <li>
             <button
               className={`sidebar-item ${
-                selectedOption === 'myAddresses' ? 'active' : ''
+                selectedOption === "myAddresses" ? "active" : ""
               }`}
-              onClick={() => setSelectedOption('myAddresses')}
+              onClick={() => setSelectedOption("myAddresses")}
             >
               My Addresses
             </button>
@@ -95,9 +92,9 @@ const UserProfile = () => {
           <li>
             <button
               className={`sidebar-item ${
-                selectedOption === 'myOrders' ? 'active' : ''
+                selectedOption === "myOrders" ? "active" : ""
               }`}
-              onClick={() => setSelectedOption('myOrders')}
+              onClick={() => setSelectedOption("myOrders")}
             >
               My Orders
             </button>
@@ -105,9 +102,9 @@ const UserProfile = () => {
           <li>
             <button
               className={`sidebar-item ${
-                selectedOption === 'changePassword' ? 'active' : ''
+                selectedOption === "changePassword" ? "active" : ""
               }`}
-              onClick={() => setSelectedOption('changePassword')}
+              onClick={() => setSelectedOption("changePassword")}
             >
               Change Password
             </button>
@@ -116,9 +113,7 @@ const UserProfile = () => {
       </div>
 
       {/* Main Content */}
-      <div className="content">
-        {renderContent()}
-      </div>
+      <div className="content">{renderContent()}</div>
     </div>
   );
 };

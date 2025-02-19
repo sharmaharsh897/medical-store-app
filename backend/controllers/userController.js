@@ -1,18 +1,27 @@
-const { findUserByEmail, createUser, db } = require("../data-access/db");
+const { findUserByEmail, createUser, findUserById} = require("../data-access/db");
 const jwt = require("jsonwebtoken");
 const { OAuth2Client } = require("google-auth-library");
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
-const getProfile = (req, res) => {
+const getProfile = async (req, res) => {
   try {
-    const userProfile = {
-      name: "John Doe",
-      email: "john.doe@example.com",
-      phone: "123-456-7890",
-    };
-    res.status(200).json(userProfile);
+    if (!req.user || !req.user.id) {
+      return res.status(401).json({ message: "Unauthorized: No user ID found." });
+    }
+
+    const user = await findUserById(req.user.id);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    res.status(200).json({
+      name: `${user.first_name} ${user.last_name}`,
+      email: user.email,
+      phone: user.phone_number || "N/A",
+    });
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching user profile:", error);
     res.status(500).json({ message: "Failed to fetch user profile" });
   }
 };

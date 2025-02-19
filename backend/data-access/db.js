@@ -1,5 +1,11 @@
 const db = require("../config/dbConfig");
 
+const findUserById = async (id) => {
+  const query = "SELECT * FROM users WHERE id = ?";
+  const [rows] = await db.execute(query, [id]);
+  return rows[0]; // Returns the first matching user or undefined
+};
+
 // Fetch user by email
 const findUserByEmail = async (email) => {
   const query = "SELECT * FROM users WHERE email = ?";
@@ -36,4 +42,4 @@ const createUser = async (user) => {
   return { id: result.insertId, ...user }; // Return created user details
 };
 
-module.exports = { findUserByEmail, createUser, findAdminByEmail };
+module.exports = { findUserByEmail, createUser, findAdminByEmail, findUserById };
