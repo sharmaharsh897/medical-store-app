@@ -33,7 +33,7 @@ const UserProfile = () => {
               <ul>
                 <li>Name: {userData.name}</li>
                 <li>Email: {userData.email}</li>
-                <li>Phone: {userData.phone}</li>
+                <li>Phone: +91-{userData.phone}</li>
               </ul>
             ) : (
               <p>Loading...</p>
