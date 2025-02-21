@@ -6,10 +6,10 @@
   
   /* Sidebar */
   .sidebar {
-    width: 25%;
-    background-color: #f8f9fa;
+    width: 20%;
     padding: 20px;
     border-right: 1px solid #dee2e6;
+    border: none;
   }
   
   .sidebar-title {
@@ -26,7 +26,7 @@
   
   .sidebar-item {
     display: block;
-    width: 100%;
+    width: 80%;
     padding: 10px 15px;
     margin-bottom: 10px;
     background-color: #e9ecef;
@@ -43,7 +43,7 @@
   }
   
   .sidebar-item.active {
-    background-color: #007bff;
+    background-color: #32AEB1;
     color: #fff;
   }
   
@@ -51,5 +51,6 @@
   .content {
     flex-grow: 1;
     padding: 20px;
+    ;
   }
   

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./UserProfile.css";
+import ChangePassword from "./ChangePassword";
 
 const UserProfile = () => {
   const [selectedOption, setSelectedOption] = useState("basicProfile");
@@ -47,7 +48,7 @@ const UserProfile = () => {
       case "myOrders":
         return <div>My Orders</div>;
       case "changePassword":
-        return <div>Change Password Form</div>;
+        return <ChangePassword />
       default:
         return <div>Select an option</div>;
     }
@@ -67,16 +68,6 @@ const UserProfile = () => {
               onClick={() => setSelectedOption("basicProfile")}
             >
               Basic Profile
-            </button>
-          </li>
-          <li>
-            <button
-              className={`sidebar-item ${
-                selectedOption === "avatar" ? "active" : ""
-              }`}
-              onClick={() => setSelectedOption("avatar")}
-            >
-              Avatar
             </button>
           </li>
           <li>

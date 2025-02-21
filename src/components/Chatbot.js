@@ -8,7 +8,7 @@ const Chatbot = () => {
   const [showNotification, setShowNotification] = useState(true);
   const [hasPlayed, setHasPlayed] = useState(false); // Track if sound has played
   const [chat, setChat] = useState([
-    { text: "Hi there! How can I assist you today?", isUser: false },
+    { text: "Hi there! How can I assist you today? Ask me about medicines", isUser: false },
   ]);
   const [userInput, setUserInput] = useState(""); // Store user input
 
