@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React, { useState, useEffect, useCallback, useContext } from "react";
+import React, { useState, useEffect, useCallback, useContext, useMemo } from "react";
 import "./SearchSection.css";
 import { UserContext } from "../context/userContext";
 import medicines from "../data-access/medicines.json";
@@ -17,6 +17,18 @@ function SearchSection() {
   const { user } = useContext(UserContext);
   const [isSuggestionSelected, setIsSuggestionSelected] = useState(false);
 
+  // ✅ Ensure unique medicine names
+  const uniqueMedicines = useMemo(() => {
+    const seen = new Set();
+    return medicines.filter((medicine) => {
+      if (!seen.has(medicine.name.toLowerCase())) {
+        seen.add(medicine.name.toLowerCase());
+        return true;
+      }
+      return false;
+    });
+  }, [medicines]); // Runs only if `medicines` changes
+
   // Dynamic placeholder effect
   useEffect(() => {
     const placeholders = ["Medicine", "Health Drinks", "Surgicals"];
@@ -33,69 +45,35 @@ function SearchSection() {
     return () => clearInterval(intervalId);
   }, [isFocused]);
 
-  // Fetch suggestions
-  // useEffect(() => {
-  //   if (query.length > 0) {
-  //     fetch(`https://rxnav.nlm.nih.gov/REST/rxcui/rxcui=${query}`)
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         console.log("API Response:", data); // Log the API response to check the structure
-
-  //         if (data && data.displayTermsList && data.displayTermsList.term) {
-  //           // Extract display terms from the API response
-  //           const filteredTerms = data.displayTermsList.term; // Directly use the drug names
-  //           console.log("Filtered Terms:", filteredTerms); // Log filtered terms before setting them
-
-  //           // Filter suggestions based on the query
-  //           const matchedSuggestions = filteredTerms.filter((term) =>
-  //             term.toLowerCase().includes(query.toLowerCase())
-  //           );
-
-  //           setSuggestions(matchedSuggestions);
-  //         } else {
-  //           setSuggestions([]);
-  //         }
-  //       })
-  //       .catch(() => {
-  //         setError("Failed to fetch suggestions");
-  //       });
-  //   } else {
-  //     setSuggestions([]);
-  //   }
-  // }, [query]);
-
+  // ✅ Filtering Suggestions
   useEffect(() => {
-    // Create a deduplicated list of medicines
-    const uniqueMedicines = [...new Set(medicines)];
-
     if (query.length > 0) {
       const matchedSuggestions = uniqueMedicines.filter((medicine) =>
-        medicine.toLowerCase().includes(query.toLowerCase())
+        medicine.name.toLowerCase().includes(query.toLowerCase())
       );
 
-      // Prevent showing the suggestion list if the query is an exact match
-      if (matchedSuggestions.length === 1 && matchedSuggestions[0] === query) {
-        setSuggestions([]);
-      } else {
-        setSuggestions(matchedSuggestions);
-      }
+      setSuggestions(matchedSuggestions);
     } else {
       setSuggestions([]);
     }
-  }, [query]);
+  }, [query, uniqueMedicines]);
 
-  // Handle suggestion click
+  // ✅ Ensure list disappears on first click
   const handleSuggestionClick = useCallback((suggestion) => {
-    setQuery(suggestion); // Set query to the selected suggestion
-    setSuggestions([]); // Clear the suggestions list
-    setIsSuggestionSelected(true); // Mark as suggestion selected
+    setQuery(suggestion.name);
+    setIsSuggestionSelected(true);
+    
+    // ✅ Use a small timeout to clear suggestions before React updates
+    setTimeout(() => {
+      setSuggestions([]);
+    }, 0);
   }, []);
 
   const handleInputChange = (e) => {
-    setQuery(e.target.value); // Update the query
-    setIsSuggestionSelected(false); // Reset the flag since user is typing
+    setQuery(e.target.value);
+    setIsSuggestionSelected(false);
     if (e.target.value === "") {
-      setSuggestions([]); // Clear suggestions when input is empty
+      setSuggestions([]);
     }
   };
 
@@ -118,12 +96,10 @@ function SearchSection() {
       return;
     }
 
-    setUploadedFile(file); // Save uploaded file
+    setUploadedFile(file);
     setUploadMessage(`"${file.name}" uploaded successfully!`);
     setUploadSuccess(true);
   };
-
-  // Handle file removal
 
   // Tooltip fade-out effect
   useEffect(() => {
@@ -131,28 +107,23 @@ function SearchSection() {
       const timeout = setTimeout(() => {
         setUploadMessage("");
         setUploadSuccess(null);
-      }, 4000); // Clear message after 4 seconds
+      }, 4000);
       return () => clearTimeout(timeout);
     }
   }, [uploadMessage]);
 
   const handleSearchButtonClick = () => {
     if (query.trim() === "") {
-      // If the input field is empty, prompt the user to enter something
       alert("Please enter something in the search bar.");
     } else {
-      // Add the "active" effect to the button
       const searchButton = document.querySelector(".search-button");
       searchButton.classList.add("active");
 
-      // Remove the active class after the animation
       setTimeout(() => {
         searchButton.classList.remove("active");
-      }, 200); // Time should match the transition duration
+      }, 200);
 
-      // Proceed with search logic if input is not empty
       console.log("Search button clicked with query:", query);
-      // Add search logic here if needed
     }
   };
 
@@ -161,7 +132,7 @@ function SearchSection() {
       <div className="search-bar">
         <div className="search-bar-header">
           {user ? (
-            <span className="">
+            <span>
               <h2>Hi {user.first_name}, What are you looking for?</h2>
             </span>
           ) : (
@@ -195,7 +166,7 @@ function SearchSection() {
           {query && (
             <button
               className="clear-button"
-              onClick={() => setQuery("")} // Clears the input
+              onClick={() => setQuery("")}
               type="button"
             >
               <MdCancel />
@@ -213,11 +184,10 @@ function SearchSection() {
                   key={index}
                   onClick={() => handleSuggestionClick(suggestion)}
                 >
-                  {suggestion}
+                  {suggestion.name}
                 </li>
               ))}
             </ul>
-            
           ) : (
             query &&
             !isSuggestionSelected &&
@@ -227,9 +197,7 @@ function SearchSection() {
         {error && <div className="error-message">{error}</div>}
       </div>
       {uploadMessage && (
-        <div
-          className={`upload-tooltip ${uploadSuccess ? "success" : "error"}`}
-        >
+        <div className={`upload-tooltip ${uploadSuccess ? "success" : "error"}`}>
           {uploadMessage}
         </div>
       )}

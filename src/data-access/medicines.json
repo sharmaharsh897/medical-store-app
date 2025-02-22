@@ -1,1265 +1,6317 @@
 [
-  "Paracetamol",
-  "Ibuprofen",
-  "Metformin",
-  "Atorvastatin",
-  "Pantoprazole",
-  "Omeprazole",
-  "Amlodipine",
-  "Losartan",
-  "Azithromycin",
-  "Ciprofloxacin",
-  "Amoxicillin",
-  "Dolo 650",
-  "Cetirizine",
-  "Levocetirizine",
-  "Montelukast",
-  "Ranitidine",
-  "Famotidine",
-  "Esomeprazole",
-  "Diclofenac",
-  "Aceclofenac",
-  "Tramadol",
-  "Cefixime",
-  "Cefpodoxime",
-  "Ceftriaxone",
-  "Clarithromycin",
-  "Clindamycin",
-  "Metronidazole",
-  "Albendazole",
-  "Ivermectin",
-  "Hydroxychloroquine",
-  "Chloroquine",
-  "Sitagliptin",
-  "Teneligliptin",
-  "Glimepiride",
-  "Glibenclamide",
-  "Pioglitazone",
-  "Insulin",
-  "Thyroxine",
-  "Carbimazole",
-  "Loratadine",
-  "Fexofenadine",
-  "Betamethasone",
-  "Prednisolone",
-  "Dexamethasone",
-  "Methylprednisolone",
-  "Hydrocortisone",
-  "Salbutamol",
-  "Formoterol",
-  "Budesonide",
-  "Fluticasone",
-  "Seretide",
-  "Tiotropium",
-  "Ipratropium",
-  "Theophylline",
-  "Acetylcysteine",
-  "Bromhexine",
-  "Ambroxol",
-  "Erythromycin",
-  "Linezolid",
-  "Vancomycin",
-  "Piperacillin-Tazobactam",
-  "Meropenem",
-  "Imipenem",
-  "Doxycycline",
-  "Minocycline",
-  "Aspirin",
-  "Clopidogrel",
-  "Ticagrelor",
-  "Warfarin",
-  "Dabigatran",
-  "Apixaban",
-  "Rivaroxaban",
-  "Heparin",
-  "Enoxaparin",
-  "Ferrous Sulfate",
-  "Folic Acid",
-  "Vitamin D3",
-  "Calcium Carbonate",
-  "Zinc Sulfate",
-  "Magnesium Hydroxide",
-  "Sodium Bicarbonate",
-  "Lactulose",
-  "Polyethylene Glycol",
-  "Bisacodyl",
-  "Docusate",
-  "Domperidone",
-  "Metoclopramide",
-  "Ondansetron",
-  "Granisetron",
-  "Propranolol",
-  "Metoprolol",
-  "Carvedilol",
-  "Bisoprolol",
-  "Atenolol",
-  "Diltiazem",
-  "Verapamil",
-  "Enalapril",
-  "Ramipril",
-  "Perindopril",
-  "Telmisartan",
-  "Olmesartan",
-  "Hydrochlorothiazide",
-  "Chlorthalidone",
-  "Furosemide",
-  "Spironolactone",
-  "Eplerenone",
-  "Nitroglycerin",
-  "Isosorbide Mononitrate",
-  "Digoxin",
-  "Amiodarone",
-  "Sotalol",
-  "Ketoconazole",
-  "Clotrimazole",
-  "Fluconazole",
-  "Itraconazole",
-  "Terbinafine",
-  "Nystatin",
-  "Acyclovir",
-  "Valacyclovir",
-  "Oseltamivir",
-  "Ribavirin",
-  "Hydroxyurea",
-  "Methotrexate",
-  "Azathioprine",
-  "Cyclophosphamide",
-  "Adalimumab",
-  "Etanercept",
-  "Rituximab",
-  "Bevacizumab",
-  "Trastuzumab",
-  "Paclitaxel",
-  "Cisplatin",
-  "Carboplatin",
-  "Vincristine",
-  "Doxorubicin",
-  "Imatinib",
-  "Erlotinib",
-  "Gefitinib",
-  "Sunitinib",
-  "Sorafenib",
-  "Levothyroxine",
-  "Thyronorm",
-  "Prochlorperazine",
-  "Haloperidol",
-  "Olanzapine",
-  "Risperidone",
-  "Quetiapine",
-  "Aripiprazole",
-  "Duloxetine",
-  "Venlafaxine",
-  "Sertraline",
-  "Paroxetine",
-  "Fluoxetine",
-  "Amitriptyline",
-  "Clonazepam",
-  "Diazepam",
-  "Lorazepam",
-  "Alprazolam",
-  "Phenobarbital",
-  "Valproate",
-  "Carbamazepine",
-  "Levetiracetam",
-  "Topiramate",
-  "Gabapentin",
-  "Pregabalin",
-  "Lamotrigine",
-  "Calamine Lotion (used for skin irritation)",
-  "Hydroxyzine (antihistamine for anxiety and allergies)",
-  "Ranitidine Bismuth Citrate (ulcer treatment)",
-  "Nitrofurantoin (for urinary tract infections)",
-  "Trimethoprim (antibiotic for bacterial infections)",
-  "Levofloxacin (antibiotic for respiratory infections)",
-  "Carbocisteine (mucolytic for respiratory conditions)",
-  "Fexofenadine (antihistamine for allergies)",
-  "Tacrolimus (immunosuppressant for organ transplants and skin conditions)",
-  "Mycophenolate Mofetil (immunosuppressant)",
-  "Alendronate (for osteoporosis)",
-  "Risedronate (bone health medication)",
-  "Bisacodyl Suppositories (laxative)",
-  "Sucralfate (for gastric ulcers)",
-  "Lidocaine (local anesthetic)",
-  "Ketorolac (pain relief)",
-  "Chlorpheniramine (antihistamine for colds and allergies)",
-  "Phenylephrine (decongestant)",
-  "Oxymetazoline (nasal spray for congestion)",
-  "Salicylic Acid (used for acne and skin conditions)",
-  "Betadine (antiseptic)",
-  "Mupirocin (antibiotic ointment)",
-  "Tamsulosin (for prostate conditions)",
-  "Finasteride (used for benign prostatic hyperplasia and hair loss)",
-  "Allopurinol (for gout and high uric acid)",
-  "Colchicine (for acute gout)",
-  "Sildenafil (used for erectile dysfunction and pulmonary hypertension)",
-  "Tadalafil (for erectile dysfunction)",
-  "Vildagliptin (antidiabetic medication)",
-  "Empagliflozin (for diabetes management)",
-  "Dapagliflozin (SGLT2 inhibitor for diabetes)",
-  "Linagliptin (antidiabetic medication)",
-  "Clobetasol Propionate (topical steroid)",
-  "Mometasone (topical and nasal corticosteroid)",
-  "Permethrin (for scabies and lice)",
-  "Clotrimazole Lotion (antifungal)",
-  "Bacitracin (topical antibiotic)",
-  "Povidone-Iodine (antiseptic)",
-  "Secnidazole (antiprotozoal)",
-  "Meclizine (for motion sickness)",
-  "Acyclovir",
-  "Albuterol",
-  "Amikacin",
-  "Amiodarone",
-  "Amlodipine",
-  "Ampicillin",
-  "Anastrozole",
-  "Aripiprazole",
-  "Azathioprine",
-  "Baclofen",
-  "Benzonatate",
-  "Bismuth Subsalicylate",
-  "Budesonide",
-  "Captopril",
-  "Carbamazepine",
-  "Carvedilol",
-  "Cetirizine",
-  "Chlorpheniramine",
-  "Chloroquine",
-  "Ciprofloxacin",
-  "Clindamycin",
-  "Clonidine",
-  "Clozapine",
-  "Colchicine",
-  "Cyclophosphamide",
-  "Dexamethasone",
-  "Diazepam",
-  "Doxycycline",
-  "Duloxetine",
-  "Enalapril",
-  "Escitalopram",
-  "Etoricoxib",
-  "Famotidine",
-  "Fexofenadine",
-  "Fluconazole",
-  "Fluoxetine",
-  "Furosemide",
-  "Gabapentin",
-  "Gliclazide",
-  "Haloperidol",
-  "Hydroxychloroquine",
-  "Hydrocodone",
-  "Hydrocortisone",
-  "Hydroxyzine",
-  "Ibuprofen",
-  "Imatinib",
-  "Indapamide",
-  "Isosorbide Dinitrate",
-  "Labetalol",
-  "Lamotrigine",
-  "Levofloxacin",
-  "Levothyroxine",
-  "Lisinopril",
-  "Lorazepam",
-  "Losartan",
-  "Loratadine",
-  "Loperamide",
-  "Methadone",
-  "Methotrexate",
-  "Methylprednisolone",
-  "Metoclopramide",
-  "Metoprolol",
-  "Miconazole",
-  "Moxifloxacin",
-  "Naproxen",
-  "Nifedipine",
-  "Nitroglycerin",
-  "Omeprazole",
-  "Ondansetron",
-  "Oxycodone",
-  "Pantoprazole",
-  "Paracetamol",
-  "Perindopril",
-  "Phenobarbital",
-  "Prednisolone",
-  "Pregabalin",
-  "Prochlorperazine",
-  "Propranolol",
-  "Quetiapine",
-  "Ranitidine",
-  "Rivaroxaban",
-  "Sertraline",
-  "Simvastatin",
-  "Sildenafil",
-  "Sodium Bicarbonate",
-  "Spironolactone",
-  "Sumatriptan",
-  "Tamsulosin",
-  "Temazepam",
-  "Terbinafine",
-  "Thyroxine",
-  "Tramadol",
-  "Trazodone",
-  "Valacyclovir",
-  "Valproate",
-  "Venlafaxine",
-  "Verapamil",
-  "Vitamin B12",
-  "Vitamin D",
-  "Warfarin",
-  "Zinc Sulfate",
-  "Zolpidem",
-  "Zolmitriptan",
-  "Zostavax",
-  "Aceclofenac",
-  "Acetaminophen",
-  "Acetazolamide",
-  "Alendronate",
-  "Alfuzosin",
-  "Allopurinol",
-  "Alprazolam",
-  "Amitriptyline",
-  "Amoxicillin",
-  "Amphetamine",
-  "Anastrozole",
-  "Artemisinin",
-  "Atorvastatin",
-  "Bacitracin",
-  "Benzodiazepine",
-  "Bisacodyl",
-  "Bromocriptine",
-  "Calcium Carbonate",
-  "Carbocisteine",
-  "Cefaclor",
-  "Cefdinir",
-  "Cefixime",
-  "Cefpodoxime",
-  "Ceftriaxone",
-  "Cetylpyridinium Chloride",
-  "Chlorhexidine",
-  "Clarithromycin",
-  "Clonazepam",
-  "Corticosteroids",
-  "Cromolyn Sodium",
-  "Cyclizine",
-  "Cyclopropane",
-  "Dabigatran",
-  "Dantrolene",
-  "Desloratadine",
-  "Dexamethasone",
-  "Diazepam",
-  "Diphenhydramine",
-  "Docetaxel",
-  "Doxazosin",
-  "Doxylamine",
-  "Echinacea",
-  "Enoxaparin",
-  "Erythromycin",
-  "Estradiol",
-  "Etodolac",
-  "Fenofibrate",
-  "Fexofenadine",
-  "Fluvoxamine",
-  "Gabapentin",
-  "Glimepiride",
-  "Glibenclamide",
-  "Haloperidol",
-  "Hydrocodone",
-  "Hydrocortisone",
-  "Ibuprofen",
-  "Imipramine",
-  "Ipratropium",
-  "Ivermectin",
-  "Ketoconazole",
-  "Ketorolac",
-  "Lactulose",
-  "Lansoprazole",
-  "Lisinopril",
-  "Lorazepam",
-  "Magnesium Sulfate",
-  "Mepivacaine",
-  "Methadone",
-  "Metolazone",
-  "Miconazole",
-  "Methylphenidate",
-  "Mupirocin",
-  "Naprosyn",
-  "Nicotine",
-  "Nitrofurantoin",
-  "Nortriptyline",
-  "Nystatin",
-  "Olmesartan",
-  "Oxybutynin",
-  "Oxycodone",
-  "Paroxetine",
-  "Peptic Ulcer",
-  "Phenytoin",
-  "Piperacillin",
-  "Piroxicam",
-  "Prednisone",
-  "Pregabalin",
-  "Procaine",
-  "Ranitidine",
-  "Repaglinide",
-  "Ropinirole",
-  "Rufinamide",
-  "Salmeterol",
-  "Sertraline",
-  "Simvastatin",
-  "Spironolactone",
-  "Sulfamethoxazole",
-  "Sundown Vitamin D",
-  "Tadalafil",
-  "Terazosin",
-  "Tetracycline",
-  "Thyroxin",
-  "Tobramycin",
-  "Tolterodine",
-  "Triamterene",
-  "Valacyclovir",
-  "Varenicline",
-  "Verapamil",
-  "Vitamins B6 and B12",
-  "Warfarin",
-  "Zafirlukast",
-  "Zolpidem",
-  "Zoster Vaccine",
-  "Zucapsaicin",
-  "Dulcoflex",
-  "Panadol",
-  "Crocin",
-  "Brufen",
-  "Azee",
-  "Zithromax",
-  "Erythrocin",
-  "Azoran",
-  "Ecosprin",
-  "Allegra",
-  "Claritin",
-  "Zyrtec",
-  "Tynal",
-  "Benadryl",
-  "Voltaren",
-  "Diclofenac Gel",
-  "Dolo 650",
-  "Cipladine",
-  "Gaviscon",
-  "Imodium",
-  "Maalox",
-  "Tums",
-  "Mucinex",
-  "Vicks",
-  "Neosporin",
-  "Vaseline",
-  "Nexium",
-  "Omeprozole",
-  "Rantac",
-  "Omez",
-  "Zantac",
-  "Zydus",
-  "Ciprofloxacin",
-  "Oflomax",
-  "Cefspan",
-  "Furosemide",
-  "Glycomet",
-  "Metformin",
-  "Glucophage",
-  "Diamicron",
-  "Janumet",
-  "Glibenclamide",
-  "Januvia",
-  "Lipitor",
-  "Zocor",
-  "Atorvastatin",
-  "Rosuvastatin",
-  "Zetia",
-  "Benzac AC",
-  "Doxycycline",
-  "Amlodipine",
-  "Cozar",
-  "Telsartan",
-  "Bendroflumethiazide",
-  "Chlorothiazide",
-  "Lasix",
-  "Lasix",
-  "Enalapril",
-  "Captopril",
-  "Ramipril",
-  "Olmesartan",
-  "Tegretol",
-  "Metoprolol",
-  "Propranolol",
-  "Inderal",
-  "Avil",
-  "Cetirizine",
-  "Cipralex",
-  "Lexapro",
-  "Effexor",
-  "Venlafaxine",
-  "Duloxetine",
-  "Zoloft",
-  "Prozac",
-  "Xanax",
-  "Valium",
-  "Diazepam",
-  "Ativan",
-  "Lorazepam",
-  "Clonazepam",
-  "Alprazolam",
-  "Risperdal",
-  "Olanzapine",
-  "Abilify",
-  "Quetiapine",
-  "Haloperidol",
-  "Rexulti",
-  "Stilnox",
-  "Tramadol",
-  "Dolonex",
-  "Targin",
-  "Colospa",
-  "Meftal Spas",
-  "Drotaverine",
-  "Cipralex",
-  "Betnovate",
-  "Clobetasol",
-  "Fucibet",
-  "Tacrolimus",
-  "Prednisolone",
-  "Betnesol",
-  "Elocon",
-  "Nicotex",
-  "Varenicline",
-  "Citrusella",
-  "Folic Acid",
-  "Caltrate",
-  "Magne B6",
-  "Osteofos",
-  "Dymista",
-  "Seretide",
-  "Salbutamol",
-  "Ventolin",
-  "Symbicort",
-  "Budesonide",
-  "Fluticasone",
-  "Seretide",
-  "Tiotropium",
-  "Ipratropium",
-  "Montair",
-  "Singulair",
-  "Daiwa",
-  "Thyroxine",
-  "Thyronorm",
-  "Synthroid",
-  "Glucovance",
-  "Glycomet",
-  "Pyrazinamide",
-  "Ciprofloxacin",
-  "Zithromax",
-  "Vicks",
-  "Loratadine",
-  "Clarinase",
-  "Allerpet",
-  "Lytol",
-  "Ventorlin",
-  "Furosemide",
-  "Diamox",
-  "Zantac",
-  "Sucralfate",
-  "Ailran",
-  "Seroquel",
-  "Hydrocodone",
-  "Tussinex",
-  "Pamelor",
-  "Marinol",
-  "Sandoz",
-  "Decadron",
-  "Methylprednisolone",
-  "Methotrexate",
-  "Mycobal",
-  "Enbrel",
-  "Humira",
-  "Zolpidem",
-  "Ambien",
-  "Nitrostat",
-  "Aspirin",
-  "Clexane",
-  "Enoxaparin",
-  "Rivaroxaban",
-  "Eliquis",
-  "Xarelto",
-  "Heparin",
-  "Warfarin",
-  "Tigecycline",
-  "Odanestron",
-  "Zithromax",
-  "Zosyn",
-  "Azithromycin",
-  "Solpadeine",
-  "Hydroxyurea",
-  "Tybost",
-  "Patanol",
-  "Triptans",
-  "Ultraset",
-  "Vibramycin",
-  "Allegra",
-  "Nizoral",
-  "Clotrimazole",
-  "Triderm",
-  "Lamisil",
-  "Fluconazole",
-  "Miconazole",
-  "Minocycline",
-  "Claritin",
-  "Ketoconazole",
-  "Sodium Bicarbonate",
-  "Keflex",
-  "Cleocin",
-  "Alupent",
-  "Aceclofenac",
-  "Nexium",
-  "Omeprozole",
-  "Sumatriptan",
-  "Migralex",
-  "Lasix",
-  "Clindamycin",
-  "Protonix",
-  "Crestor",
-  "Sodium Bicarbonate",
-  "Ciprofloxacin",
-  "Zyvox",
-  "Metoclopramide",
-  "Lansoprazole",
-  "Acyclovir",
-  "Tamiflu",
-  "Vicks VapoRub",
-  "Benzalkonium Chloride",
-  "Ciprodex",
-  "Zovirax",
-  "Avelox",
-  "Lisinopril",
-  "Apixaban",
-  "Coumadin",
-  "Vioxx",
-  "Norvasc",
-  "Metformin",
-  "Zantac",
-  "Amlodipine",
-  "Savella",
-  "Depakote",
-  "Lyrica",
-  "Pristiq",
-  "Geodon",
-  "Sertraline",
-  "Tegretol",
-  "Plaquenil",
-  "Neurontin",
-  "Glucophage",
-  "Januvia",
-  "Singulair",
-  "Enbrel",
-  "Advair",
-  "Allegra-D",
-  "Aldactone",
-  "Amaryl",
-  "Amitriptyline",
-  "Amoxil",
-  "Ampyra",
-  "Anaprox",
-  "Angeliq",
-  "Antara",
-  "Arava",
-  "Arimidex",
-  "Asacol",
-  "Aspercreme",
-  "Astepro",
-  "Atarax",
-  "Ativan",
-  "Avandia",
-  "Avapro",
-  "Bactrim",
-  "Bactroban",
-  "Benzaclin",
-  "Benzedrex",
-  "Biaxin",
-  "Bingocardi",
-  "Breo Ellipta",
-  "Brilinta",
-  "Bydureon",
-  "Caduet",
-  "Cafcit",
-  "Calan",
-  "Capoten",
-  "Carafate",
-  "Carvedilol",
-  "Celebrex",
-  "Cefzil",
-  "Cetraxal",
-  "Chantix",
-  "Chlor-Trimeton",
-  "Cialis",
-  "Cilostazol",
-  "Cipro",
-  "Claritin-D",
-  "Clindagel",
-  "Clomid",
-  "Clozaril",
-  "Cortef",
-  "Cortizone",
-  "Coumadin",
-  "Crestor",
-  "Cubicin",
-  "Daliresp",
-  "Dantrolene",
-  "Darvocet",
-  "Delsym",
-  "Desyrel",
-  "Dexilant",
-  "Diabeta",
-  "Diazepam",
-  "Divalproex",
-  "Doxy",
-  "Dulera",
-  "Duragesic",
-  "Dynavel",
-  "Effexor XR",
-  "Elavil",
-  "Enbrel",
-  "Esidrix",
-  "Estrace",
-  "Evista",
-  "Excedrin",
-  "Feldene",
-  "Flagyl",
-  "Flonase",
-  "Flovent",
-  "Fluimucil",
-  "Fluoxetine",
-  "Folic Acid",
-  "Furoxone",
-  "Gabapentin",
-  "Gleevec",
-  "Glucophage XR",
-  "Gleevec",
-  "Hydrocodone-Acetaminophen",
-  "Hyzaar",
-  "Imuran",
-  "Indocin",
-  "Iodex",
-  "Isentress",
-  "Isoptin",
-  "Isuprel",
-  "Januvia",
-  "Jardiance",
-  "Jublia",
-  "Keflex",
-  "Klonopin",
-  "Kybella",
-  "Lamictal",
-  "Lanoxin",
-  "Lantus",
-  "Lasix",
-  "Latuda",
-  "Lisinopril",
-  "Lodine",
-  "Loperamide",
-  "Lyrica",
-  "Malarone",
-  "MayoClinic",
-  "Medrol",
-  "Metadate",
-  "Methadone",
-  "Metformin XR",
-  "Methotrexate",
-  "Methylprednisolone",
-  "Microzide",
-  "Midol",
-  "Minocycline",
-  "Mirapex",
-  "Mobic",
-  "Mucinex",
-  "Naproxen Sodium",
-  "Narcan",
-  "Nasonex",
-  "Nexium",
-  "Nicorette",
-  "Nitro-Dur",
-  "Nolvadex",
-  "Norco",
-  "Noxafil",
-  "Ogen",
-  "Olaparib",
-  "Omeprazole",
-  "Onfi",
-  "Opana",
-  "OxyContin",
-  "Oxycodone",
-  "Pamelor",
-  "Panadol",
-  "Pantoprazole",
-  "Paroxetine",
-  "Paxil",
-  "Percocet",
-  "PillCam",
-  "Plaquenil",
-  "Prilosec",
-  "Proair",
-  "Procardia",
-  "Prograf",
-  "Prozac",
-  "Pulmicort",
-  "Qvar",
-  "Repatha",
-  "Restasis",
-  "Rexulti",
-  "Ritalin",
-  "Rofecoxib",
-  "Roxicodone",
-  "Seroquel",
-  "Similac",
-  "Singulair",
-  "Sitagliptin",
-  "Sodium Bicarbonate",
-  "Soolantra",
-  "Sparfloxacin",
-  "Sprycel",
-  "Starlix",
-  "Suffrex",
-  "Symbicort",
-  "Synthroid",
-  "Tadalafil",
-  "Tamiflu",
-  "Tamsulosin",
-  "Temodar",
-  "Terbinafine",
-  "Topamax",
-  "Tramadol",
-  "Tretinoin",
-  "Trulicity",
-  "Tylenol",
-  "Valacyclovir",
-  "Valium",
-  "Vasotec",
-  "Vayarin",
-  "Vibramycin",
-  "Vicodin",
-  "Vimovo",
-  "Viread",
-  "Vyvanse",
-  "Wellbutrin",
-  "Xanax",
-  "Xarelto",
-  "Zantac",
-  "Zithromax",
-  "Zocor",
-  "Zofran",
-  "Zolpidem",
-  "Zosyn",
-  "Zyban",
-  "Zyrtec",
-  "Zydus",
-  "Zyflo",
-  "Zyprexa",
-  "AcipHex",
-  "Actos",
-  "Advil",
-  "Alphagan",
-  "Amitiza",
-  "Avandamet",
-  "Bactroban",
-  "Benzaclin",
-  "Boniva",
-  "Breo",
-  "Capecitabine",
-  "Capreomycin",
-  "Caverta",
-  "Celebrex",
-  "Cialis",
-  "Ciprodex",
-  "Claritin",
-  "Clomid",
-  "Clopidogrel",
-  "Comtan",
-  "Dexamethasone",
-  "Dexilant",
-  "Digoxin",
-  "Diphenhydramine",
-  "Divalproex",
-  "Duricef",
-  "Durogesic",
-  "Elmiron",
-  "Enbrel",
-  "Entocort",
-  "Estrace",
-  "Estring",
-  "Fentanyl",
-  "Flonase",
-  "Fluoxetine",
-  "Fosamax",
-  "Gabapentin",
-  "Geodon",
-  "Glucophage",
-  "Halcion",
-  "Humira",
-  "Hydrocodone",
-  "Hydroxyzine",
-  "Imuran",
-  "Inderal",
-  "Irbesartan",
-  "Klonopin",
-  "Lantus",
-  "Lasix",
-  "Lisinopril",
-  "Lodine",
-  "Lorazepam",
-  "Lotrel",
-  "Lyrica",
-  "Micardis",
-  "Minocin",
-  "Motrin",
-  "Naproxen",
-  "Norvasc",
-  "Nucynta",
-  "Odomos",
-  "Omeclamox",
-  "Omeprazole",
-  "Paracetamol",
-  "Paxil",
-  "Percocet",
-  "Phenergan",
-  "Plavix",
-  "Prilosec",
-  "Prolia",
-  "Remicade",
-  "Requip",
-  "Seroquel",
-  "Simvastatin",
-  "Sitagliptin",
-  "Singulair",
-  "Sodium Chloride",
-  "Stelara",
-  "Sublimaze",
-  "Sulfamethoxazole",
-  "Symbicort",
-  "Tadacip",
-  "Tamsulosin",
-  "Tegretol",
-  "Topamax",
-  "Tramadol",
-  "Trazodone",
-  "Tricor",
-  "Vasotec",
-  "Venclexta",
-  "Vicodin",
-  "Vigamox",
-  "Vimovo",
-  "Viread",
-  "Warfarin",
-  "Xanax",
-  "Xarelto",
-  "Zantac",
-  "Zithromax",
-  "Zofran",
-  "Zyrtec",
-  "Adderall",
-  "Advil",
-  "Allegra",
-  "Amitiza",
-  "Amoxicillin",
-  "Ampyra",
-  "Antivert",
-  "Arava",
-  "Arimidex",
-  "Asacol",
-  "Aspercreme",
-  "Atarax",
-  "Ativan",
-  "Avandia",
-  "Avapro",
-  "Bactrim",
-  "Bactroban",
-  "Benzaclin",
-  "Benzedrex",
-  "Biaxin",
-  "Bingocardi",
-  "Breo Ellipta",
-  "Brilinta",
-  "Bydureon",
-  "Caduet",
-  "Cafcit",
-  "Calan",
-  "Capoten",
-  "Carafate",
-  "Carvedilol",
-  "Celebrex",
-  "Cefzil",
-  "Cetraxal",
-  "Chantix",
-  "Chlor-Trimeton",
-  "Cialis",
-  "Cilostazol",
-  "Cipro",
-  "Claritin-D",
-  "Clindagel",
-  "Clomid",
-  "Clozaril",
-  "Cortef",
-  "Cortizone",
-  "Coumadin",
-  "Crestor",
-  "Cubicin",
-  "Daliresp",
-  "Dantrolene",
-  "Darvocet",
-  "Delsym",
-  "Desyrel",
-  "Dexilant",
-  "Diabeta",
-  "Diazepam",
-  "Divalproex",
-  "Doxy",
-  "Dulera",
-  "Duragesic",
-  "Dynavel",
-  "Effexor XR",
-  "Elavil",
-  "Enbrel",
-  "Esidrix",
-  "Estrace",
-  "Evista",
-  "Excedrin",
-  "Feldene",
-  "Flagyl",
-  "Flonase",
-  "Flovent",
-  "Fluimucil",
-  "Fluoxetine",
-  "Folic Acid",
-  "Furoxone",
-  "Gabapentin",
-  "Gleevec",
-  "Glucophage XR",
-  "Gleevec",
-  "Hydrocodone-Acetaminophen",
-  "Hyzaar",
-  "Imuran",
-  "Indocin",
-  "Iodex",
-  "Isentress",
-  "Isoptin",
-  "Isuprel",
-  "Januvia",
-  "Jardiance",
-  "Jublia",
-  "Keflex",
-  "Klonopin",
-  "Kybella",
-  "Lamictal",
-  "Lanoxin",
-  "Lantus",
-  "Lasix",
-  "Latuda",
-  "Lisinopril",
-  "Lodine",
-  "Loperamide",
-  "Lyrica",
-  "Malarone",
-  "MayoClinic",
-  "Medrol",
-  "Metadate",
-  "Methadone",
-  "Metformin XR",
-  "Methotrexate",
-  "Methylprednisolone",
-  "Microzide",
-  "Midol",
-  "Minocycline",
-  "Mirapex",
-  "Mobic",
-  "Mucinex",
-  "Naproxen Sodium",
-  "Narcan",
-  "Nasonex",
-  "Nexium",
-  "Nicorette",
-  "Nitro-Dur",
-  "Nolvadex",
-  "Norco",
-  "Noxafil",
-  "Ogen",
-  "Olaparib",
-  "Omeprazole",
-  "Onfi",
-  "Opana",
-  "OxyContin",
-  "Oxycodone",
-  "Pamelor",
-  "Panadol",
-  "Pantoprazole",
-  "Paroxetine",
-  "Paxil",
-  "Percocet",
-  "PillCam",
-  "Plaquenil",
-  "Prilosec",
-  "Proair",
-  "Procardia",
-  "Prograf",
-  "Prozac",
-  "Pulmicort",
-  "Qvar",
-  "Repatha",
-  "Restasis",
-  "Rexulti",
-  "Ritalin",
-  "Rofecoxib",
-  "Roxicodone",
-  "Seroquel",
-  "Similac",
-  "Singulair",
-  "Sitagliptin",
-  "Sodium Bicarbonate",
-  "Soolantra",
-  "Sparfloxacin",
-  "Sprycel",
-  "Starlix",
-  "Suffrex",
-  "Symbicort",
-  "Synthroid",
-  "Tadalafil",
-  "Tamiflu",
-  "Tamsulosin",
-  "Temodar",
-  "Terbinafine",
-  "Topamax",
-  "Tramadol",
-  "Tretinoin",
-  "Trulicity",
-  "Tylenol",
-  "Valacyclovir",
-  "Valium",
-  "Vasotec",
-  "Vayarin",
-  "Vibramycin",
-  "Vicodin",
-  "Vimovo",
-  "Viread",
-  "Vyvanse",
-  "Wellbutrin",
-  "Xanax",
-  "Xarelto",
-  "Zantac",
-  "Zithromax",
-  "Zocor",
-  "Zofran",
-  "Zolpidem",
-  "Zosyn",
-  "Zyban",
-  "Zyrtec",
-  "Zydus",
-  "Zyflo",
-  "Zyprexa",
-  "AcipHex",
-  "Actos",
-  "Advil",
-  "Alphagan",
-  "Amitiza",
-  "Avandamet",
-  "Bactroban",
-  "Benzaclin",
-  "Boniva",
-  "Breo",
-  "Capecitabine",
-  "Capreomycin",
-  "Caverta",
-  "Celebrex",
-  "Cialis",
-  "Ciprodex",
-  "Claritin",
-  "Clomid",
-  "Clopidogrel",
-  "Comtan",
-  "Dexamethasone",
-  "Dexilant",
-  "Digoxin",
-  "Diphenhydramine",
-  "Divalproex",
-  "Duricef",
-  "Durogesic",
-  "Elmiron",
-  "Enbrel",
-  "Entocort",
-  "Estrace",
-  "Estring",
-  "Fentanyl",
-  "Flonase",
-  "Fluoxetine",
-  "Fosamax",
-  "Gabapentin",
-  "Geodon",
-  "Glucophage",
-  "Halcion",
-  "Humira",
-  "Hydrocodone",
-  "Hydroxyzine",
-  "Imuran",
-  "Inderal",
-  "Irbesartan",
-  "Klonopin",
-  "Lantus",
-  "Lasix",
-  "Latuda",
-  "Lisinopril",
-  "Lodine",
-  "Lorazepam",
-  "Lotrel",
-  "Lyrica",
-  "Micardis",
-  "Minocin",
-  "Motrin",
-  "Naproxen",
-  "Norvasc",
-  "Nucynta",
-  "Odomos",
-  "Omeclamox",
-  "Omeprazole",
-  "Paracetamol",
-  "Paxil",
-  "Percocet",
-  "Phenergan",
-  "Plavix",
-  "Prilosec",
-  "Prolia",
-  "Remicade",
-  "Requip",
-  "Seroquel",
-  "Simvastatin",
-  "Sitagliptin",
-  "Singulair",
-  "Sodium Chloride",
-  "Stelara",
-  "Sublimaze",
-  "Sulfamethoxazole",
-  "Symbicort",
-  "Tadacip",
-  "Tamsulosin",
-  "Tegretol",
-  "Topamax",
-  "Tramadol",
-  "Trazodone",
-  "Tricor",
-  "Vasotec",
-  "Venclexta",
-  "Vicodin",
-  "Vigamox",
-  "Vimovo",
-  "Viread",
-  "Warfarin",
-  "Xanax",
-  "Xarelto",
-  "Zantac",
-  "Zithromax",
-  "Zofran",
-  "Zyrtec",
-  "Calpol 250mg (Syrup)",
-  "Calpol 500",
-  "Calpol 650",
-  "Calpol Paediatric Drops Peppermint (bottle of 15 ml Oral Suspension)"
+  {
+    "name": "Paracetamol",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ibuprofen",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metformin",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Atorvastatin",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pantoprazole",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omeprazole",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amlodipine",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Losartan",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Azithromycin",
+    "price": 46,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ciprofloxacin",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amoxicillin",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dolo 650",
+    "price": 89,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cetirizine",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Levocetirizine",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Montelukast",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ranitidine",
+    "price": 65,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Famotidine",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Esomeprazole",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diclofenac",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Aceclofenac",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tramadol",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cefixime",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cefpodoxime",
+    "price": 88,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ceftriaxone",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clarithromycin",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clindamycin",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metronidazole",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Albendazole",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ivermectin",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydroxychloroquine",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chloroquine",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sitagliptin",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Teneligliptin",
+    "price": 46,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glimepiride",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glibenclamide",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pioglitazone",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Insulin",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Thyroxine",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carbimazole",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Loratadine",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fexofenadine",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Betamethasone",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prednisolone",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dexamethasone",
+    "price": 96,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methylprednisolone",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrocortisone",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Salbutamol",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Formoterol",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Budesonide",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluticasone",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Seretide",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tiotropium",
+    "price": 68,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ipratropium",
+    "price": 82,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Theophylline",
+    "price": 68,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Acetylcysteine",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bromhexine",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ambroxol",
+    "price": 47,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Erythromycin",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Linezolid",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vancomycin",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Piperacillin-Tazobactam",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Meropenem",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Imipenem",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Doxycycline",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Minocycline",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Aspirin",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clopidogrel",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ticagrelor",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Warfarin",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dabigatran",
+    "price": 17,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Apixaban",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rivaroxaban",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Heparin",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enoxaparin",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ferrous Sulfate",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Folic Acid",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vitamin D3",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Calcium Carbonate",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zinc Sulfate",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Magnesium Hydroxide",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sodium Bicarbonate",
+    "price": 17,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lactulose",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Polyethylene Glycol",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bisacodyl",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Docusate",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Domperidone",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metoclopramide",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ondansetron",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Granisetron",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Propranolol",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metoprolol",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carvedilol",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bisoprolol",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Atenolol",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diltiazem",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Verapamil",
+    "price": 88,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enalapril",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ramipril",
+    "price": 71,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Perindopril",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Telmisartan",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Olmesartan",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrochlorothiazide",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chlorthalidone",
+    "price": 17,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Furosemide",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Spironolactone",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Eplerenone",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nitroglycerin",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Isosorbide Mononitrate",
+    "price": 64,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Digoxin",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amiodarone",
+    "price": 67,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sotalol",
+    "price": 77,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ketoconazole",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clotrimazole",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluconazole",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Itraconazole",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Terbinafine",
+    "price": 64,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nystatin",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Acyclovir",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Valacyclovir",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Oseltamivir",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ribavirin",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydroxyurea",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methotrexate",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Azathioprine",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cyclophosphamide",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Adalimumab",
+    "price": 88,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Etanercept",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rituximab",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bevacizumab",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Trastuzumab",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paclitaxel",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cisplatin",
+    "price": 88,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carboplatin",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vincristine",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Doxorubicin",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Imatinib",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Erlotinib",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gefitinib",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sunitinib",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sorafenib",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Levothyroxine",
+    "price": 33,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Thyronorm",
+    "price": 17,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prochlorperazine",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Haloperidol",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Olanzapine",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Risperidone",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Quetiapine",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Aripiprazole",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Duloxetine",
+    "price": 85,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Venlafaxine",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sertraline",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paroxetine",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluoxetine",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amitriptyline",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clonazepam",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diazepam",
+    "price": 71,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lorazepam",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Alprazolam",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Phenobarbital",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Valproate",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carbamazepine",
+    "price": 89,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Levetiracetam",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Topiramate",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gabapentin",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pregabalin",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lamotrigine",
+    "price": 58,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Calamine Lotion (used for skin irritation)",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydroxyzine (antihistamine for anxiety and allergies)",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ranitidine Bismuth Citrate (ulcer treatment)",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nitrofurantoin (for urinary tract infections)",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Trimethoprim (antibiotic for bacterial infections)",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Levofloxacin (antibiotic for respiratory infections)",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carbocisteine (mucolytic for respiratory conditions)",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fexofenadine (antihistamine for allergies)",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tacrolimus (immunosuppressant for organ transplants and skin conditions)",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mycophenolate Mofetil (immunosuppressant)",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Alendronate (for osteoporosis)",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Risedronate (bone health medication)",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bisacodyl Suppositories (laxative)",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sucralfate (for gastric ulcers)",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lidocaine (local anesthetic)",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ketorolac (pain relief)",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chlorpheniramine (antihistamine for colds and allergies)",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Phenylephrine (decongestant)",
+    "price": 68,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Oxymetazoline (nasal spray for congestion)",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Salicylic Acid (used for acne and skin conditions)",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Betadine (antiseptic)",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mupirocin (antibiotic ointment)",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tamsulosin (for prostate conditions)",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Finasteride (used for benign prostatic hyperplasia and hair loss)",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Allopurinol (for gout and high uric acid)",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Colchicine (for acute gout)",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sildenafil (used for erectile dysfunction and pulmonary hypertension)",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tadalafil (for erectile dysfunction)",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vildagliptin (antidiabetic medication)",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Empagliflozin (for diabetes management)",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dapagliflozin (SGLT2 inhibitor for diabetes)",
+    "price": 68,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Linagliptin (antidiabetic medication)",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clobetasol Propionate (topical steroid)",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mometasone (topical and nasal corticosteroid)",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Permethrin (for scabies and lice)",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clotrimazole Lotion (antifungal)",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bacitracin (topical antibiotic)",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Povidone-Iodine (antiseptic)",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Secnidazole (antiprotozoal)",
+    "price": 82,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Meclizine (for motion sickness)",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Acyclovir",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Albuterol",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amikacin",
+    "price": 47,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amiodarone",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amlodipine",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ampicillin",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Anastrozole",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Aripiprazole",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Azathioprine",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Baclofen",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benzonatate",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bismuth Subsalicylate",
+    "price": 85,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Budesonide",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Captopril",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carbamazepine",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carvedilol",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cetirizine",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chlorpheniramine",
+    "price": 65,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chloroquine",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ciprofloxacin",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clindamycin",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clonidine",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clozapine",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Colchicine",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cyclophosphamide",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dexamethasone",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diazepam",
+    "price": 61,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Doxycycline",
+    "price": 58,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Duloxetine",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enalapril",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Escitalopram",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Etoricoxib",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Famotidine",
+    "price": 46,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fexofenadine",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluconazole",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluoxetine",
+    "price": 71,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Furosemide",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gabapentin",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gliclazide",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Haloperidol",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydroxychloroquine",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrocodone",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrocortisone",
+    "price": 61,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydroxyzine",
+    "price": 66,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ibuprofen",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Imatinib",
+    "price": 73,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Indapamide",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Isosorbide Dinitrate",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Labetalol",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lamotrigine",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Levofloxacin",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Levothyroxine",
+    "price": 42,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lisinopril",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lorazepam",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Losartan",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Loratadine",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Loperamide",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methadone",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methotrexate",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methylprednisolone",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metoclopramide",
+    "price": 82,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metoprolol",
+    "price": 64,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Miconazole",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Moxifloxacin",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Naproxen",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nifedipine",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nitroglycerin",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omeprazole",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ondansetron",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Oxycodone",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pantoprazole",
+    "price": 89,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paracetamol",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Perindopril",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Phenobarbital",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prednisolone",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pregabalin",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prochlorperazine",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Propranolol",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Quetiapine",
+    "price": 33,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ranitidine",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rivaroxaban",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sertraline",
+    "price": 42,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Simvastatin",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sildenafil",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sodium Bicarbonate",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Spironolactone",
+    "price": 42,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sumatriptan",
+    "price": 25,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tamsulosin",
+    "price": 25,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Temazepam",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Terbinafine",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Thyroxine",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tramadol",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Trazodone",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Valacyclovir",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Valproate",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Venlafaxine",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Verapamil",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vitamin B12",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vitamin D",
+    "price": 85,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Warfarin",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zinc Sulfate",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zolpidem",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zolmitriptan",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zostavax",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Aceclofenac",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Acetaminophen",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Acetazolamide",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Alendronate",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Alfuzosin",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Allopurinol",
+    "price": 68,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Alprazolam",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amitriptyline",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amoxicillin",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amphetamine",
+    "price": 33,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Anastrozole",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Artemisinin",
+    "price": 46,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Atorvastatin",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bacitracin",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benzodiazepine",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bisacodyl",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bromocriptine",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Calcium Carbonate",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carbocisteine",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cefaclor",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cefdinir",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cefixime",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cefpodoxime",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ceftriaxone",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cetylpyridinium Chloride",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chlorhexidine",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clarithromycin",
+    "price": 64,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clonazepam",
+    "price": 42,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Corticosteroids",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cromolyn Sodium",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cyclizine",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cyclopropane",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dabigatran",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dantrolene",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Desloratadine",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dexamethasone",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diazepam",
+    "price": 64,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diphenhydramine",
+    "price": 21,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Docetaxel",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Doxazosin",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Doxylamine",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Echinacea",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enoxaparin",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Erythromycin",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Estradiol",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Etodolac",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fenofibrate",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fexofenadine",
+    "price": 15,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluvoxamine",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gabapentin",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glimepiride",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glibenclamide",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Haloperidol",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrocodone",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrocortisone",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ibuprofen",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Imipramine",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ipratropium",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ivermectin",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ketoconazole",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ketorolac",
+    "price": 71,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lactulose",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lansoprazole",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lisinopril",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lorazepam",
+    "price": 85,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Magnesium Sulfate",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mepivacaine",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methadone",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metolazone",
+    "price": 66,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Miconazole",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methylphenidate",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mupirocin",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Naprosyn",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nicotine",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nitrofurantoin",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nortriptyline",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nystatin",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Olmesartan",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Oxybutynin",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Oxycodone",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paroxetine",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Peptic Ulcer",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Phenytoin",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Piperacillin",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Piroxicam",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prednisone",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pregabalin",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Procaine",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ranitidine",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Repaglinide",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ropinirole",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rufinamide",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Salmeterol",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sertraline",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Simvastatin",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Spironolactone",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sulfamethoxazole",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sundown Vitamin D",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tadalafil",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Terazosin",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tetracycline",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Thyroxin",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tobramycin",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tolterodine",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Triamterene",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Valacyclovir",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Varenicline",
+    "price": 71,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Verapamil",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vitamins B6 and B12",
+    "price": 21,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Warfarin",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zafirlukast",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zolpidem",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zoster Vaccine",
+    "price": 64,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zucapsaicin",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dulcoflex",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Panadol",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Crocin",
+    "price": 65,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Brufen",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Azee",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zithromax",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Erythrocin",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Azoran",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ecosprin",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Allegra",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Claritin",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyrtec",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tynal",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benadryl",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Voltaren",
+    "price": 58,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diclofenac Gel",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dolo 650",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cipladine",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gaviscon",
+    "price": 17,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Imodium",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Maalox",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tums",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mucinex",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vicks",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Neosporin",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vaseline",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nexium",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omeprozole",
+    "price": 89,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rantac",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omez",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zantac",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zydus",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ciprofloxacin",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Oflomax",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cefspan",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Furosemide",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glycomet",
+    "price": 65,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metformin",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glucophage",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diamicron",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Janumet",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glibenclamide",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Januvia",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lipitor",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zocor",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Atorvastatin",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rosuvastatin",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zetia",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benzac AC",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Doxycycline",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amlodipine",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cozar",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Telsartan",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bendroflumethiazide",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chlorothiazide",
+    "price": 61,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lasix",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lasix",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enalapril",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Captopril",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ramipril",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Olmesartan",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tegretol",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metoprolol",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Propranolol",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Inderal",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Avil",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cetirizine",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cipralex",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lexapro",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Effexor",
+    "price": 82,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Venlafaxine",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Duloxetine",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zoloft",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prozac",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Xanax",
+    "price": 73,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Valium",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diazepam",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ativan",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lorazepam",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clonazepam",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Alprazolam",
+    "price": 25,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Risperdal",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Olanzapine",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Abilify",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Quetiapine",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Haloperidol",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rexulti",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Stilnox",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tramadol",
+    "price": 96,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dolonex",
+    "price": 82,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Targin",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Colospa",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Meftal Spas",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Drotaverine",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cipralex",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Betnovate",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clobetasol",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fucibet",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tacrolimus",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prednisolone",
+    "price": 65,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Betnesol",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Elocon",
+    "price": 67,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nicotex",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Varenicline",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Citrusella",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Folic Acid",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Caltrate",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Magne B6",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Osteofos",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dymista",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Seretide",
+    "price": 47,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Salbutamol",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ventolin",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Symbicort",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Budesonide",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluticasone",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Seretide",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tiotropium",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ipratropium",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Montair",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Singulair",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Daiwa",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Thyroxine",
+    "price": 88,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Thyronorm",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Synthroid",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glucovance",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glycomet",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pyrazinamide",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ciprofloxacin",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zithromax",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vicks",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Loratadine",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clarinase",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Allerpet",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lytol",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ventorlin",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Furosemide",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diamox",
+    "price": 61,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zantac",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sucralfate",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ailran",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Seroquel",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrocodone",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tussinex",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pamelor",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Marinol",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sandoz",
+    "price": 73,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Decadron",
+    "price": 17,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methylprednisolone",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methotrexate",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mycobal",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enbrel",
+    "price": 64,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Humira",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zolpidem",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ambien",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nitrostat",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Aspirin",
+    "price": 65,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clexane",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enoxaparin",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rivaroxaban",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Eliquis",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Xarelto",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Heparin",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Warfarin",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tigecycline",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Odanestron",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zithromax",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zosyn",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Azithromycin",
+    "price": 66,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Solpadeine",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydroxyurea",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tybost",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Patanol",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Triptans",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ultraset",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vibramycin",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Allegra",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nizoral",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clotrimazole",
+    "price": 89,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Triderm",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lamisil",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluconazole",
+    "price": 85,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Miconazole",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Minocycline",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Claritin",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ketoconazole",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sodium Bicarbonate",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Keflex",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cleocin",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Alupent",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Aceclofenac",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nexium",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omeprozole",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sumatriptan",
+    "price": 25,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Migralex",
+    "price": 21,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lasix",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clindamycin",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Protonix",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Crestor",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sodium Bicarbonate",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ciprofloxacin",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyvox",
+    "price": 25,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metoclopramide",
+    "price": 58,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lansoprazole",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Acyclovir",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tamiflu",
+    "price": 61,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vicks VapoRub",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benzalkonium Chloride",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ciprodex",
+    "price": 85,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zovirax",
+    "price": 96,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Avelox",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lisinopril",
+    "price": 77,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Apixaban",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Coumadin",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vioxx",
+    "price": 42,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Norvasc",
+    "price": 67,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metformin",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zantac",
+    "price": 65,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amlodipine",
+    "price": 15,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Savella",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Depakote",
+    "price": 67,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lyrica",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pristiq",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Geodon",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sertraline",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tegretol",
+    "price": 15,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Plaquenil",
+    "price": 88,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Neurontin",
+    "price": 33,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glucophage",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Januvia",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Singulair",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enbrel",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Advair",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Allegra-D",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Aldactone",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amaryl",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amitriptyline",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amoxil",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ampyra",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Anaprox",
+    "price": 47,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Angeliq",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Antara",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Arava",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Arimidex",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Asacol",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Aspercreme",
+    "price": 64,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Astepro",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Atarax",
+    "price": 96,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ativan",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Avandia",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Avapro",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bactrim",
+    "price": 82,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bactroban",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benzaclin",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benzedrex",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Biaxin",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bingocardi",
+    "price": 36,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Breo Ellipta",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Brilinta",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bydureon",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Caduet",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cafcit",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Calan",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Capoten",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carafate",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carvedilol",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Celebrex",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cefzil",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cetraxal",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chantix",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chlor-Trimeton",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cialis",
+    "price": 33,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cilostazol",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cipro",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Claritin-D",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clindagel",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clomid",
+    "price": 47,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clozaril",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cortef",
+    "price": 33,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cortizone",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Coumadin",
+    "price": 58,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Crestor",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cubicin",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Daliresp",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dantrolene",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Darvocet",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Delsym",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Desyrel",
+    "price": 68,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dexilant",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diabeta",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diazepam",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Divalproex",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Doxy",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dulera",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Duragesic",
+    "price": 58,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dynavel",
+    "price": 96,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Effexor XR",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Elavil",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enbrel",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Esidrix",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Estrace",
+    "price": 66,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Evista",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Excedrin",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Feldene",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Flagyl",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Flonase",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Flovent",
+    "price": 88,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluimucil",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluoxetine",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Folic Acid",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Furoxone",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gabapentin",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gleevec",
+    "price": 77,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glucophage XR",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gleevec",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrocodone-Acetaminophen",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hyzaar",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Imuran",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Indocin",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Iodex",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Isentress",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Isoptin",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Isuprel",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Januvia",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Jardiance",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Jublia",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Keflex",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Klonopin",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Kybella",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lamictal",
+    "price": 77,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lanoxin",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lantus",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lasix",
+    "price": 67,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Latuda",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lisinopril",
+    "price": 82,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lodine",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Loperamide",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lyrica",
+    "price": 47,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Malarone",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "MayoClinic",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Medrol",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metadate",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methadone",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metformin XR",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methotrexate",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methylprednisolone",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Microzide",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Midol",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Minocycline",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mirapex",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mobic",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mucinex",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Naproxen Sodium",
+    "price": 47,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Narcan",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nasonex",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nexium",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nicorette",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nitro-Dur",
+    "price": 71,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nolvadex",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Norco",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Noxafil",
+    "price": 47,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ogen",
+    "price": 73,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Olaparib",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omeprazole",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Onfi",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Opana",
+    "price": 25,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "OxyContin",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Oxycodone",
+    "price": 64,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pamelor",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Panadol",
+    "price": 96,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pantoprazole",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paroxetine",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paxil",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Percocet",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "PillCam",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Plaquenil",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prilosec",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Proair",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Procardia",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prograf",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prozac",
+    "price": 15,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pulmicort",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Qvar",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Repatha",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Restasis",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rexulti",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ritalin",
+    "price": 61,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rofecoxib",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Roxicodone",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Seroquel",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Similac",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Singulair",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sitagliptin",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sodium Bicarbonate",
+    "price": 82,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Soolantra",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sparfloxacin",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sprycel",
+    "price": 82,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Starlix",
+    "price": 61,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Suffrex",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Symbicort",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Synthroid",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tadalafil",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tamiflu",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tamsulosin",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Temodar",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Terbinafine",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Topamax",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tramadol",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tretinoin",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Trulicity",
+    "price": 65,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tylenol",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Valacyclovir",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Valium",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vasotec",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vayarin",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vibramycin",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vicodin",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vimovo",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Viread",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vyvanse",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Wellbutrin",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Xanax",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Xarelto",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zantac",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zithromax",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zocor",
+    "price": 17,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zofran",
+    "price": 61,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zolpidem",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zosyn",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyban",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyrtec",
+    "price": 85,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zydus",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyflo",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyprexa",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "AcipHex",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Actos",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Advil",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Alphagan",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amitiza",
+    "price": 85,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Avandamet",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bactroban",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benzaclin",
+    "price": 17,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Boniva",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Breo",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Capecitabine",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Capreomycin",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Caverta",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Celebrex",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cialis",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ciprodex",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Claritin",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clomid",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clopidogrel",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Comtan",
+    "price": 46,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dexamethasone",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dexilant",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Digoxin",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diphenhydramine",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Divalproex",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Duricef",
+    "price": 46,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Durogesic",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Elmiron",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enbrel",
+    "price": 73,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Entocort",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Estrace",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Estring",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fentanyl",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Flonase",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluoxetine",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fosamax",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gabapentin",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Geodon",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glucophage",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Halcion",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Humira",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrocodone",
+    "price": 47,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydroxyzine",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Imuran",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Inderal",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Irbesartan",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Klonopin",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lantus",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lasix",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lisinopril",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lodine",
+    "price": 68,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lorazepam",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lotrel",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lyrica",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Micardis",
+    "price": 46,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Minocin",
+    "price": 89,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Motrin",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Naproxen",
+    "price": 15,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Norvasc",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nucynta",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Odomos",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omeclamox",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omeprazole",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paracetamol",
+    "price": 33,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paxil",
+    "price": 58,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Percocet",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Phenergan",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Plavix",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prilosec",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prolia",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Remicade",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Requip",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Seroquel",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Simvastatin",
+    "price": 71,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sitagliptin",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Singulair",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sodium Chloride",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Stelara",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sublimaze",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sulfamethoxazole",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Symbicort",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tadacip",
+    "price": 77,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tamsulosin",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tegretol",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Topamax",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tramadol",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Trazodone",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tricor",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vasotec",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Venclexta",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vicodin",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vigamox",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vimovo",
+    "price": 65,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Viread",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Warfarin",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Xanax",
+    "price": 61,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Xarelto",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zantac",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zithromax",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zofran",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyrtec",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Adderall",
+    "price": 46,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Advil",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Allegra",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amitiza",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amoxicillin",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ampyra",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Antivert",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Arava",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Arimidex",
+    "price": 68,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Asacol",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Aspercreme",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Atarax",
+    "price": 66,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ativan",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Avandia",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Avapro",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bactrim",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bactroban",
+    "price": 74,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benzaclin",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benzedrex",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Biaxin",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bingocardi",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Breo Ellipta",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Brilinta",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bydureon",
+    "price": 61,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Caduet",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cafcit",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Calan",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Capoten",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carafate",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Carvedilol",
+    "price": 42,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Celebrex",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cefzil",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cetraxal",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chantix",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Chlor-Trimeton",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cialis",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cilostazol",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cipro",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Claritin-D",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clindagel",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clomid",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clozaril",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cortef",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cortizone",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Coumadin",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Crestor",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cubicin",
+    "price": 66,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Daliresp",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dantrolene",
+    "price": 67,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Darvocet",
+    "price": 25,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Delsym",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Desyrel",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dexilant",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diabeta",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diazepam",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Divalproex",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Doxy",
+    "price": 21,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dulera",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Duragesic",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dynavel",
+    "price": 17,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Effexor XR",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Elavil",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enbrel",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Esidrix",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Estrace",
+    "price": 20,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Evista",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Excedrin",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Feldene",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Flagyl",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Flonase",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Flovent",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluimucil",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluoxetine",
+    "price": 42,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Folic Acid",
+    "price": 96,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Furoxone",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gabapentin",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gleevec",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glucophage XR",
+    "price": 17,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gleevec",
+    "price": 77,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrocodone-Acetaminophen",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hyzaar",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Imuran",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Indocin",
+    "price": 22,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Iodex",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Isentress",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Isoptin",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Isuprel",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Januvia",
+    "price": 87,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Jardiance",
+    "price": 98,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Jublia",
+    "price": 76,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Keflex",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Klonopin",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Kybella",
+    "price": 82,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lamictal",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lanoxin",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lantus",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lasix",
+    "price": 71,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Latuda",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lisinopril",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lodine",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Loperamide",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lyrica",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Malarone",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "MayoClinic",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Medrol",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metadate",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methadone",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Metformin XR",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methotrexate",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Methylprednisolone",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Microzide",
+    "price": 66,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Midol",
+    "price": 89,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Minocycline",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mirapex",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mobic",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Mucinex",
+    "price": 10,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Naproxen Sodium",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Narcan",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nasonex",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nexium",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nicorette",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nitro-Dur",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nolvadex",
+    "price": 25,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Norco",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Noxafil",
+    "price": 73,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ogen",
+    "price": 73,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Olaparib",
+    "price": 58,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omeprazole",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Onfi",
+    "price": 12,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Opana",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "OxyContin",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Oxycodone",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pamelor",
+    "price": 89,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Panadol",
+    "price": 23,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pantoprazole",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paroxetine",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paxil",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Percocet",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "PillCam",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Plaquenil",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prilosec",
+    "price": 41,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Proair",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Procardia",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prograf",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prozac",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Pulmicort",
+    "price": 71,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Qvar",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Repatha",
+    "price": 42,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Restasis",
+    "price": 62,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rexulti",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ritalin",
+    "price": 85,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Rofecoxib",
+    "price": 37,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Roxicodone",
+    "price": 86,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Seroquel",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Similac",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Singulair",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sitagliptin",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sodium Bicarbonate",
+    "price": 66,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Soolantra",
+    "price": 71,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sparfloxacin",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sprycel",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Starlix",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Suffrex",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Symbicort",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Synthroid",
+    "price": 89,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tadalafil",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tamiflu",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tamsulosin",
+    "price": 54,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Temodar",
+    "price": 47,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Terbinafine",
+    "price": 15,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Topamax",
+    "price": 73,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tramadol",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tretinoin",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Trulicity",
+    "price": 92,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tylenol",
+    "price": 80,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Valacyclovir",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Valium",
+    "price": 57,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vasotec",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vayarin",
+    "price": 42,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vibramycin",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vicodin",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vimovo",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Viread",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vyvanse",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Wellbutrin",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Xanax",
+    "price": 44,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Xarelto",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zantac",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zithromax",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zocor",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zofran",
+    "price": 15,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zolpidem",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zosyn",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyban",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyrtec",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zydus",
+    "price": 96,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyflo",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyprexa",
+    "price": 75,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "AcipHex",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Actos",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Advil",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Alphagan",
+    "price": 45,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Amitiza",
+    "price": 73,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Avandamet",
+    "price": 25,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Bactroban",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Benzaclin",
+    "price": 96,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Boniva",
+    "price": 89,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Breo",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Capecitabine",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Capreomycin",
+    "price": 13,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Caverta",
+    "price": 79,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Celebrex",
+    "price": 66,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Cialis",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Ciprodex",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Claritin",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clomid",
+    "price": 99,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Clopidogrel",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Comtan",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dexamethasone",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Dexilant",
+    "price": 18,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Digoxin",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Diphenhydramine",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Divalproex",
+    "price": 88,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Duricef",
+    "price": 50,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Durogesic",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Elmiron",
+    "price": 59,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Enbrel",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Entocort",
+    "price": 21,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Estrace",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Estring",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fentanyl",
+    "price": 28,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Flonase",
+    "price": 68,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fluoxetine",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Fosamax",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Gabapentin",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Geodon",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Glucophage",
+    "price": 11,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Halcion",
+    "price": 27,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Humira",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydrocodone",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Hydroxyzine",
+    "price": 78,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Imuran",
+    "price": 63,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Inderal",
+    "price": 32,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Irbesartan",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Klonopin",
+    "price": 97,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lantus",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lasix",
+    "price": 24,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Latuda",
+    "price": 95,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lisinopril",
+    "price": 53,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lodine",
+    "price": 43,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lorazepam",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lotrel",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Lyrica",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Micardis",
+    "price": 25,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Minocin",
+    "price": 26,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Motrin",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Naproxen",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Norvasc",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Nucynta",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Odomos",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omeclamox",
+    "price": 52,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Omeprazole",
+    "price": 60,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paracetamol",
+    "price": 93,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Paxil",
+    "price": 35,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Percocet",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Phenergan",
+    "price": 49,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Plavix",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prilosec",
+    "price": 16,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Prolia",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Remicade",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Requip",
+    "price": 31,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Seroquel",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Simvastatin",
+    "price": 84,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sitagliptin",
+    "price": 51,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Singulair",
+    "price": 69,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sodium Chloride",
+    "price": 14,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Stelara",
+    "price": 56,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sublimaze",
+    "price": 90,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Sulfamethoxazole",
+    "price": 72,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Symbicort",
+    "price": 21,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tadacip",
+    "price": 30,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tamsulosin",
+    "price": 65,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tegretol",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Topamax",
+    "price": 58,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tramadol",
+    "price": 67,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Trazodone",
+    "price": 29,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Tricor",
+    "price": 85,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vasotec",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Venclexta",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vicodin",
+    "price": 19,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vigamox",
+    "price": 100,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Vimovo",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Viread",
+    "price": 39,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Warfarin",
+    "price": 38,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Xanax",
+    "price": 81,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Xarelto",
+    "price": 40,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zantac",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zithromax",
+    "price": 83,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zofran",
+    "price": 94,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Zyrtec",
+    "price": 55,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Calpol 250mg (Syrup)",
+    "price": 70,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Calpol 500",
+    "price": 48,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Calpol 650",
+    "price": 34,
+    "image": "https://via.placeholder.com/100"
+  },
+  {
+    "name": "Calpol Paediatric Drops Peppermint (bottle of 15 ml Oral Suspension)",
+    "price": 91,
+    "image": "https://via.placeholder.com/100"
+  }
 ]
