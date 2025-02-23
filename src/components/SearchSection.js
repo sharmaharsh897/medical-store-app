@@ -4,6 +4,7 @@ import "./SearchSection.css";
 import { UserContext } from "../context/userContext";
 import medicines from "../data-access/medicines.json";
 import { MdCancel } from "react-icons/md";
+import ProductDetail from "./ProductDetail";
 
 function SearchSection() {
   const [dynamicText, setDynamicText] = useState("Medicine"); // For dynamic placeholder
@@ -14,8 +15,10 @@ function SearchSection() {
   const [uploadMessage, setUploadMessage] = useState(""); // Tooltip message
   const [uploadSuccess, setUploadSuccess] = useState(null); // Track upload success/failure
   const [uploadedFile, setUploadedFile] = useState(null); // Uploaded file state
+  const [selectedProduct, setSelectedProduct] = useState(null); // ✅ Store selected medicine
   const { user } = useContext(UserContext);
   const [isSuggestionSelected, setIsSuggestionSelected] = useState(false);
+  const [searchErrorMessage, setSearchErrorMessage] = useState("");
 
   // ✅ Ensure unique medicine names
   const uniqueMedicines = useMemo(() => {
@@ -62,6 +65,7 @@ function SearchSection() {
   const handleSuggestionClick = useCallback((suggestion) => {
     setQuery(suggestion.name);
     setIsSuggestionSelected(true);
+    setSelectedProduct(suggestion); // ✅ Show product details
     
     // ✅ Use a small timeout to clear suggestions before React updates
     setTimeout(() => {
@@ -72,6 +76,7 @@ function SearchSection() {
   const handleInputChange = (e) => {
     setQuery(e.target.value);
     setIsSuggestionSelected(false);
+    setSelectedProduct(null); // ✅ Reset product details on typing
     if (e.target.value === "") {
       setSuggestions([]);
     }
@@ -112,19 +117,24 @@ function SearchSection() {
     }
   }, [uploadMessage]);
 
+  // ✅ Show product detail on Search button click
   const handleSearchButtonClick = () => {
     if (query.trim() === "") {
-      alert("Please enter something in the search bar.");
+      setSearchErrorMessage("Please enter something in the search bar.");
     } else {
-      const searchButton = document.querySelector(".search-button");
-      searchButton.classList.add("active");
-
-      setTimeout(() => {
-        searchButton.classList.remove("active");
-      }, 200);
-
-      console.log("Search button clicked with query:", query);
+      const matchedProduct = uniqueMedicines.find(
+        (medicine) => medicine.name.toLowerCase() === query.toLowerCase()
+      );
+      if (matchedProduct) {
+        setSelectedProduct(matchedProduct); // ✅ Show product details on search
+        setSearchErrorMessage(""); // ✅ Clear error if found
+      } else {
+        setSearchErrorMessage("Medicine not found!");
+      }
     }
+    setTimeout(() => {
+      setSearchErrorMessage("");
+    }, 4000);
   };
 
   return (
@@ -164,11 +174,7 @@ function SearchSection() {
             onChange={handleInputChange}
           />
           {query && (
-            <button
-              className="clear-button"
-              onClick={() => setQuery("")}
-              type="button"
-            >
+            <button className="clear-button" onClick={() => setQuery("")} type="button">
               <MdCancel />
             </button>
           )}
@@ -176,26 +182,28 @@ function SearchSection() {
             Search
           </button>
         </div>
+         {/* ✅ Tooltip for search errors */}
+      {searchErrorMessage && (
+        <div className="upload-tooltip error">
+          {searchErrorMessage}
+        </div>
+      )}
         <div className="suggestions-list">
           {suggestions.length > 0 && query ? (
             <ul>
               {suggestions.map((suggestion, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleSuggestionClick(suggestion)}
-                >
+                <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
                   {suggestion.name}
                 </li>
               ))}
             </ul>
-          ) : (
-            query &&
-            !isSuggestionSelected &&
-            suggestions.length === 0 && <p>No suggestions found</p>
-          )}
+          ) : null}
         </div>
-        {error && <div className="error-message">{error}</div>}
       </div>
+
+      {/* ✅ Show Product Detail Below Search Bar */}
+      {selectedProduct && <ProductDetail product={selectedProduct} />}
+
       {uploadMessage && (
         <div className={`upload-tooltip ${uploadSuccess ? "success" : "error"}`}>
           {uploadMessage}
