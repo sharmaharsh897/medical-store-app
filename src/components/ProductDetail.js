@@ -16,10 +16,10 @@ function ProductDetail({ product }) {
 
     setTimeout(() => {
       setRipple(null);
-    }, 600); // Match animation duration
+    }, 600);
   };
 
-  if (!product) return null; // If no product selected, return nothing
+  if (!product) return null;
 
   return (
     <div className="product-detail">
