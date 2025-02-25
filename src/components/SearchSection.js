@@ -61,13 +61,11 @@ function SearchSection() {
     }
   }, [query, uniqueMedicines]);
 
-  // ✅ Ensure list disappears on first click
   const handleSuggestionClick = useCallback((suggestion) => {
     setQuery(suggestion.name);
     setIsSuggestionSelected(true);
-    setSelectedProduct(suggestion); // ✅ Show product details
+    setSelectedProduct(suggestion); 
     
-    // ✅ Use a small timeout to clear suggestions before React updates
     setTimeout(() => {
       setSuggestions([]);
     }, 0);
