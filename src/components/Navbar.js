@@ -10,7 +10,8 @@ import { UserContext } from "../context/userContext";
 import { FaUserCircle } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 import axios from "axios";
-
+import { CartContext } from "../context/cartContext"; // Import CartContext
+import { AiOutlineShoppingCart } from "react-icons/ai"; // Import cart icon
 
 const INACTIVITY_TIMEOUT = 10 * 60 * 1000; // 2 minutes in milliseconds
 
@@ -30,6 +31,7 @@ const fetchUserProfile = async () => {
 };
 
 function Navbar() {
+  const { cart } = useContext(CartContext); // Get cart from context
   const { user } = useContext(UserContext);
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false); // State to control loader visibility
@@ -162,6 +164,14 @@ function Navbar() {
               <RouterLink to="/home">Contact Us</RouterLink>
             )}
           </li>
+          {cart.length > 0 && (
+          <li>
+            <RouterLink to="/cart" className="cart-link">
+              <AiOutlineShoppingCart size={24} />
+              <span className="cart-badge">{cart.length}</span>
+            </RouterLink>
+          </li>
+        )}
 
           <li className="dropdown">
             {user ? (

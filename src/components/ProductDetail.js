@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./ProductDetail.css";
 import { AiFillMedicineBox } from "react-icons/ai";
+import { CartContext } from "../context/cartContext"; // Import CartContext
+
 function ProductDetail({ product }) {
-    
+  const { addToCart } = useContext(CartContext); // Get addToCart function from context
   const [ripple, setRipple] = useState(null);
 
   const handleButtonClick = (event) => {
@@ -17,6 +19,8 @@ function ProductDetail({ product }) {
     setTimeout(() => {
       setRipple(null);
     }, 600);
+
+    addToCart(product); // Add product to the cart
   };
 
   if (!product) return null;
