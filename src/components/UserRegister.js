@@ -95,7 +95,7 @@ const RegisterForm = () => {
     setLoading(true); // Show spinner while making API call
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/register",
+        "http://localhost:5000/api/register/",
         formData
       );
       setNotification({ type: "success", message: response.data.message });
