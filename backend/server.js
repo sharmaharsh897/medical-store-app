@@ -11,8 +11,8 @@ app.use(
   })
 );
 app.use((req, res, next) => {
-  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-  res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+  res.setHeader("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
+  res.setHeader("Cross-Origin-Embedder-Policy", "credentialless"); // Use `credentialless` instead
   next();
 });
 app.use(express.json()); // To parse JSON bodies

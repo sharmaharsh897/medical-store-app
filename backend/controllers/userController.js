@@ -60,6 +60,7 @@ const loginUser = async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
 const googleLogin = async (req, res) => {
   const { token } = req.body;
 
@@ -68,28 +69,24 @@ const googleLogin = async (req, res) => {
   }
 
   try {
-    // Verify the Google ID token (not the access token)
+    // Verify Google ID Token
     const ticket = await client.verifyIdToken({
-      idToken: token, // Use the ID token for verification
-      audience: process.env.GOOGLE_CLIENT_ID, // Your Google OAuth Client ID
+      idToken: token, // Use the ID token from frontend
+      audience: process.env.GOOGLE_CLIENT_ID, // Google OAuth Client ID
     });
 
     const payload = ticket.getPayload();
-    console.log("Google Token Payload:", payload); // Debugging log
+    console.log("Google Token Payload:", payload);
 
-    const email = payload.email;
-
-    // Check if the user already exists in the database
-    let user = await findUserByEmail(email);
+    let user = await findUserByEmail(payload.email);
 
     if (!user) {
-      // Create new user if not found
       const newUser = {
         first_name: payload.given_name,
         last_name: payload.family_name,
         email: payload.email,
         profile_picture: payload.picture,
-        password: null, // No password for Google login
+        password: null,
       };
 
       user = await createUser(newUser);
@@ -112,6 +109,7 @@ const googleLogin = async (req, res) => {
     return res.status(400).json({ message: "Invalid Google token." });
   }
 };
+
 
 
 module.exports = { loginUser, getProfile, googleLogin };
