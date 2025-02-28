@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/medical-store-app/static/css/main.2255807f.css",
-    "main.js": "/medical-store-app/static/js/main.d51ecdf8.js",
+    "main.css": "/medical-store-app/static/css/main.0c8a172b.css",
+    "main.js": "/medical-store-app/static/js/main.b7062961.js",
     "static/js/453.c0325d81.chunk.js": "/medical-store-app/static/js/453.c0325d81.chunk.js",
     "static/media/bell.mp3": "/medical-store-app/static/media/bell.e82f9eb7666963bbb9e8.mp3",
     "static/media/owner.jpg": "/medical-store-app/static/media/owner.6bed7da64259e8cbd379.jpg",
@@ -10,6 +10,7 @@
     "static/media/government.png": "/medical-store-app/static/media/government.3e0ec8a3b129137506b1.png",
     "static/media/allMedicines.png": "/medical-store-app/static/media/allMedicines.c5c94d8f2b95c2374b23.png",
     "static/media/lowCost.png": "/medical-store-app/static/media/lowCost.0f22c82aff7cbcdf0232.png",
+    "static/media/bg3.jpg": "/medical-store-app/static/media/bg3.5fc5286bb7588b63a4e8.jpg",
     "static/media/247.png": "/medical-store-app/static/media/247.8606e31cc9e7331016ba.png",
     "static/media/delivery.png": "/medical-store-app/static/media/delivery.5c097e1304f5031511b5.png",
     "static/media/vaccination.png": "/medical-store-app/static/media/vaccination.63f8017ec2870e8943f3.png",
@@ -28,12 +29,12 @@
     "static/media/slick.ttf": "/medical-store-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/medical-store-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/medical-store-app/index.html",
-    "main.2255807f.css.map": "/medical-store-app/static/css/main.2255807f.css.map",
-    "main.d51ecdf8.js.map": "/medical-store-app/static/js/main.d51ecdf8.js.map",
+    "main.0c8a172b.css.map": "/medical-store-app/static/css/main.0c8a172b.css.map",
+    "main.b7062961.js.map": "/medical-store-app/static/js/main.b7062961.js.map",
     "453.c0325d81.chunk.js.map": "/medical-store-app/static/js/453.c0325d81.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2255807f.css",
-    "static/js/main.d51ecdf8.js"
+    "static/css/main.0c8a172b.css",
+    "static/js/main.b7062961.js"
   ]
 }
