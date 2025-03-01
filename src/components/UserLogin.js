@@ -81,10 +81,10 @@ const LoginForm = () => {
       console.log("Google Login Success:", data);
 
       localStorage.setItem("token", data.jwtToken);
-      localStorage.setItem(
-        "user",
-        JSON.stringify({ name: `${data.first_name} ${data.last_name}` })
-      );
+      localStorage.setItem("user", JSON.stringify({ first_name: data.first_name })); // Store only first_name
+        
+        setUser({ first_name: data.first_name }); // Update UserContext
+
       navigate("/home");
     } catch (err) {
       console.error("Error during Google login:", err);
