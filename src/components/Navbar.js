@@ -26,7 +26,10 @@ const fetchUserProfile = async () => {
     console.log("User Profile:", response.data);
     // Handle the profile data (e.g., display it in a modal or redirect to a profile page)
   } catch (error) {
-    console.error("Error fetching user profile:", error.response?.data || error.message);
+    console.error(
+      "Error fetching user profile:",
+      error.response?.data || error.message
+    );
   }
 };
 
@@ -46,10 +49,10 @@ function Navbar() {
     if (user) {
       console.log("User detected, starting inactivity timer");
       startInactivityTimer();
-  
+
       window.addEventListener("mousemove", resetInactivityTimer);
       window.addEventListener("keydown", resetInactivityTimer);
-  
+
       return () => {
         console.log("Cleaning up inactivity timer and event listeners");
         clearInactivityTimer();
@@ -57,7 +60,7 @@ function Navbar() {
         window.removeEventListener("keydown", resetInactivityTimer);
       };
     }
-  }, [user]); 
+  }, [user]);
 
   useEffect(() => {
     if (showSessionModal) {
@@ -71,7 +74,7 @@ function Navbar() {
     setShowSessionModal(false); // Close modal
     startInactivityTimer(); // Restart the timer
   };
-  
+
   const startInactivityTimer = () => {
     clearInactivityTimer(); // Clear existing timer
     const id = setTimeout(() => {
@@ -165,23 +168,24 @@ function Navbar() {
             )}
           </li>
           {cart.length > 0 && (
-          <li>
-            <RouterLink to="/cart" className="cart-link">
-              <AiOutlineShoppingCart size={24} />
-              <span className="cart-badge">{cart.length}</span>
-            </RouterLink>
-          </li>
-        )}
+            <li>
+              <RouterLink to="/cart" className="cart-link">
+                <AiOutlineShoppingCart size={24} />
+                <span className="cart-badge">{cart.length}</span>
+                </RouterLink>
+            </li>
+          )}
 
           <li className="dropdown">
             {user ? (
               <span className="after-login">
-                <FaUserCircle className="user-login-icon" /> {user.first_name} {user.last_name}
+                <FaUserCircle className="user-login-icon" /> {user.first_name}{" "}
+                {user.last_name}
                 <FaCaretDown className="user-login-down-icon" />
                 <div className="dropdown-menu">
-                <button className="account-button" onClick={fetchUserProfile}>
-    <RouterLink to="/profile">Profile</RouterLink>
-  </button>
+                  <button className="account-button" onClick={fetchUserProfile}>
+                    <RouterLink to="/profile">Profile</RouterLink>
+                  </button>
                   <button className="account-button">
                     <RouterLink to="">My Orders</RouterLink>
                   </button>
@@ -253,7 +257,7 @@ function Navbar() {
         onClose={() => setShowLogoutModal(false)} // Close modal
         onConfirm={handleLogout} // Confirm logout
       />
-       <SessionModal
+      <SessionModal
         show={showSessionModal}
         onClose={handleSessionExtend} // Stay logged in
         onConfirm={handleLogout} // Log out due to inactivity
