@@ -7,8 +7,8 @@ import { MdCancel } from "react-icons/md";
 import ProductDetail from "./ProductDetail";
 
 function SearchSection() {
-  const [dynamicText, setDynamicText] = useState("Medicine"); // For dynamic placeholder
-  const [isFocused, setIsFocused] = useState(false); // Detect input focus
+  const [dynamicText, setDynamicText] = useState("Medicine"); 
+  const [isFocused, setIsFocused] = useState(false);
   const [query, setQuery] = useState(""); // User input
   const [suggestions, setSuggestions] = useState([]); // Suggestions list
   const [error, setError] = useState(""); // Error state
