@@ -16,7 +16,6 @@ const LoginForm = () => {
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-  // Existing email/password login handler
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true); // Show loader
