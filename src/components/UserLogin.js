@@ -18,7 +18,7 @@ const LoginForm = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loader
+    setLoading(true);
     try {
       const response = await fetch("http://localhost:5000/api/login", {
         method: "POST",
