@@ -37,7 +37,7 @@ const LoginForm = () => {
       setUser({ first_name: data.first_name, last_name: data.last_name });
       localStorage.setItem("token", data.token); // Use "token" as the key
       setTimeout(() => {
-        setLoading(false); // Hide loader after 2 seconds
+        setLoading(false);
         navigate("/home");
       }, 2000);
       console.log("Login successful:", data);
