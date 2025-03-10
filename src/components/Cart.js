@@ -18,7 +18,7 @@ const Cart = () => {
               <p className="cart-item-name">{item.name}</p>
               <p className="cart-item-price">₹{item.price}</p>
             </div>
-            {/* <button className="cart-remove-btn">Remove</button> */}
+            <button className="cart-remove-btn">Remove</button>
           </div>
         ))
       )}
@@ -27,7 +27,7 @@ const Cart = () => {
           <p className="cart-total">
             Total: ₹{cart.reduce((total, item) => total + item.price, 0)}
           </p>
-          {/* <button className="cart-checkout-btn">Checkout</button> */}
+          <button className="cart-checkout-btn">Checkout</button>
         </>
       )}
     </div>
