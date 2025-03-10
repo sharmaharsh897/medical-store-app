@@ -15,6 +15,7 @@ import RegisterForm from "./components/UserRegister";
 import ChangePassword from "./components/ChangePassword";
 import OwnerLoginForm from "./components/OwnerLogin";
 import UserProfile from "./components/UserProfile";
+import Cart from "./components/Cart";
 
 function ProtectedRoute({ children }) {
   const { user } = useContext(UserContext);
@@ -59,6 +60,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+             <Route path="/cart" element={<Cart />} /> {/* ✅ Add this line */}
           </Routes>
           <Footer />
         </div>
