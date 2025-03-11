@@ -3,7 +3,7 @@ import { CartContext } from "../context/cartContext";
 import "./Cart.css";
 
 const Cart = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, removeFromCart } = useContext(CartContext);
 
   return (
     <div className="cart-container">
@@ -18,7 +18,7 @@ const Cart = () => {
               <p className="cart-item-name">{item.name}</p>
               <p className="cart-item-price">₹{item.price}</p>
             </div>
-            <button className="cart-remove-btn">Remove</button>
+            <button className="cart-remove-btn" onClick={()=>removeFromCart(item)}>Remove</button>
           </div>
         ))
       )}

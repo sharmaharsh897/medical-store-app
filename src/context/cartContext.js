@@ -9,8 +9,12 @@ export function CartProvider({ children }) {
     setCart((prevCart) => [...prevCart, product]);
   };
 
+  const removeFromCart = (itemToRemove) => {
+    setCart((prevCart) => prevCart.filter((item) => item !== itemToRemove));
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

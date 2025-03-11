@@ -41,9 +41,14 @@ function App() {
                 <>
                   <SearchSection />
                   <CarouselComponent />
-                  <Testimonials />
-                  <Services />
-                  <MapComponent />
+                  <section id="about"><Testimonials /></section>
+                  
+                  <section id="services">
+                  <Services/>
+                    </section>
+                  <section id="contact">
+         <MapComponent />
+       </section>
                   <Chatbot />
                 </>
               }
