@@ -119,7 +119,6 @@ function Navbar() {
 
   return (
     <div>
-      {/* Loader Overlay */}
       {isLoading && (
         <div className="loader-overlay">
           <div className="loader"></div>
