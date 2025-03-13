@@ -7,6 +7,10 @@
     margin: 0 auto; /* Centers the container horizontally */
     margin-bottom: 30px;
   }
+
+  .services-container:hover{
+    transform: rotateY(360deg);
+  }
   
   .service-box {
     display: flex;
