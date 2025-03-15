@@ -42,6 +42,7 @@ const Cart = () => {
         <table className="cart-table">
           <thead>
             <tr>
+              <th>S. No.</th>
               <th>Image</th>
               <th>Product Name</th>
               <th>Quantity</th>
@@ -54,6 +55,9 @@ const Cart = () => {
           <tbody>
             {cart.map((item, index) => (
               <tr key={item.id}>
+                <td>
+                  {index + 1}
+                </td>
                 <td>
                   <img src={item.image} alt={item.name} className="cart-item-img" />
                 </td>
