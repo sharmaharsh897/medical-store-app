@@ -6,6 +6,7 @@ import { CartContext } from "../context/cartContext";
 function ProductDetail({ product }) {
   const { addToCart } = useContext(CartContext); 
   const [ripple, setRipple] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleButtonClick = (event) => {
     const button = event.currentTarget;
@@ -20,7 +21,11 @@ function ProductDetail({ product }) {
       setRipple(null);
     }, 600);
 
-    addToCart(product);
+    addToCart(product); setShowPopup(true);
+
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 2000);
   };
 
   if (!product) return null;
@@ -47,6 +52,7 @@ function ProductDetail({ product }) {
           )}
         </button>
       </div>
+      {showPopup && <div className="popup">Added to cart successfully!</div>}
     </div>
   );
 }
