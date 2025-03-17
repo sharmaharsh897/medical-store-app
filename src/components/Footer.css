@@ -8,6 +8,23 @@
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+}
+
+.qr-code {
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.footer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 .payment-container {

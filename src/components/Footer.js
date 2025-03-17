@@ -8,12 +8,16 @@ import airtelIcon from "../components/assets/payment-icons/airtel-money.png";
 import visaIcon from "../components/assets/payment-icons/visa.png";
 import mastercardIcon from "../components/assets/payment-icons/mastercard.png";
 import rupayIcon from "../components/assets/payment-icons/rupay.png";
+import qrCode from "../components/assets/qr-codes/qr-dev.png";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <h3>Gurudev Medical & Surgical Store</h3>
+      <div className="footer-header">
+          <h3>Gurudev Medical & Surgical Store</h3>
+          <img src={qrCode} alt="WhatsApp QR Code" className="qr-code" />
+        </div>
         <p>Contact: +91-9826730666</p>
         <p>
           Address: Opp. Madhav Dispensary, Hospital Rd, Lalitpur Colony,
