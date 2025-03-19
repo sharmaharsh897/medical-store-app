@@ -16,6 +16,7 @@ import ChangePassword from "./components/ChangePassword";
 import OwnerLoginForm from "./components/OwnerLogin";
 import UserProfile from "./components/UserProfile";
 import Cart from "./components/Cart";
+import Partners from "./components/Partners";
 
 function ProtectedRoute({ children }) {
   const { user } = useContext(UserContext);
@@ -42,6 +43,7 @@ function App() {
                   <SearchSection />
                   <CarouselComponent />
                   <section id="about"><Testimonials /></section>
+                  <section><Partners /></section>
                   
                   <section id="services">
                   <Services/>

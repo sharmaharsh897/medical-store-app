@@ -1,0 +1,85 @@
+.partners-section {
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .partners-name-heading {
+    text-align: center;
+    padding: 10px;
+    color: #4f5860;
+    margin-bottom: 20px;
+    margin-left: -66%;
+  }
+  
+  .partners-slider {
+    width: 76%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Fading effect at the edges */
+  .partners-slider::before,
+  .partners-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .partners-slider::before {
+    left: 0;
+    background: linear-gradient(to right, rgb(255, 254, 254) 0%, rgba(248, 248, 248, 0) 100%);
+  }
+  
+  .partners-slider::after {
+    right: 0;
+    background: linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(248, 248, 248, 0) 100%);
+  }
+  
+  /* Main scrolling track */
+  .partners-track {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: max-content; /* Makes the track as wide as needed */
+    animation: scroll 12s linear infinite;
+    white-space: nowrap; /* Ensures items stay in a single line */
+  }
+  
+  /* Each logo container */
+  .partner-logo {
+    width: 150px;  /* Set fixed width */
+    height: 100px; /* Set fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none; /* Ensure no background */
+  }
+  
+  .partner-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps aspect ratio */
+  }
+  
+  /* Infinite scrolling effect */
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-25%);
+    }
+  }
+  
