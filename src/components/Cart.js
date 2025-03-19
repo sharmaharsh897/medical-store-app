@@ -1,9 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../context/cartContext";
 import "./Cart.css";
 
 const Cart = () => {
   const { cart, setCart, removeFromCart } = useContext(CartContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState("");
+
+  const openModal = (image) => {
+    setModalImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalImage("");
+  };
 
   const increaseQuantity = (item) => {
     setCart((prevCart) =>
@@ -55,12 +67,36 @@ const Cart = () => {
           <tbody>
             {cart.map((item, index) => (
               <tr key={item.id}>
+                <td>{index + 1}</td>
                 <td>
-                  {index + 1}
+                  <button
+                    className="cart-item-btn"
+                    onClick={() => openModal(item.image)}
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="cart-item-img"
+                    />
+                  </button>
                 </td>
-                <td>
-                  <img src={item.image} alt={item.name} className="cart-item-img" />
-                </td>
+                {isModalOpen && (
+                  <div className="modal-overlay" onClick={closeModal}>
+                    <div
+                      className="modal-content"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <img
+                        src={modalImage}
+                        alt="Preview"
+                        className="modal-img"
+                      />
+                      <button className="close-btn" onClick={closeModal}>
+                        &times;
+                      </button>
+                    </div>
+                  </div>
+                )}
                 <td>{item.name}</td>
                 <td>
                   <button onClick={() => decreaseQuantity(item)}>-</button>
@@ -70,13 +106,14 @@ const Cart = () => {
                 <td>₹{item.price}</td>
                 <td>₹{(item.price * item.quantity).toFixed(2)}</td>
                 <td>
-                  <button className="cart-remove-btn" onClick={() => removeFromCart(item)}>
+                  <button
+                    className="cart-remove-btn"
+                    onClick={() => removeFromCart(item)}
+                  >
                     Remove
                   </button>
                 </td>
-                <td>
-                  ₹{(item.price * item.quantity).toFixed(2)}
-                </td>
+                <td>₹{(item.price * item.quantity).toFixed(2)}</td>
               </tr>
             ))}
           </tbody>
@@ -85,9 +122,15 @@ const Cart = () => {
 
       {cart.length > 0 && (
         <div className="cart-summary">
-          <p><strong>CGST (12%):</strong> ₹{cgst}</p>
-          <p><strong>SGST (12%):</strong> ₹{sgst}</p>
-          <p><strong>Grand Total:</strong> ₹{grandTotal}</p>
+          <p>
+            <strong>CGST (12%):</strong> ₹{cgst}
+          </p>
+          <p>
+            <strong>SGST (12%):</strong> ₹{sgst}
+          </p>
+          <p>
+            <strong>Grand Total:</strong> ₹{grandTotal}
+          </p>
           <button className="cart-checkout-btn">Checkout</button>
         </div>
       )}
