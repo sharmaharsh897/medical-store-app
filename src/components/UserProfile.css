@@ -1,56 +1,105 @@
-    /* User Profile Container */
+/* User Profile Container */
 .user-profile-container {
-    display: flex;
-    height: 100vh;
-  }
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 30%;
+  padding: 20px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.sidebar-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  margin-left: 15px;
+}
+
+/* Sidebar List */
+.sidebar-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-item {
+  display: block;
+  width: 60%;
+  padding: 12px 15px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #f2ede7;
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  color: #777777;
+}
+
+.sidebar-item:hover {
+  color: #000;
+}
+
+.sidebar-item.active {
+  font-weight: bold;
+  color: #000;
+}
+
+.sidebar-list li:last-child .sidebar-item {
+  border-bottom: none;
+}
+
+.sidebar-item.logout {
+  color: red;
+  font-weight: bold;
+}
+
+/* Content */
+.content {
+  flex-grow: 1;
+  margin-top: 6%;
+  margin-left: 0; /* remove the negative margin */
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+  margin-left: 15px;
+
+}
+
+.breadcrumb .breadcrumb-link {
+  text-decoration: none;
+  color: #007bff; /* Bootstrap blue */
+}
+
+.breadcrumb .breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .current {
+  font-weight: bold;
+  color: #000;
+}
+
+.change-password {
+  margin-left: -10px;
+}
+
+.welcome-text{
+  display: block;
+  font-size: 1rem;
+  text-align: left;
+  color: #777777;
   
-  /* Sidebar */
-  .sidebar {
-    width: 20%;
-    padding: 20px;
-    border-right: 1px solid #dee2e6;
-    border: none;
-  }
-  
-  .sidebar-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .sidebar-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar-item {
-    display: block;
-    width: 80%;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    background-color: #e9ecef;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    text-align: left;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .sidebar-item:hover {
-    background-color: #ced4da;
-  }
-  
-  .sidebar-item.active {
-    background-color: #32AEB1;
-    color: #fff;
-  }
-  
-  /* Content */
-  .content {
-    flex-grow: 1;
-    padding: 20px;
-    ;
-  }
-  
+}
