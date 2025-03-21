@@ -1,5 +1,10 @@
 import React, { useContext } from "react";
-import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { CartProvider } from "./context/cartContext"; // ✅ Import CartProvider
@@ -25,7 +30,9 @@ function ProtectedRoute({ children }) {
 
 function App() {
   return (
-    <CartProvider> {/* ✅ Wrapping the entire application */}
+    <CartProvider>
+      {" "}
+      {/* ✅ Wrapping the entire application */}
       <Router>
         <link
           rel="stylesheet"
@@ -42,21 +49,32 @@ function App() {
                 <>
                   <SearchSection />
                   <CarouselComponent />
-                  <section id="about"><Testimonials /></section>
-                  <section><Partners /></section>
-                  
+                  <section id="about">
+                    <Testimonials />
+                  </section>
+                  <section>
+                    <Partners />
+                  </section>
+
                   <section id="services">
-                  <Services/>
-                    </section>
+                    <Services />
+                  </section>
                   <section id="contact">
-         <MapComponent />
-       </section>
+                    <MapComponent />
+                  </section>
                   <Chatbot />
                 </>
               }
             />
             <Route path="/user-login" element={<LoginForm />} />
-            <Route path="/profile" element={<UserProfile />} />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <UserProfile />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/owner-login" element={<OwnerLoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route
@@ -67,7 +85,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-             <Route path="/cart" element={<Cart />} /> {/* ✅ Add this line */}
+            <Route path="/cart" element={<Cart />} /> {/* ✅ Add this line */}
           </Routes>
           <Footer />
         </div>
