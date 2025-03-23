@@ -13,7 +13,7 @@ import axios from "axios";
 import { CartContext } from "../context/cartContext"; // Import CartContext
 import { AiOutlineShoppingCart } from "react-icons/ai"; // Import cart icon
 
-const INACTIVITY_TIMEOUT = 10 * 60 * 1000; // 2 minutes in milliseconds
+const INACTIVITY_TIMEOUT = 15 * 60 * 1000; // 2 minutes in milliseconds
 
 const fetchUserProfile = async () => {
   try {
