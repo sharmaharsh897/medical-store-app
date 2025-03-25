@@ -23,7 +23,7 @@
   }
   
   .profile-card:hover {
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 15px rgba(50, 174, 177, 1);
   }
   
   .profile-icon {

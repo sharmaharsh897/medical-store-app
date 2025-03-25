@@ -13,33 +13,33 @@ const Chatbot = () => {
   ]);
   const [userInput, setUserInput] = useState(""); // Store user input
 
-  // useEffect(() => {
-    // const playSound = () => {
-    //   const audio = new Audio(notificationSound);
-    //   audio
-    //     .play()
-    //     .then(() => setHasPlayed(true)) // Mark sound as played
-    //     .catch(() => console.log("Autoplay failed. Waiting for user interaction."));
-    // };
+  useEffect(() => {
+    const playSound = () => {
+      const audio = new Audio(notificationSound);
+      audio
+        .play()
+        .then(() => setHasPlayed(true)) // Mark sound as played
+        .catch(() => console.log("Autoplay failed. Waiting for user interaction."));
+    };
 
-  //   if (!hasPlayed) {
-  //     playSound();
-  //   }
+    if (!hasPlayed) {
+      playSound();
+    }
 
-  //   const enableSoundOnInteraction = () => {
-  //     if (!hasPlayed) {
-  //       playSound();
-  //     }
-  //   };
+    const enableSoundOnInteraction = () => {
+      if (!hasPlayed) {
+        playSound();
+      }
+    };
 
-  //   document.addEventListener("click", enableSoundOnInteraction);
-  //   document.addEventListener("keydown", enableSoundOnInteraction);
+    document.addEventListener("click", enableSoundOnInteraction);
+    document.addEventListener("keydown", enableSoundOnInteraction);
 
-  //   return () => {
-  //     document.removeEventListener("click", enableSoundOnInteraction);
-  //     document.removeEventListener("keydown", enableSoundOnInteraction);
-  //   };
-  // }, [hasPlayed]);
+    return () => {
+      document.removeEventListener("click", enableSoundOnInteraction);
+      document.removeEventListener("keydown", enableSoundOnInteraction);
+    };
+  }, [hasPlayed]);
 
   const predefinedResponses = {
     "order medicine": "You can order medicines online through our website!",
