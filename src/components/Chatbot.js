@@ -2,16 +2,16 @@
 import React, { useEffect, useState } from "react";
 import "./Chatbot.css";
 import logoIcon from "../components/assets/gurulogo.png";
-import notificationSound from "../components/assets/bell.mp3"; // Path to your audio file
+import notificationSound from "../components/assets/bell.mp3"; 
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNotification, setShowNotification] = useState(true);
-  const [hasPlayed, setHasPlayed] = useState(false); // Track if sound has played
+  const [hasPlayed, setHasPlayed] = useState(false); 
   const [chat, setChat] = useState([
     { text: "Hi there! How can I assist you today? Ask me about medicines", isUser: false },
   ]);
-  const [userInput, setUserInput] = useState(""); // Store user input
+  const [userInput, setUserInput] = useState(""); 
 
   useEffect(() => {
     const playSound = () => {
