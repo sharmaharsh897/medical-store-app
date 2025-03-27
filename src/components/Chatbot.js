@@ -18,7 +18,7 @@ const Chatbot = () => {
       const audio = new Audio(notificationSound);
       audio
         .play()
-        .then(() => setHasPlayed(true)) // Mark sound as played
+        .then(() => setHasPlayed(true)) 
         .catch(() => console.log("Autoplay failed. Waiting for user interaction."));
     };
 
