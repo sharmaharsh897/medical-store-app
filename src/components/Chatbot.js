@@ -57,7 +57,7 @@ const Chatbot = () => {
     const userMessage = { text: userInput, isUser: true };
     setChat((prevChat) => [...prevChat, userMessage]);
 
-    // Convert input to lowercase for better matching
+  
     const lowerCaseInput = userInput.toLowerCase();
     const botResponse = predefinedResponses[lowerCaseInput] || "Sorry, I don't have an answer for that. Try asking something else.";
 
