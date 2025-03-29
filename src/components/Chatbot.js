@@ -65,7 +65,7 @@ const Chatbot = () => {
       setChat((prevChat) => [...prevChat, { text: botResponse, isUser: false }]);
     }, 500);
 
-    setUserInput(""); // Clear input field
+    setUserInput(""); 
   };
 
   const handleChatbotToggle = () => {
