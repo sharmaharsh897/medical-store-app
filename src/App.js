@@ -22,6 +22,7 @@ import OwnerLoginForm from "./components/OwnerLogin";
 import UserProfile from "./components/UserProfile";
 import Cart from "./components/Cart";
 import Partners from "./components/Partners";
+import PaymentPage from "./components/PaymentPage"; // ✅ Import PaymentPage
 
 function ProtectedRoute({ children }) {
   const { user } = useContext(UserContext);
@@ -86,8 +87,9 @@ function App() {
               }
             />
             <Route path="/cart" element={<Cart />} /> {/* ✅ Add this line */}
+            <Route path="/payment" element={<PaymentPage />} />
           </Routes>
-          <Footer />
+          <Footer className="footer"/>
         </div>
       </Router>
     </CartProvider>
