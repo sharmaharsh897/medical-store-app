@@ -1,0 +1,164 @@
+.addresses-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+  }
+  
+  .addresses-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .addresses-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .address-card {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 4px solid green;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .address-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .icon-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .edit-input {
+    width: 200%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .save-btn {
+    background: green;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  .save-btn:hover {
+    background: darkgreen;
+  }
+  
+  .edit-icon {
+    color: blue;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .edit-icon:hover {
+    color: darkblue;
+  }
+  
+  .delete-icon {
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .delete-icon:hover {
+    color: darkred;
+  }
+  
+  .add-address-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+  }
+  
+  .add-address-btn:hover {
+    background: #218838;
+  }
+  
+  .add-container {
+    background: #f1f1f1;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #28a745;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .add-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .add-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  .add-btn:hover {
+    background: #0056b3;
+  }
+  
+  .cancel-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  .cancel-btn:hover {
+    background: #c82333;
+  }
+  
