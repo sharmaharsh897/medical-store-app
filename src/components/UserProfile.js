@@ -111,7 +111,6 @@ const UserProfile = () => {
       )}
 
       <div className="user-profile-container">
-        {/* Sidebar */}
         <div className="sidebar">
           <div className="breadcrumb">
             <Link to="/" className="breadcrumb-link">
