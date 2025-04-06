@@ -178,7 +178,6 @@ const UserProfile = () => {
           onConfirm={handleLogout} // Confirm logout
         />
 
-        {/* Main Content */}
         <div className="content">{renderContent()}</div>
       </div>
     </>
