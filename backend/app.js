@@ -21,4 +21,7 @@ app.use("/api", ownerRoutes); // This mounts the routes under /api
 const registerRoutes = require('./routes/registerRoutes'); // registration routes
 app.use('/api/register', registerRoutes);
 
+const addressRoutes = require("./routes/addressRoutes");
+app.use("/api/addresses", addressRoutes);
+
 module.exports = app; // Make sure you export the app
