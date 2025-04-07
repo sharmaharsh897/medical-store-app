@@ -27,6 +27,9 @@ app.use("/api", ownerRoutes);
 const registerRoutes = require("./routes/registerRoutes");
 app.use("/api/register", registerRoutes);
 
+const addressRoutes = require("./routes/addressRoutes");
+app.use("/api/addresses", addressRoutes);
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
