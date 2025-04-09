@@ -1,164 +1,152 @@
-.addresses-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    
-  }
-  
-  .addresses-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .addresses-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .address-card {
-    background: #f9f9f9;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border-left: 4px solid green;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .address-content {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-  }
-  
-  .icon-container {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .edit-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .edit-input {
-    width: 200%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .save-btn {
-    background: green;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 5px;
-  }
-  
-  .save-btn:hover {
-    background: darkgreen;
-  }
-  
-  .edit-icon {
-    color: blue;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .edit-icon:hover {
-    color: darkblue;
-  }
-  
-  .delete-icon {
-    color: red;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .delete-icon:hover {
-    color: darkred;
-  }
-  
-  .add-address-btn {
-    background: #28a745;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 20px;
-  }
-  
-  .add-address-btn:hover {
-    background: #218838;
-  }
-  
-  .add-container {
-    background: #f1f1f1;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 5px;
-    border-left: 4px solid #28a745;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .add-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .add-btn {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 5px;
-  }
-  
-  .add-btn:hover {
-    background: #0056b3;
-  }
-  
-  .cancel-btn {
-    background: #dc3545;
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 5px;
-  }
-  
-  .cancel-btn:hover {
-    background: #c82333;
-  }
-  
+.profile-addresses-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 25px 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.profile-addresses-container .addresses-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.profile-addresses-container .addresses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-addresses-container .address-card {
+  background: #f0fff4;
+  border-left: 5px solid #2e7d32;
+  padding: 16px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: box-shadow 0.3s;
+}
+
+.profile-addresses-container .address-card:hover {
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+}
+
+.profile-addresses-container .address-content {
+  flex-grow: 1;
+  font-size: 15px;
+  color: #333;
+}
+
+.profile-addresses-container .icon-container {
+  display: flex;
+  gap: 12px;
+  margin-left: 15px;
+}
+
+.profile-addresses-container .edit-icon,
+.profile-addresses-container .delete-icon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.profile-addresses-container .edit-icon {
+  color: #0288d1;
+}
+
+.profile-addresses-container .edit-icon:hover {
+  color: #01579b;
+}
+
+.profile-addresses-container .delete-icon {
+  color: #e53935;
+}
+
+.profile-addresses-container .delete-icon:hover {
+  color: #b71c1c;
+}
+
+.profile-addresses-container .edit-container,
+.profile-addresses-container .add-container {
+  margin-top: 15px;
+  background: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2e7d32;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-addresses-container .edit-input,
+.profile-addresses-container .add-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.profile-addresses-container .save-btn,
+.profile-addresses-container .add-btn,
+.profile-addresses-container .cancel-btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: fit-content;
+}
+
+.profile-addresses-container .save-btn {
+  background-color: #388e3c;
+  color: white;
+}
+
+.profile-addresses-container .save-btn:hover {
+  background-color: #2e7d32;
+}
+
+.profile-addresses-container .add-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.profile-addresses-container .add-btn:hover {
+  background-color: #0056b3;
+}
+
+.profile-addresses-container .cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.profile-addresses-container .cancel-btn:hover {
+  background-color: #c82333;
+}
+
+.profile-addresses-container .add-address-btn {
+  background-color: #4caf50;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  display: block;
+  margin: 25px auto 0;
+}
+
+.profile-addresses-container .add-address-btn:hover {
+  background-color: #388e3c;
+}
