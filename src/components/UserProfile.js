@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./UserProfile.css";
@@ -11,7 +10,7 @@ const UserProfile = () => {
   const [selectedOption, setSelectedOption] = useState("basicProfile");
   const [userData, setUserData] = useState(null);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // <- initially true for loader
 
   const handleLogout = () => {
     setIsLoading(true);
@@ -26,6 +25,9 @@ const UserProfile = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
+    // simulate loading state
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+
     fetch("http://localhost:5000/api/profile", {
       method: "GET",
       headers: {
@@ -39,6 +41,8 @@ const UserProfile = () => {
       })
       .then((data) => setUserData(data))
       .catch((error) => console.error("Error fetching user profile:", error));
+
+    return () => clearTimeout(timer);
   }, []);
 
   const breadcrumbs = {
@@ -52,36 +56,34 @@ const UserProfile = () => {
     switch (selectedOption) {
       case "basicProfile":
         return (
-          <div>
-            {(
-              <p className="welcome-text" style={{ marginLeft: "-50px" }}>
-                From your account dashboard you can view your{" "}
-                <span
-                  style={{
-                    color: "#007bff",
-                    cursor: "pointer",
-                    textDecoration: "underline",
-                  }}
-                  onClick={() => setSelectedOption("myOrders")}
-                >
-                  recent orders
-                </span>
-                , manage your shipping and billing{" "}
-                <span
-                  style={{
-                    color: "#007bff",
-                    cursor: "pointer",
-                    textDecoration: "underline",
-                  }}
-                  onClick={() => setSelectedOption("myAddresses")}
-                >
-                  addresses
-                </span>
-                , and edit account details.
-              </p>
-            )}
-            <ProfileDashboard />
-          </div>
+          <>
+            <p className="welcome-text" style={{ marginLeft: "-50px" }}>
+              From your account dashboard you can view your{" "}
+              <span
+                style={{
+                  color: "#007bff",
+                  cursor: "pointer",
+                  textDecoration: "underline",
+                }}
+                onClick={() => setSelectedOption("myOrders")}
+              >
+                recent orders
+              </span>
+              , manage your shipping and billing{" "}
+              <span
+                style={{
+                  color: "#007bff",
+                  cursor: "pointer",
+                  textDecoration: "underline",
+                }}
+                onClick={() => setSelectedOption("myAddresses")}
+              >
+                addresses
+              </span>
+              , and edit account details.
+            </p>
+            <ProfileDashboard onSelectOption={setSelectedOption} />
+          </>
         );
       case "myOrders":
         return <div>My Orders</div>;
@@ -102,14 +104,16 @@ const UserProfile = () => {
     }
   };
 
+  if (isLoading) {
+    return (
+      <div className="spinner-container">
+        <div className="spinner"></div>
+      </div>
+    );
+  }
+
   return (
     <>
-      {isLoading && (
-        <div className="loader-overlay">
-          <div className="loader"></div>
-        </div>
-      )}
-
       <div className="user-profile-container">
         <div className="sidebar">
           <div className="breadcrumb">
@@ -140,7 +144,7 @@ const UserProfile = () => {
               >
                 Orders
               </button>
-            </li> 
+            </li>
             <li>
               <button
                 className={`sidebar-item ${
@@ -165,17 +169,17 @@ const UserProfile = () => {
               <button
                 className="sidebar-item logout"
                 onClick={() => setShowLogoutModal(true)}
-                disabled={isLoading}
               >
                 Log Out
               </button>
             </li>
           </ul>
         </div>
+
         <Modal
           show={showLogoutModal}
-          onClose={() => setShowLogoutModal(false)} // Close modal
-          onConfirm={handleLogout} // Confirm logout
+          onClose={() => setShowLogoutModal(false)}
+          onConfirm={handleLogout}
         />
 
         <div className="content">{renderContent()}</div>
