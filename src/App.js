@@ -87,7 +87,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route path="/cart" element={<Cart />} /> {/* ✅ Add this line */}
+            <Route path="/cart" element={<Cart />} /> 
             <Route path="/payment" element={<PaymentPage />} />
             <Route path="/addresses" element={<ProfileAddresses />} />
           </Routes>
