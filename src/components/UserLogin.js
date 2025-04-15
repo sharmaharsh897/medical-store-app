@@ -42,7 +42,7 @@ const LoginForm = () => {
       }, 2000);
       console.log("Login successful:", data);
     } catch (error) {
-      setLoading(false); // Hide loader on error
+      setLoading(false); 
       console.error("Error during login:", error);
       setErrorMessage("Incorrect email or password. Please try again.");
       setErrorVisible(true);
