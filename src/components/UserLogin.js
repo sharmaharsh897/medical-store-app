@@ -35,7 +35,7 @@ const LoginForm = () => {
 
       const data = await response.json();
       setUser({ first_name: data.first_name, last_name: data.last_name });
-      localStorage.setItem("token", data.token); // Use "token" as the key
+      localStorage.setItem("token", data.token);
       setTimeout(() => {
         setLoading(false);
         navigate("/home");
