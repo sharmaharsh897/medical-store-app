@@ -61,7 +61,6 @@ const LoginForm = () => {
     }
   }, [errorVisible]);
 
-  // Google login handler
   const handleGoogleLogin = async (credentialResponse) => {
     console.log("Google Token Response:", credentialResponse);
 
