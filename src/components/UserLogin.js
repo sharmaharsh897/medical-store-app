@@ -68,7 +68,7 @@ const LoginForm = () => {
       const res = await fetch("http://localhost:5000/api/google-login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token: credentialResponse.credential }), // This is now the correct ID token
+        body: JSON.stringify({ token: credentialResponse.credential }),
       });
 
       if (!res.ok) {
