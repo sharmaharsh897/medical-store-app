@@ -93,7 +93,7 @@ const LoginForm = () => {
     if (errorVisible) {
       const timeout = setTimeout(() => {
         setErrorMessage("");
-        setErrorVisible(false); // Hide the error message after 4 seconds
+        setErrorVisible(false); 
       }, 4000);
       return () => clearTimeout(timeout);
     }
