@@ -88,7 +88,6 @@ const LoginForm = () => {
     }
   };
 
-  // Tooltip fade-out effect
   useEffect(() => {
     if (errorVisible) {
       const timeout = setTimeout(() => {
