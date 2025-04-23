@@ -151,7 +151,6 @@ const LoginForm = () => {
           </div>
         </div>
 
-        {/* Error message tooltip */}
         {errorVisible && (
           <div className="login-tooltip error">{errorMessage}</div>
         )}
