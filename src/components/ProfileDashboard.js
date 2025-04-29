@@ -1,12 +1,13 @@
 import React from "react";
-import { FaBox, FaMapMarkerAlt, FaUser, FaSignOutAlt } from "react-icons/fa";
+import { FaBox, FaMapMarkerAlt, FaSignOutAlt, FaIdCard, FaKey } from "react-icons/fa";
 import "./ProfileDashboard.css";
 
 const ProfileDashboard = ({ onSelectOption }) => {
   const menuItems = [
     { icon: <FaBox size={40} />, label: "Orders", value: "myOrders" },
     { icon: <FaMapMarkerAlt size={40} />, label: "Addresses", value: "myAddresses" },
-    { icon: <FaUser size={40} />, label: "Account Details", value: "changePassword" },
+    { icon: <FaIdCard size={40} />, label: "User Account Details", value: "accountDetails" },
+    { icon: <FaKey size={40} />, label: "Change Password", value: "changePassword" },
     { icon: <FaSignOutAlt size={40} />, label: "Logout", value: "logout" },
   ];
 
