@@ -1,0 +1,70 @@
+/* ProfileDetails.css */
+
+.profile-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 20px;
+  }
+  
+  .profile-details-card {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(50, 174, 177, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .profile-details-card:hover {
+    box-shadow: 4px 4px 15px rgba(50, 174, 177, 1);
+  }
+  
+  .profile-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .profile-info-item {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .profile-label {
+    font-weight: bold;
+    color: #32aeb1;
+    margin-right: 8px;
+  }
+  
+  .profile-loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .profile-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top: 5px solid #32aeb1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
