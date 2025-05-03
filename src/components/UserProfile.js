@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./UserProfile.css";
@@ -5,6 +6,7 @@ import ChangePassword from "./ChangePassword";
 import Modal from "./LogoutModal";
 import ProfileDashboard from "./ProfileDashboard";
 import ProfileAddresses from "./ProfileAddresses";
+import ProfileDetails from "./ProfileDetails";
 
 const UserProfile = () => {
   const [selectedOption, setSelectedOption] = useState("basicProfile");
@@ -50,6 +52,7 @@ const UserProfile = () => {
     myOrders: "Orders",
     myAddresses: "Addresses",
     changePassword: "Change Password",
+    accountDetails: "Account Details",
   };
 
   const renderContent = () => {
@@ -57,7 +60,7 @@ const UserProfile = () => {
       case "basicProfile":
         return (
           <>
-            <p className="welcome-text" style={{ marginLeft: "-50px" }}>
+            <p className="welcome-text" >
               From your account dashboard you can view your{" "}
               <span
                 style={{
@@ -87,6 +90,12 @@ const UserProfile = () => {
         );
       case "myOrders":
         return <div>My Orders</div>;
+        case "accountDetails":
+          return (
+            <div style={{ marginLeft: "-330px", marginTop: "-100px" }}>
+              <ProfileDetails />
+            </div>
+          );
       case "myAddresses":
         return (
           <div style={{ marginLeft: "-330px", marginTop: "-100px" }}>
@@ -153,6 +162,16 @@ const UserProfile = () => {
                 onClick={() => setSelectedOption("myAddresses")}
               >
                 Addresses
+              </button>
+            </li>
+            <li>
+              <button
+                className={`sidebar-item ${
+                  selectedOption === "accountDetails" ? "active" : ""
+                }`}
+                onClick={() => setSelectedOption("accountDetails")}
+              >
+                User Account Details
               </button>
             </li>
             <li>
