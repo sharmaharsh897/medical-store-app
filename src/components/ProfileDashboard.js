@@ -27,7 +27,7 @@ const ProfileDashboard = ({ onSelectOption }) => {
           style={{ cursor: "pointer" }}
         >
           <div className="profile-icon">{item.icon}</div>
-          <p className="profile-label">{item.label}</p>
+          <p className="profile-label1">{item.label}</p>
         </div>
       ))}
     </div>
