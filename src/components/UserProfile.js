@@ -27,7 +27,6 @@ const UserProfile = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    // simulate loading state
     const timer = setTimeout(() => setIsLoading(false), 2000);
 
     fetch("http://localhost:5000/api/profile", {
