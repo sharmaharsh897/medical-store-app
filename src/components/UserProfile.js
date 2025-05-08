@@ -12,7 +12,7 @@ const UserProfile = () => {
   const [selectedOption, setSelectedOption] = useState("basicProfile");
   const [userData, setUserData] = useState(null);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(true); // <- initially true for loader
+  const [isLoading, setIsLoading] = useState(true); 
 
   const handleLogout = () => {
     setIsLoading(true);
