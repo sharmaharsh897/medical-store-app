@@ -124,7 +124,7 @@ function SearchSection() {
         (medicine) => medicine.name.toLowerCase() === query.toLowerCase()
       );
       if (matchedProduct) {
-        setSelectedProduct(matchedProduct); // ✅ Show product details on search
+        setSelectedProduct(matchedProduct); 
         setSearchErrorMessage("");
       } else {
         setSearchErrorMessage("Medicine not found!");
