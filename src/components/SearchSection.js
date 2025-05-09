@@ -125,7 +125,7 @@ function SearchSection() {
       );
       if (matchedProduct) {
         setSelectedProduct(matchedProduct); // ✅ Show product details on search
-        setSearchErrorMessage(""); // ✅ Clear error if found
+        setSearchErrorMessage("");
       } else {
         setSearchErrorMessage("Medicine not found!");
       }
