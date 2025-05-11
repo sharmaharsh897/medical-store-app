@@ -115,7 +115,6 @@ function SearchSection() {
     }
   }, [uploadMessage]);
 
-  // ✅ Show product detail on Search button click
   const handleSearchButtonClick = () => {
     if (query.trim() === "") {
       setSearchErrorMessage("Please enter something in the search bar.");
