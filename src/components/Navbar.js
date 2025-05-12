@@ -186,7 +186,7 @@ function Navbar() {
                     <RouterLink to="/profile">Profile</RouterLink>
                   </button>
                   <button className="account-button">
-                    <RouterLink to="">My Orders</RouterLink>
+                    <RouterLink to="/profile">My Orders</RouterLink>
                   </button>
                   <button className="account-button">
                     <RouterLink to="/change-password">
