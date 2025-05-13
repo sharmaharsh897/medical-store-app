@@ -75,7 +75,6 @@ const Cart = () => {
               <th>Price (₹)</th>
               <th>Total (₹)</th>
               <th>Actions</th>
-              <th>Total</th>
             </tr>
           </thead>
           <tbody>
@@ -108,7 +107,7 @@ const Cart = () => {
                     Remove
                   </button>
                 </td>
-                <td>₹{(item.price * item.quantity).toFixed(2)}</td>
+                
               </tr>
             ))}
           </tbody>
