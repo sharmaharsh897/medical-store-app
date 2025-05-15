@@ -22,7 +22,6 @@ const UserAccountDetails = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        // Fetch address
         const addressResponse = await axios.get('/api/addresses', {
           headers: { Authorization: `Bearer ${token}` },
         });
