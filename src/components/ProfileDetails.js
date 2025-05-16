@@ -17,7 +17,6 @@ const UserAccountDetails = () => {
         setLoading(true);
         const token = localStorage.getItem('token');
 
-        // Fetch profile
         const profileResponse = await axios.get('http://localhost:5000/api/profile', {
           headers: { Authorization: `Bearer ${token}` },
         });
