@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './ProfileDetails.css'; // your custom css
+import './ProfileDetails.css'; 
 
 const UserAccountDetails = () => {
   const [userDetails, setUserDetails] = useState({
