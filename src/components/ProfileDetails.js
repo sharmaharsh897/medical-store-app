@@ -53,7 +53,6 @@ const UserAccountDetails = () => {
       </div>
     );
   }
-  //random comment
 
   return (
     <div className="profile-details-container">
