@@ -53,7 +53,6 @@ const UserAccountDetails = () => {
       </div>
     );
   }
-//comment added
   return (
     <div className="profile-details-container">
       <div className="profile-details-card">
