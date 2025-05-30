@@ -53,7 +53,7 @@ const UserAccountDetails = () => {
       </div>
     );
   }
-//commit
+// commit
   return (
     <div className="profile-details-container">
       <div className="profile-details-card">
