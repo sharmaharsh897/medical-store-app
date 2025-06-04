@@ -6,12 +6,12 @@ import thyrocare from "../components/assets/Partners/thyrocare.png";
 import apex from "../components/assets/Partners/apex.jpeg";
 import redcliffe from "../components/assets/Partners/redcliffe.png";
 import mankind from "../components/assets/Partners/mankind.jpeg";
-// import lalpathlabs from "../components/assets/Partners/lalpathlabs.jpg";
-// import apollolabs from "../components/assets/Partners/apollolabs.png";
+import lalpathlabs from "../components/assets/Partners/lalpathlabs.jpg";
+import apollolabs from "../components/assets/Partners/apollolabs.png";
 
 const partners = [
-  //   { name: "All Path Labs", image: lalpathlabs },
-  //   { name: "Apollo Labs", image: apollolabs },
+    { name: "All Path Labs", image: lalpathlabs },
+    { name: "Apollo Labs", image: apollolabs },
     { name: "Mankind", image: mankind },
   { name: "SRL Diagnostics", image: srl },
   { name: "Apex Diagnostics", image: apex },
@@ -19,15 +19,7 @@ const partners = [
 
   { name: "Thyrocare", image: thyrocare },
   { name: "Metropolis", image: metropolis },
-  {
-    name: "Dr. Lal PathLabs",
-    image: "https://www.lalpathlabs.com/images/logo.png",
-  },
-  { name: "Thyrocare", image: "https://www.thyrocare.com/images/logo.png" },
-  {
-    name: "Apollo Diagnostics",
-    image: "https://www.apollodiagnostics.in/images/logo.png",
-  },
+
 ];
 function Partners() {
   return (
