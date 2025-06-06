@@ -1,68 +1,77 @@
-.paymentpage-container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .payment-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .payment-instruction {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #666;
-  }
-  
-  .payment-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .payment-option {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #ddd;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .payment-option input {
-    margin-right: 10px;
-  }
-  
-  .payment-option:hover,
-  .payment-option.selected {
-    border-color: green;
-    background: #e6f5e6;
-  }
-  
-  .pay-btn {
-    background: #28a745;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .pay-btn:hover {
-    background: #218838;
-  }
-  
+.confirm-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background: #fff;
+}
+
+.confirm-section {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+}
+
+.user-info p {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+.products-section .product-card {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.product-info h4 {
+  margin: 0 0 4px;
+}
+
+.price-summary .price-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.price-summary .total {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  font-size: 18px;
+  color: #000;
+}
+
+.free-delivery {
+  color: green;
+  font-weight: bold;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #2874f0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.place-order-btn:hover {
+  background-color: #2363d6;
+}
+
+.confirm-loader {
+  text-align: center;
+  padding: 40px;
+  font-size: 20px;
+}
