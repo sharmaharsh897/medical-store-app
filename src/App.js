@@ -88,7 +88,9 @@ function App() {
               }
             />
             <Route path="/cart" element={<Cart />} /> 
-            <Route path="/payment" element={<PaymentPage />} />
+
+            <Route path="/payment" element={<ProtectedRoute><PaymentPage /></ProtectedRoute>} />
+
             <Route path="/addresses" element={<ProfileAddresses />} />
           </Routes>
           <Footer className="footer"/>
