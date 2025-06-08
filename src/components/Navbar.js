@@ -107,6 +107,8 @@ function Navbar() {
   };
 
   const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     setIsLoading(true);
     setTimeout(() => {
       sessionStorage.removeItem("user");
