@@ -181,18 +181,27 @@ const Testimonials = () => {
         </div>
 
         <div className="reviews-grid">
-          {reviewsState.slice(0, visibleReviews).map((review, index) => (
-            <div key={index} className="review-box">
-              <div className="review-stars">
-                {"★".repeat(review.rating)}
-                {"☆".repeat(5 - review.rating)}
-              </div>
-              <p className="review-text">“{review.text}”</p>
-              <p className="review-author">
-                {review.author}, {review.date}
-              </p>
-            </div>
-          ))}
+         {reviewsState
+  .slice() // clone the array
+  .sort((a, b) => new Date(b.date) - new Date(a.date)) // sort by date DESC
+  .slice(0, visibleReviews)
+  .map((review, index) => (
+    <div key={index} className="review-box">
+      <div className="review-stars">
+        {"★".repeat(review.rating)}
+        {"☆".repeat(5 - review.rating)}
+      </div>
+      <p className="review-text">“{review.text}”</p>
+      <p className="review-author">
+        {review.author},{" "}
+        {new Date(review.date).toLocaleDateString("en-GB", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+        })}
+      </p>
+    </div>
+))}
         </div>
 
         <div className="reviews-buttons">
