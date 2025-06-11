@@ -75,3 +75,83 @@
   padding: 40px;
   font-size: 20px;
 }
+
+/* Step bar */
+.steps-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  max-width: 500px;      /* Control the width */
+  margin-left: auto;     /* Center horizontally */
+  margin-right: auto;
+  gap: 12px;             /* Space between steps */
+}
+.step-dot {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 50%;
+  background: #ddd;
+  text-align: center;
+  font-weight: 600;
+}
+.step-dot.active {
+  background: #2874f0;
+  color: #fff;
+}
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #ddd;
+}
+
+/* Accordions */
+.pay-accordion {
+  margin-bottom: 12px;
+}
+.pay-accordion summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 6px 0;
+}
+.pay-accordion[open] summary {
+  color: #2874f0;
+}
+.pay-accordion label,
+.pay-accordion input,
+.pay-accordion select {
+  display: block;
+  margin: 6px 0;
+}
+
+/* Card field group */
+.card-fields input {
+  width: 100%;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+}
+
+
+.confirm-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.confirm-loader::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
