@@ -59,6 +59,23 @@ const Cart = () => {
   const cgst = (subtotal * 0.12).toFixed(2);
   const grandTotal = (subtotal * 1.24).toFixed(2);
 
+  console.log("Cart Details:");
+cart.forEach((item, index) => {
+  console.log(`Item ${index + 1}:`, {
+    name: item.name,
+    quantity: item.quantity,
+    price: item.price,
+    total: (item.price * item.quantity).toFixed(2),
+  });
+});
+
+console.log("Cart Summary:", {
+  subtotal: subtotal.toFixed(2),
+  cgst,
+  sgst,
+  grandTotal
+});
+
   return (
     <div className="cart-container">
       <h2 className="cart-title">Cart</h2>
