@@ -36,30 +36,6 @@ const reviews = [
       rating: 4,
     },
     {
-      text: "Gurudev Medical Store is my trusted place for health and wellness needs. The staff’s expertise and friendliness make it a standout pharmacy. I’ve always had great experiences, whether it’s buying over-the-counter medicine or prescription refills.",
-      author: "Vikram Jain",
-      date: "12 December 2023",
-      rating: 5,
-    },
-    {
-      text: "I’m impressed with the quality of service at this pharmacy. They always have everything I need, and the team is very attentive. They make sure to answer all my questions and ensure I leave with exactly what I came for.",
-      author: "Nina Desai",
-      date: "30 November 2023",
-      rating: 4,
-    },
-    {
-      text: "A very reliable pharmacy! The staff is extremely knowledgeable and helpful, providing great recommendations based on my needs. Their timely service and attention to detail make every visit a pleasant experience.",
-      author: "Kiran Soni",
-      date: "17 December 2023",
-      rating: 5,
-    },
-    {
-      text: "I’ve had nothing but positive experiences at Gurudev Medical Store. The staff is efficient, and the store is always clean and well-organized. Whether it’s a routine visit or an urgent need, they’re always ready to help.",
-      author: "Harish Yadav",
-      date: "25 January 2024",
-      rating: 4,
-    },
-    {
       text: "The store’s staff goes above and beyond to ensure a satisfying experience. They helped me find a rare medicine that I couldn’t find elsewhere, and I couldn’t be more grateful for their dedication to helping customers.",
       author: "Reena Mehta",
       date: "8 February 2024",
@@ -76,12 +52,6 @@ const reviews = [
       text: "The product selection is good, but I’ve had a few issues with the availability of certain items. Overall, the service is okay, but I would appreciate better stock management.",
       author: "Anjali Patel",
       date: "3 December 2023",
-      rating: 3,
-    },
-    {
-      text: "The quality of the service could be better. I faced some issues with incorrect prescriptions, and it took longer than expected to resolve. However, the staff was apologetic and rectified the issue.",
-      author: "Vikram Desai",
-      date: "19 December 2023",
       rating: 3,
     },
   ];
