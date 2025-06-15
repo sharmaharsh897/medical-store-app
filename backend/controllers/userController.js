@@ -16,6 +16,7 @@ const getProfile = async (req, res) => {
     }
 
     res.status(200).json({
+      id: user.id,
       name: `${user.first_name} ${user.last_name}`,
       email: user.email,
       phone: user.phone_number || "N/A",
