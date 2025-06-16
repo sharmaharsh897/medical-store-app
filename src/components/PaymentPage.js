@@ -10,11 +10,13 @@ const PaymentPage = () => {
 
   const [userDetails, setUserDetails] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [step, setStep] = useState(1);          // ← NEW: 1 = summary, 2 = payment
-  const [paymentMethod, setPaymentMethod] = useState(""); // keeps chosen pay-mode
+  const [step, setStep] = useState(1);
+  const [paymentMethod, setPaymentMethod] = useState("");
 
-  // Price calculations (unchanged)
-  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const subtotal = cart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
   const sgst = parseFloat((subtotal * 0.12).toFixed(2));
   const cgst = parseFloat((subtotal * 0.12).toFixed(2));
   const deliveryCharge = 0;
@@ -29,9 +31,12 @@ const PaymentPage = () => {
           return;
         }
 
-        const profileRes = await axios.get("http://localhost:5000/api/profile", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const profileRes = await axios.get(
+          "http://localhost:5000/api/profile",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
 
         const addressRes = await axios.get("/api/addresses", {
           headers: { Authorization: `Bearer ${token}` },
@@ -43,6 +48,7 @@ const PaymentPage = () => {
           : "N/A";
 
         setUserDetails({
+          id: profileRes.data.id,
           name: profileRes.data.name || "",
           address: fullAddress,
           phone_number: profileRes.data.phone || "N/A",
@@ -54,63 +60,96 @@ const PaymentPage = () => {
         setLoading(false);
       }
     };
+
     fetchUserDetails();
   }, [navigate]);
 
-  const placeOrder = () => {
+  const placeOrder = async () => {
     if (!paymentMethod) {
       alert("Choose a payment option first!");
       return;
     }
-    alert(`Order placed successfully via ${paymentMethod}!`);
-    setCart([]);
-    navigate("/");
+
+    try {
+      const token = localStorage.getItem("token");
+
+      const payload = {
+        userId: userDetails.id,
+        customerName: userDetails.name,
+        phoneNumber: userDetails.phone_number,
+        paymentMethod,
+        totalAmount: parseFloat(grandTotal),
+        cart: cart.map((item) => ({
+          name: item.name,
+          quantity: item.quantity,
+          price: item.price,
+        })),
+      };
+
+      const res = await axios.post(
+        "http://localhost:5000/api/place-order",
+        payload,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      console.log("Order response:", res.data);
+      console.log("Order placed successfully:", payload);
+
+      alert(`✅ ${res.data.message}\n🧾 Order ID: ${res.data.orderCode}`);
+      setCart([]);
+      navigate("/");
+    } catch (err) {
+      console.error("❌ Order failed", err);
+      alert("Order failed! Please try again.");
+    }
   };
 
   if (loading) return <div className="confirm-loader"></div>;
 
   return (
     <div className="confirm-page">
-
-      {/* ── Step bar ─────────────────────────────────────── */}
       <div className="steps-bar">
-  <span
-    className={`step-dot ${step === 1 ? "active" : ""}`}
-    onClick={() => setStep(1)}
-    title="Order Summary"
-    style={{ cursor: "pointer" }}
-  >
-    1
-  </span>
-  <span className="step-line"></span>
-  <span
-    className={`step-dot ${step === 2 ? "active" : ""}`}
-    onClick={() => setStep(2)}
-    title="Payment"
-    style={{ cursor: "pointer" }}
-  >
-    2
-  </span>
-</div>
+        <span
+          className={`step-dot ${step === 1 ? "active" : ""}`}
+          onClick={() => setStep(1)}
+          title="Order Summary"
+          style={{ cursor: "pointer" }}
+        >
+          1
+        </span>
+        <span className="step-line"></span>
+        <span
+          className={`step-dot ${step === 2 ? "active" : ""}`}
+          onClick={() => setStep(2)}
+          title="Payment"
+          style={{ cursor: "pointer" }}
+        >
+          2
+        </span>
+      </div>
 
-      {/* ── STEP 1 : Order summary ───────────────────────── */}
       {step === 1 && (
         <>
           <div className="confirm-section user-info">
             <h3>Delivering to:</h3>
-            <p><strong>{userDetails.name}</strong></p>
+            <p>
+              <strong>{userDetails.name}</strong>
+            </p>
             <p>{userDetails.phone_number}</p>
             <p>
-              {userDetails.address && userDetails.address !== "N/A"
-                ? userDetails.address
-                : <i>No address in database</i>}
+              {userDetails.address && userDetails.address !== "N/A" ? (
+                userDetails.address
+              ) : (
+                <i>No address in database</i>
+              )}
             </p>
           </div>
 
           <div className="confirm-section products-section">
             <h3>Items in your Order:</h3>
-            {cart.map((item) => (
-              <div key={item.id} className="product-card">
+            {cart.map((item, index) => (
+              <div key={index} className="product-card">
                 <img src={item.image} alt={item.name} />
                 <div className="product-info">
                   <h4>{item.name}</h4>
@@ -123,42 +162,71 @@ const PaymentPage = () => {
 
           <div className="confirm-section price-summary">
             <h3>Price Details</h3>
-            <div className="price-item"><span>Item Total</span><span>₹{subtotal.toFixed(2)}</span></div>
-            <div className="price-item"><span>SGST (12%)</span><span>₹{sgst}</span></div>
-            <div className="price-item"><span>CGST (12%)</span><span>₹{cgst}</span></div>
+            <div className="price-item">
+              <span>Item Total</span>
+              <span>₹{subtotal.toFixed(2)}</span>
+            </div>
+            <div className="price-item">
+              <span>SGST (12%)</span>
+              <span>₹{sgst}</span>
+            </div>
+            <div className="price-item">
+              <span>CGST (12%)</span>
+              <span>₹{cgst}</span>
+            </div>
             <div className="price-item">
               <span>Delivery</span>
-              <span><s>₹40</s> <span className="free-delivery">Free</span></span>
+              <span>
+                <s>₹40</s> <span className="free-delivery">Free</span>
+              </span>
             </div>
             <div className="price-item total">
-              <strong>Total Amount</strong><strong>₹{grandTotal}</strong>
+              <strong>Total Amount</strong>
+              <strong>₹{grandTotal}</strong>
             </div>
           </div>
 
-          {/* Continue button → Step 2 */}
           <button className="place-order-btn" onClick={() => setStep(2)}>
             Continue
           </button>
         </>
       )}
 
-      {/* ── STEP 2 : Payment options ─────────────────────── */}
       {step === 2 && (
         <div className="confirm-section payment-section">
           <h3>Select Payment Method</h3>
 
-          {/* UPI */}
           <details className="pay-accordion">
             <summary>UPI</summary>
-            <label><input type="radio" name="pay" value="Paytm"
-                   onChange={(e)=>setPaymentMethod(e.target.value)}/> Paytm</label>
-            <label><input type="radio" name="pay" value="Google Pay"
-                   onChange={(e)=>setPaymentMethod(e.target.value)}/> GPay</label>
-            <label><input type="radio" name="pay" value="PhonePe"
-                   onChange={(e)=>setPaymentMethod(e.target.value)}/> PhonePe</label>
+            <label>
+              <input
+                type="radio"
+                name="pay"
+                value="Paytm"
+                onChange={(e) => setPaymentMethod(e.target.value)}
+              />{" "}
+              Paytm
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="pay"
+                value="Google Pay"
+                onChange={(e) => setPaymentMethod(e.target.value)}
+              />{" "}
+              GPay
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="pay"
+                value="PhonePe"
+                onChange={(e) => setPaymentMethod(e.target.value)}
+              />{" "}
+              PhonePe
+            </label>
           </details>
 
-          {/* Card */}
           <details className="pay-accordion">
             <summary>Credit / Debit / ATM Card</summary>
             <div className="card-fields">
@@ -166,16 +234,24 @@ const PaymentPage = () => {
               <input placeholder="Valid thru (MM/YY)" />
               <input placeholder="CVV" type="password" />
               <label>
-                <input type="radio" name="pay" value="Card"
-                       onChange={(e)=>setPaymentMethod(e.target.value)}/> Use this card
+                <input
+                  type="radio"
+                  name="pay"
+                  value="Card"
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                />{" "}
+                Use this card
               </label>
             </div>
           </details>
 
-          {/* Net-Banking */}
           <details className="pay-accordion">
             <summary>Net Banking</summary>
-            <select onChange={(e)=>setPaymentMethod(`Net Banking (${e.target.value})`)}>
+            <select
+              onChange={(e) =>
+                setPaymentMethod(`Net Banking (${e.target.value})`)
+              }
+            >
               <option>Select Bank</option>
               <option>HDFC Bank</option>
               <option>SBI</option>
@@ -184,31 +260,46 @@ const PaymentPage = () => {
             </select>
           </details>
 
-          {/* Wallet */}
           <details className="pay-accordion">
             <summary>Wallet</summary>
-            <label><input type="radio" name="pay" value="Amazon Pay"
-                   onChange={(e)=>setPaymentMethod(e.target.value)}/> Amazon Pay</label>
-            <label><input type="radio" name="pay" value="Mobikwik"
-                   onChange={(e)=>setPaymentMethod(e.target.value)}/> Mobikwik</label>
+            <label>
+              <input
+                type="radio"
+                name="pay"
+                value="Amazon Pay"
+                onChange={(e) => setPaymentMethod(e.target.value)}
+              />{" "}
+              Amazon Pay
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="pay"
+                value="Mobikwik"
+                onChange={(e) => setPaymentMethod(e.target.value)}
+              />{" "}
+              Mobikwik
+            </label>
           </details>
 
-          {/* Gift Card */}
           <details className="pay-accordion">
             <summary>Have a Gift Card?</summary>
             <input placeholder="Enter gift card code" />
           </details>
 
-          {/* Cash on Delivery */}
           <details className="pay-accordion">
             <summary>Cash on Delivery</summary>
             <label>
-              <input type="radio" name="pay" value="Cash on Delivery"
-                     onChange={(e)=>setPaymentMethod(e.target.value)}/> Pay ₹{grandTotal} on delivery
+              <input
+                type="radio"
+                name="pay"
+                value="Cash on Delivery"
+                onChange={(e) => setPaymentMethod(e.target.value)}
+              />{" "}
+              Pay ₹{grandTotal} on delivery
             </label>
           </details>
 
-          {/* Final place order */}
           <button className="place-order-btn" onClick={placeOrder}>
             Place Order
           </button>
