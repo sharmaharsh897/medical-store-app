@@ -1,8 +1,11 @@
+/*eslint-disable*/
+
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { CartContext } from "../context/cartContext";
 import "./PaymentPage.css";
+import successDing from "../components/assets/success-ding.mp3";
 
 const PaymentPage = () => {
   const navigate = useNavigate();
@@ -12,6 +15,7 @@ const PaymentPage = () => {
   const [loading, setLoading] = useState(true);
   const [step, setStep] = useState(1);
   const [paymentMethod, setPaymentMethod] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false); // ✅ new state
 
   const subtotal = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -93,12 +97,19 @@ const PaymentPage = () => {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      console.log("Order response:", res.data);
-      console.log("Order placed successfully:", payload);
 
-      alert(`✅ ${res.data.message}\n🧾 Order ID: ${res.data.orderCode}`);
-      setCart([]);
-      navigate("/");
+      // ✅ Play ding sound
+      const ding = new Audio(successDing);
+      ding.play();
+
+      // ✅ Show animated success popup
+      setShowSuccess(true);
+
+      // ✅ Clear cart and navigate after 3 seconds
+      setTimeout(() => {
+        setCart([]);
+        navigate("/");
+      }, 3000);
     } catch (err) {
       console.error("❌ Order failed", err);
       alert("Order failed! Please try again.");
@@ -109,12 +120,11 @@ const PaymentPage = () => {
 
   return (
     <div className="confirm-page">
+      {/* STEP BAR (unchanged) */}
       <div className="steps-bar">
         <span
           className={`step-dot ${step === 1 ? "active" : ""}`}
           onClick={() => setStep(1)}
-          title="Order Summary"
-          style={{ cursor: "pointer" }}
         >
           1
         </span>
@@ -122,13 +132,12 @@ const PaymentPage = () => {
         <span
           className={`step-dot ${step === 2 ? "active" : ""}`}
           onClick={() => setStep(2)}
-          title="Payment"
-          style={{ cursor: "pointer" }}
         >
           2
         </span>
       </div>
 
+      {/* STEP 1: Summary */}
       {step === 1 && (
         <>
           <div className="confirm-section user-info">
@@ -138,7 +147,7 @@ const PaymentPage = () => {
             </p>
             <p>{userDetails.phone_number}</p>
             <p>
-              {userDetails.address && userDetails.address !== "N/A" ? (
+              {userDetails.address !== "N/A" ? (
                 userDetails.address
               ) : (
                 <i>No address in database</i>
@@ -192,6 +201,7 @@ const PaymentPage = () => {
         </>
       )}
 
+      {/* STEP 2: Payment */}
       {step === 2 && (
         <div className="confirm-section payment-section">
           <h3>Select Payment Method</h3>
@@ -303,6 +313,22 @@ const PaymentPage = () => {
           <button className="place-order-btn" onClick={placeOrder}>
             Place Order
           </button>
+        </div>
+      )}
+
+      {/* ✅ SUCCESS POPUP */}
+      {showSuccess && (
+        <div className="order-success-popup">
+          <div className="popup-content">
+            <div className="checkmark-animation">
+              <svg viewBox="0 0 60 60">
+                {" "}
+                <circle className="circle" cx="30" cy="30" r="24" fill="none" />
+                <path className="check" fill="none" d="M18 32l8 8 16-18" />
+              </svg>
+            </div>
+            <p>Order placed successfully!</p>
+          </div>
         </div>
       )}
     </div>
