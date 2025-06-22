@@ -7,6 +7,7 @@ import Modal from "./LogoutModal";
 import ProfileDashboard from "./ProfileDashboard";
 import ProfileAddresses from "./ProfileAddresses";
 import ProfileDetails from "./ProfileDetails";
+import MyOrders from "./MyOrders";
 
 const UserProfile = () => {
   const [selectedOption, setSelectedOption] = useState("basicProfile");
@@ -87,8 +88,11 @@ const UserProfile = () => {
             <ProfileDashboard onSelectOption={setSelectedOption} />
           </>
         );
-      case "myOrders":
-        return <div>My Orders</div>;
+    case "myOrders":
+      return( 
+            <MyOrders />
+      );
+  
         case "accountDetails":
           return (
             <div style={{ marginLeft: "-330px", marginTop: "-100px" }}>
