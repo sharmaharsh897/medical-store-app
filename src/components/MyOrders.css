@@ -1,0 +1,70 @@
+components/MyOrders.css
+.my-orders-container {
+  padding: 30px 40px;
+  background-color: #f4f9fb;
+  box-sizing: border-box;
+  width: 100%;
+  
+}
+
+.my-orders-container .orders-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #32aeb1;
+  padding-bottom: 10px;
+}
+
+.my-orders-container .order-card {
+  border: 1px solid #ddd;
+  padding: 20px 25px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(50, 174, 177, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.my-orders-container .order-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 16px rgba(50, 174, 177, 0.15);
+}
+
+.my-orders-container .order-code {
+  margin: 0;
+  color: #32aeb1;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.my-orders-container .order-info {
+  margin: 8px 0;
+  color: #555;
+  font-size: 15px;
+}
+
+.my-orders-container .order-items-title {
+  font-weight: bold;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.my-orders-container .order-items-list {
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+.my-orders-container .order-item {
+  font-size: 15px;
+  color: #333;
+}
+
+.my-orders-container .loading-spinner {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #888;
+}
+
