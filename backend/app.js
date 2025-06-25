@@ -24,4 +24,7 @@ app.use('/api/register', registerRoutes);
 const addressRoutes = require("./routes/addressRoutes");
 app.use("/api/addresses", addressRoutes);
 
+const orderRoutes = require("./routes/orderRoutes"); // Import your order routes
+app.use("/api", orderRoutes); // Mount the order routes under /api
+
 module.exports = app; // Make sure you export the app
