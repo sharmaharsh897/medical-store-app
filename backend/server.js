@@ -30,6 +30,9 @@ app.use("/api/register", registerRoutes);
 const addressRoutes = require("./routes/addressRoutes");
 app.use("/api/addresses", addressRoutes);
 
+const orderRoutes = require("./routes/orderRoutes"); // Import your order routes
+app.use("/api", orderRoutes); // Mount the order routes under /api
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
