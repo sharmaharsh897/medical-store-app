@@ -13,6 +13,8 @@
     "axios": "^1.7.9",
     "cors": "^2.8.5",
     "google-auth-library": "^9.15.0",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
     "medical-store-app": "file:",
     "mysql2": "^3.12.0",
     "punycode": "^2.3.1",
