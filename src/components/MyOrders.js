@@ -30,7 +30,6 @@ const MyOrders = () => {
   if (orders.length === 0) return <div>No orders found.</div>;
 
   // MyOrders.js
-  //comment added
 return (
   <div className="my-orders-container">
     <h2 className="orders-heading">My Orders</h2>
