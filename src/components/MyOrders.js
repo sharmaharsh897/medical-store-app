@@ -60,10 +60,10 @@ const MyOrders = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <h3>Order Code: {selectedOrder.order_code}</h3>
-            {/* <p>Order Date: {new Date(selectedOrder.order_date).toLocaleDateString()}</p> */}
+            <p>Order Date: {new Date(selectedOrder.order_date).toLocaleDateString()}</p>
             <p>Payment Method: {selectedOrder.payment_method}</p>
             <p>Total Amount: ₹{selectedOrder.total_amount}</p>
-            {/* <p>Delivery Address: {selectedOrder.delivery_address}</p> */}
+            <p>Delivery Address: {selectedOrder.delivery_address}</p>
             <div className="order-items-title">Items:</div>
             <ul className="order-items-list">
               {selectedOrder.items.map((item, i) => (
