@@ -60,6 +60,7 @@ const MyOrders = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <h3>Order Code: {selectedOrder.order_code}</h3>
+            {/* fix required */}
             <p>Order Date: {new Date(selectedOrder.order_date).toLocaleDateString()}</p>
             <p>Payment Method: {selectedOrder.payment_method}</p>
             <p>Total Amount: ₹{selectedOrder.total_amount}</p>
