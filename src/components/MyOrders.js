@@ -4,26 +4,45 @@ import "./MyOrders.css";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
+  const [addresses, setAddresses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedOrder, setSelectedOrder] = useState(null);
 
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
-    const fetchOrders = async () => {
+    const fetchOrdersAndAddresses = async () => {
       try {
-        const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/my-orders", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setOrders(res.data);
+        const [ordersRes, addressesRes] = await Promise.all([
+          axios.get("http://localhost:5000/api/my-orders", {
+            headers: { Authorization: `Bearer ${token}` },
+          }),
+          axios.get("http://localhost:5000/api/addresses", {
+            headers: { Authorization: `Bearer ${token}` },
+          }),
+        ]);
+
+        setOrders(ordersRes.data);
+        setAddresses(addressesRes.data);
       } catch (err) {
-        console.error("❌ Error fetching orders:", err);
+        console.error("❌ Error fetching orders or addresses:", err);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchOrders();
-  }, []);
+    fetchOrdersAndAddresses();
+  }, [token]);
+
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
+  const defaultAddress = addresses.length > 0 ? addresses[0] : null;
 
   if (loading) return <div className="loading-spinner">Loading Orders...</div>;
   if (orders.length === 0) return <div>No orders found.</div>;
@@ -54,31 +73,69 @@ const MyOrders = () => {
       ))}
 
       {selectedOrder && (
-        <div className="modal-overlay" onClick={() => setSelectedOrder(null)}>
-          <div
-            className="modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3>Order Code: {selectedOrder.order_code}</h3>
-            {/* fix required */}
-            <p>Order Date: {new Date(selectedOrder.order_date).toLocaleDateString()}</p>
-            <p>Payment Method: {selectedOrder.payment_method}</p>
-            <p>Total Amount: ₹{selectedOrder.total_amount}</p>
-            <p>Delivery Address: {selectedOrder.delivery_address}</p>
-            <div className="order-items-title">Items:</div>
-            <ul className="order-items-list">
-              {selectedOrder.items.map((item, i) => (
-                <li key={i} className="order-item">
-                  {item.product_name} x {item.quantity} – ₹{item.price}
-                </li>
-              ))}
-            </ul>
-            <button className="close-button" onClick={() => setSelectedOrder(null)}>
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+  <div className="modal-overlay" onClick={() => setSelectedOrder(null)}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <h3 className="modal-title">Order Summary</h3>
+
+      <table className="modal-table">
+        <tbody>
+          <tr>
+            <th>Order Code</th>
+            <td>{selectedOrder.order_code}</td>
+          </tr>
+          <tr>
+            <th>Order Date</th>
+            <td>{formatDate(selectedOrder.created_at)}</td>
+          </tr>
+          <tr>
+            <th>Payment Method</th>
+            <td>{selectedOrder.payment_method}</td>
+          </tr>
+          <tr>
+            <th>Total Amount Paid</th>
+            <td>₹{selectedOrder.total_amount}</td>
+          </tr>
+          {defaultAddress && (
+            <>
+              <tr>
+                <th>Address</th>
+                <td>
+                  {defaultAddress.line1}, {defaultAddress.city},<br />
+                  {defaultAddress.state} – {defaultAddress.pincode}
+                </td>
+              </tr>
+            </>
+          )}
+        </tbody>
+      </table>
+
+      <h4 className="items-heading">Ordered Items</h4>
+      <table className="items-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {selectedOrder.items.map((item, i) => (
+            <tr key={i}>
+              <td>{item.product_name}</td>
+              <td>{item.quantity}</td>
+              <td>{item.price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <button className="close-button" onClick={() => setSelectedOrder(null)}>
+        Close
+      </button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
