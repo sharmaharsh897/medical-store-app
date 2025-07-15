@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-.my-orders-container .orders-heading {
+.orders-heading {
   font-size: 28px;
   font-weight: bold;
   color: #333;
@@ -13,7 +13,7 @@
   padding-bottom: 10px;
 }
 
-.my-orders-container .order-card {
+.order-card {
   border: 1px solid #ddd;
   padding: 20px 25px;
   margin-bottom: 24px;
@@ -24,42 +24,44 @@
   cursor: pointer;
 }
 
-.my-orders-container .order-card:hover {
+.order-card:hover {
   transform: translateY(-4px);
   box-shadow: 0px 6px 16px rgba(50, 174, 177, 0.15);
 }
 
-.my-orders-container .order-code {
+.order-code {
   margin: 0;
   color: #32aeb1;
   font-size: 18px;
   font-weight: bold;
 }
 
-.my-orders-container .order-info {
+.order-info {
   margin: 8px 0;
   color: #555;
   font-size: 15px;
 }
 
-.my-orders-container .order-items-title {
+.order-items-title {
   font-weight: bold;
   margin-top: 12px;
   margin-bottom: 6px;
   color: #333;
 }
 
-.my-orders-container .order-items-list {
+.order-items-list {
   padding-left: 20px;
   margin-top: 0;
 }
 
-.my-orders-container .order-item {
+.order-item {
   font-size: 15px;
   color: #333;
+  padding-left: 10px;
+  margin: 4px 0;
 }
 
-.my-orders-container .loading-spinner {
+.loading-spinner {
   text-align: center;
   padding: 40px;
   font-size: 18px;
@@ -84,13 +86,11 @@
   background: #fff;
   padding: 30px;
   border-radius: 12px;
-  max-width: 200px;
-  width: 30%;
+  max-width: 600px; /* ✅ reduced from 800px */
+  width: 50%;        /* ✅ reduced from 90% */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   position: relative;
   animation: fadeIn 0.3s ease-in-out;
-  align-items: flex-start;
-  align-items: baseline;
 }
 
 .modal-content h3 {
@@ -103,7 +103,7 @@
 .modal-content .order-items-title,
 .modal-content .order-items-list {
   margin-bottom: 10px;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .close-button {
@@ -115,7 +115,6 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
-      align-self: anchor-center;
 }
 
 .close-button:hover {
@@ -132,3 +131,79 @@
     transform: translateY(0);
   }
 }
+.modal-title {
+  margin-top: 0;
+  color: #32aeb1;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Summary Table */
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.modal-table th {
+  background-color: #f0f8f8;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+  width: 40%;
+  color: #444;
+}
+
+.modal-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Items Table */
+.items-heading {
+  margin-bottom: 10px;
+  color: #32aeb1;
+  font-size: 18px;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.items-table th,
+.items-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.items-table th {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.items-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .modal-table th,
+  .modal-table td,
+  .items-table th,
+  .items-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .modal-title {
+    font-size: 18px;
+  }
+}
+
+
