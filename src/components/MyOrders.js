@@ -57,7 +57,7 @@ const MyOrders = () => {
           onClick={() => setSelectedOrder(order)}
         >
           <h4 className="order-code">Order Code: {order.order_code}</h4>
-          <p className="order-info">Order date: {order.created_at}</p>
+          <p className="order-info">Order date: {formatDate(order.created_at)}</p>
           <p className="order-info">Payment: {order.payment_method}</p>
           <p className="order-info">Total: ₹{order.total_amount}</p>
           <div>
