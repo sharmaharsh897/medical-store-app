@@ -39,7 +39,7 @@ const MyOrders = () => {
     };
 
     fetchOrdersAndAddresses();
-  }, [token, sortOrder]); // ✅ safe and clean
+  }, [token, sortOrder]);
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
