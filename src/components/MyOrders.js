@@ -32,7 +32,7 @@ const MyOrders = () => {
         setOrders(sorted);
         setAddresses(addressesRes.data);
       } catch (err) {
-        console.error("❌ Error fetching orders or addresses:", err);
+        console.error(" Error fetching orders or addresses:", err);
       } finally {
         setLoading(false);
       }
