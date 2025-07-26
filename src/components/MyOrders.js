@@ -72,27 +72,38 @@ const MyOrders = () => {
 
       {orders.map((order, idx) => (
         <div
-          key={idx}
-          className="order-card"
-          onClick={() => setSelectedOrder(order)}
-        >
-          <h4 className="order-code">Order Code: {order.order_code}</h4>
-          <p className="order-info">
-            Order date: {formatDate(order.created_at)}
-          </p>
-          <p className="order-info">Payment: {order.payment_method}</p>
-          <p className="order-info">Total: ₹{order.total_amount}</p>
-          <div>
-            <div className="order-items-title">Items:</div>
-            <ul className="order-items-list">
-              {order.items.map((item, i) => (
-                <li key={i} className="order-item">
-                  {item.product_name} x {item.quantity} – ₹{item.price}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+  key={idx}
+  className="order-card"
+  onClick={() => setSelectedOrder(order)}
+>
+  <h4 className="order-code">Order Code: {order.order_code}</h4>
+  <p className="order-info">
+    Order date: {formatDate(order.created_at)}
+  </p>
+  <p className="order-info">Payment: {order.payment_method}</p>
+  <p className="order-info">Total: ₹{order.total_amount}</p>
+
+  <div>
+    <div className="order-items-title">Items:</div>
+    <ul className="order-items-list">
+      {order.items.map((item, i) => (
+        <li key={i} className="order-item">
+          {item.product_name} x {item.quantity} – ₹{item.price}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <button
+    className="invoice-button"
+    onClick={(e) => {
+      e.stopPropagation(); // Prevent card click (modal open)
+      window.print(); // Placeholder for print logic
+    }}
+  >
+    Print Invoice
+  </button>
+</div>
       ))}
 
       {selectedOrder && (
