@@ -11,6 +11,91 @@ const MyOrders = () => {
 
   const token = localStorage.getItem("token");
 
+const handlePrintInvoice = (order) => {
+  const address = addresses.length > 0 ? addresses[0] : null;
+
+  const invoiceHTML = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Invoice - ${order.order_code}</title>
+        <style>
+          body { font-family: Arial, sans-serif; padding: 20px; }
+          h2 { color: #32aeb1; }
+          table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+          th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+          th { background-color: #f0f8f8; }
+          .address, .summary { margin-top: 20px; }
+        </style>
+      </head>
+      <body>
+        <h2>Invoice</h2>
+        <div class="summary">
+          <p><strong>Order Code:</strong> ${order.order_code}</p>
+          <p><strong>Order Date:</strong> ${formatDate(order.created_at)}</p>
+          <p><strong>Payment Method:</strong> ${order.payment_method}</p>
+          <p><strong>Total Paid:</strong> ₹${order.total_amount}</p>
+        </div>
+
+        ${
+          address
+            ? `<div class="address">
+                <strong>Delivery Address:</strong>
+                <p>${address.line1}, ${address.city}, ${address.state} - ${address.pincode}</p>
+              </div>`
+            : ""
+        }
+
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Qty</th>
+              <th>Price (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${order.items
+              .map(
+                (item) => `
+              <tr>
+                <td>${item.product_name}</td>
+                <td>${item.quantity}</td>
+                <td>${item.price}</td>
+              </tr>
+            `
+              )
+              .join("")}
+          </tbody>
+        </table>
+
+        <p style="margin-top: 40px;">Thank you for your purchase!</p>
+      </body>
+    </html>
+  `;
+
+  const printWindow = window.open("", "_blank");
+
+  if (printWindow) {
+    printWindow.document.write(invoiceHTML);
+    printWindow.document.close();
+
+    // Delay the print to allow render time (important!)
+    setTimeout(() => {
+      printWindow.focus();
+      printWindow.print();
+
+      // Optional: close after a delay to allow user cancel
+      setTimeout(() => {
+        printWindow.close();
+      }, 1000);
+    }, 500); // ⏱️ Delay ensures DOM is rendered before print()
+  } else {
+    alert("Pop-up blocked! Please allow pop-ups for this site.");
+  }
+};
+
+
   useEffect(() => {
     const fetchOrdersAndAddresses = async () => {
       try {
@@ -94,15 +179,15 @@ const MyOrders = () => {
     </ul>
   </div>
 
-  <button
-    className="invoice-button"
-    onClick={(e) => {
-      e.stopPropagation(); // Prevent card click (modal open)
-      window.print(); // Placeholder for print logic
-    }}
-  >
-    Print Invoice
-  </button>
+ <button
+  className="invoice-button"
+  onClick={(e) => {
+    e.stopPropagation();
+    handlePrintInvoice(order);
+  }}
+>
+  🖨️
+</button>
 </div>
       ))}
 
