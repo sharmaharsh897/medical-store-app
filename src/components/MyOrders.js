@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./MyOrders.css";
+import { generateInvoiceHTML } from "../utils/generateInvoiceHTML";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -13,118 +14,63 @@ const MyOrders = () => {
 
 const handlePrintInvoice = (order) => {
   const address = addresses.length > 0 ? addresses[0] : null;
-
-  const invoiceHTML = `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Invoice - ${order.order_code}</title>
-        <style>
-          body { font-family: Arial, sans-serif; padding: 20px; }
-          h2 { color: #32aeb1; }
-          table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-          th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
-          th { background-color: #f0f8f8; }
-          .address, .summary { margin-top: 20px; }
-        </style>
-      </head>
-      <body>
-        <h2>Invoice</h2>
-        <div class="summary">
-          <p><strong>Order Code:</strong> ${order.order_code}</p>
-          <p><strong>Order Date:</strong> ${formatDate(order.created_at)}</p>
-          <p><strong>Payment Method:</strong> ${order.payment_method}</p>
-          <p><strong>Total Paid:</strong> ₹${order.total_amount}</p>
-        </div>
-
-        ${
-          address
-            ? `<div class="address">
-                <strong>Delivery Address:</strong>
-                <p>${address.line1}, ${address.city}, ${address.state} - ${address.pincode}</p>
-              </div>`
-            : ""
-        }
-
-        <table>
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Qty</th>
-              <th>Price (₹)</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${order.items
-              .map(
-                (item) => `
-              <tr>
-                <td>${item.product_name}</td>
-                <td>${item.quantity}</td>
-                <td>${item.price}</td>
-              </tr>
-            `
-              )
-              .join("")}
-          </tbody>
-        </table>
-
-        <p style="margin-top: 40px;">Thank you for your purchase!</p>
-      </body>
-    </html>
-  `;
+  const invoiceHTML = generateInvoiceHTML(order, address, user);
 
   const printWindow = window.open("", "_blank");
 
   if (printWindow) {
     printWindow.document.write(invoiceHTML);
     printWindow.document.close();
-
-    // Delay the print to allow render time (important!)
     setTimeout(() => {
       printWindow.focus();
       printWindow.print();
-
-      // Optional: close after a delay to allow user cancel
-      setTimeout(() => {
-        printWindow.close();
-      }, 1000);
-    }, 500); // ⏱️ Delay ensures DOM is rendered before print()
+      setTimeout(() => printWindow.close(), 1000);
+    }, 500);
   } else {
     alert("Pop-up blocked! Please allow pop-ups for this site.");
   }
 };
 
 
-  useEffect(() => {
-    const fetchOrdersAndAddresses = async () => {
-      try {
-        const [ordersRes, addressesRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/my-orders", {
-            headers: { Authorization: `Bearer ${token}` },
-          }),
-          axios.get("http://localhost:5000/api/addresses", {
-            headers: { Authorization: `Bearer ${token}` },
-          }),
-        ]);
+ const [user, setUser] = useState(null);
 
-        const sorted = ordersRes.data.sort((a, b) =>
-          sortOrder === "desc"
-            ? new Date(b.created_at) - new Date(a.created_at)
-            : new Date(a.created_at) - new Date(b.created_at)
-        );
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const [ordersRes, addressesRes, userRes] = await Promise.all([
+        axios.get("http://localhost:5000/api/my-orders", {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        axios.get("http://localhost:5000/api/addresses", {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        axios.get("http://localhost:5000/api/profile", {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+      ]);
 
-        setOrders(sorted);
-        setAddresses(addressesRes.data);
-      } catch (err) {
-        console.error(" Error fetching orders or addresses:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+      const sorted = ordersRes.data.sort((a, b) =>
+        sortOrder === "desc"
+          ? new Date(b.created_at) - new Date(a.created_at)
+          : new Date(a.created_at) - new Date(b.created_at)
+      );
 
-    fetchOrdersAndAddresses();
-  }, [token, sortOrder]);
+      console.log("ordersRes:", ordersRes.data);
+console.log("addressesRes:", addressesRes.data);
+console.log("userRes:", userRes.data);
+
+      setOrders(sorted);
+      setAddresses(addressesRes.data);
+      setUser(userRes.data);
+    } catch (err) {
+      console.error("Error fetching orders, addresses, or user:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchData();
+}, [token, sortOrder]);
 
   //random comment
 
@@ -183,7 +129,7 @@ const handlePrintInvoice = (order) => {
   className="invoice-button"
   onClick={(e) => {
     e.stopPropagation();
-    handlePrintInvoice(order);
+    handlePrintInvoice(order, user);
   }}
 >
   🖨️
@@ -195,6 +141,7 @@ const handlePrintInvoice = (order) => {
         <div className="modal-overlay" onClick={() => setSelectedOrder(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h3 className="modal-title">Order Summary</h3>
+          
 
             <table className="modal-table">
               <tbody>
@@ -245,6 +192,15 @@ const handlePrintInvoice = (order) => {
                 ))}
               </tbody>
             </table>
+              <button
+  className="invoice-button-modal"
+  onClick={(e) => {
+    e.stopPropagation();
+    handlePrintInvoice(selectedOrder, user);
+  }}
+>
+  🖨️
+</button>
 
             <button
               className="close-button"
