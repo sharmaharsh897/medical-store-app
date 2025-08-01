@@ -12,65 +12,65 @@ const MyOrders = () => {
 
   const token = localStorage.getItem("token");
 
-const handlePrintInvoice = (order) => {
-  const address = addresses.length > 0 ? addresses[0] : null;
-  const invoiceHTML = generateInvoiceHTML(order, address, user);
+  const handlePrintInvoice = (order) => {
+    const address = addresses.length > 0 ? addresses[0] : null;
+    const invoiceHTML = generateInvoiceHTML(order, address, user);
 
-  const printWindow = window.open("", "_blank");
+    const printWindow = window.open("", "_blank");
 
-  if (printWindow) {
-    printWindow.document.write(invoiceHTML);
-    printWindow.document.close();
-    setTimeout(() => {
-      printWindow.focus();
-      printWindow.print();
-      setTimeout(() => printWindow.close(), 1000);
-    }, 500);
-  } else {
-    alert("Pop-up blocked! Please allow pop-ups for this site.");
-  }
-};
-
-
- const [user, setUser] = useState(null);
-
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const [ordersRes, addressesRes, userRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/my-orders", {
-          headers: { Authorization: `Bearer ${token}` },
-        }),
-        axios.get("http://localhost:5000/api/addresses", {
-          headers: { Authorization: `Bearer ${token}` },
-        }),
-        axios.get("http://localhost:5000/api/profile", {
-          headers: { Authorization: `Bearer ${token}` },
-        }),
-      ]);
-
-      const sorted = ordersRes.data.sort((a, b) =>
-        sortOrder === "desc"
-          ? new Date(b.created_at) - new Date(a.created_at)
-          : new Date(a.created_at) - new Date(b.created_at)
-      );
-
-      console.log("ordersRes:", ordersRes.data);
-console.log("addressesRes:", addressesRes.data);
-console.log("userRes:", userRes.data);
-
-      setOrders(sorted);
-      setAddresses(addressesRes.data);
-      setUser(userRes.data);
-    } catch (err) {
-      console.error("Error fetching orders, addresses, or user:", err);
-    } finally {
-      setLoading(false);
+    if (printWindow) {
+      printWindow.document.write(invoiceHTML);
+      printWindow.document.close();
+      setTimeout(() => {
+        printWindow.focus();
+        printWindow.print();
+        setTimeout(() => printWindow.close(), 1000);
+      }, 500);
+    } else {
+      alert("Pop-up blocked! Please allow pop-ups for this site.");
     }
   };
 
-  fetchData();
-}, [token, sortOrder]);
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [ordersRes, addressesRes, userRes] = await Promise.all([
+          axios.get("http://localhost:5000/api/my-orders", {
+            headers: { Authorization: `Bearer ${token}` },
+          }),
+          axios.get("http://localhost:5000/api/addresses", {
+            headers: { Authorization: `Bearer ${token}` },
+          }),
+          axios.get("http://localhost:5000/api/profile", {
+            headers: { Authorization: `Bearer ${token}` },
+          }),
+        ]);
+
+        const sorted = ordersRes.data.sort((a, b) =>
+          sortOrder === "desc"
+            ? new Date(b.created_at) - new Date(a.created_at)
+            : new Date(a.created_at) - new Date(b.created_at)
+        );
+
+        console.log("ordersRes:", ordersRes.data);
+        console.log("addressesRes:", addressesRes.data);
+        console.log("userRes:", userRes.data);
+
+        setOrders(sorted);
+        setAddresses(addressesRes.data);
+        setUser(userRes.data);
+      } catch (err) {
+        console.error("Error fetching orders, addresses, or user:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [token, sortOrder]);
 
   //random comment
 
@@ -103,45 +103,45 @@ console.log("userRes:", userRes.data);
 
       {orders.map((order, idx) => (
         <div
-  key={idx}
-  className="order-card"
-  onClick={() => setSelectedOrder(order)}
->
-  <h4 className="order-code">Order Code: {order.order_code}</h4>
-  <p className="order-info">
-    Order date: {formatDate(order.created_at)}
-  </p>
-  <p className="order-info">Payment: {order.payment_method}</p>
-  <p className="order-info">Total: ₹{order.total_amount}</p>
+          key={idx}
+          className="order-card"
+          onClick={() => setSelectedOrder(order)}
+        >
+          <h4 className="order-code">Order Code: {order.order_code}</h4>
+          <p className="order-info">
+            Order date: {formatDate(order.created_at)}
+          </p>
+          <p className="order-info">Payment: {order.payment_method}</p>
+          <p className="order-info">Total: ₹{order.total_amount}</p>
 
-  <div>
-    <div className="order-items-title">Items:</div>
-    <ul className="order-items-list">
-      {order.items.map((item, i) => (
-        <li key={i} className="order-item">
-          {item.product_name} x {item.quantity} – ₹{item.price}
-        </li>
-      ))}
-    </ul>
-  </div>
+          <div>
+            <div className="order-items-title">Items:</div>
+            <ul className="order-items-list">
+              {order.items.map((item, i) => (
+                <li key={i} className="order-item">
+                  {item.product_name} x {item.quantity} – ₹{item.price}
+                </li>
+              ))}
+            </ul>
+          </div>
 
- <button
-  className="invoice-button"
-  onClick={(e) => {
-    e.stopPropagation();
-    handlePrintInvoice(order, user);
-  }}
->
-  🖨️
-</button>
-</div>
+          <button
+            className="invoice-button"
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrintInvoice(order, user);
+            }}
+          >
+            🖨️
+          </button>
+        </div>
       ))}
 
       {selectedOrder && (
         <div className="modal-overlay" onClick={() => setSelectedOrder(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h3 className="modal-title">Order Summary</h3>
-          
+
 
             <table className="modal-table">
               <tbody>
@@ -192,15 +192,15 @@ console.log("userRes:", userRes.data);
                 ))}
               </tbody>
             </table>
-              <button
-  className="invoice-button-modal"
-  onClick={(e) => {
-    e.stopPropagation();
-    handlePrintInvoice(selectedOrder, user);
-  }}
->
-  🖨️
-</button>
+            <button
+              className="invoice-button-modal"
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrintInvoice(selectedOrder, user);
+              }}
+            >
+              🖨️
+            </button>
 
             <button
               className="close-button"
