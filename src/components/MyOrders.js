@@ -19,13 +19,16 @@ const MyOrders = () => {
     const printWindow = window.open("", "_blank");
 
     if (printWindow) {
-      printWindow.document.write(invoiceHTML);
-      printWindow.document.close();
-      setTimeout(() => {
-        printWindow.focus();
-        printWindow.print();
-        setTimeout(() => printWindow.close(), 1000);
-      }, 500);
+     printWindow.document.write(invoiceHTML);
+printWindow.document.close();
+
+// Wait until all content (including QR <img>) is loaded
+printWindow.onload = () => {
+  printWindow.focus();
+  printWindow.print();
+  setTimeout(() => printWindow.close(), 1000);
+};
+
     } else {
       alert("Pop-up blocked! Please allow pop-ups for this site.");
     }
