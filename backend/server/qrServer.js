@@ -62,7 +62,8 @@ export function startQrServer({ port = 5001 } = {}) {
       if (!address) address = demoAddress();
 
       // Generate full HTML (uses your existing function)
-      const html = generateInvoiceHTML(order, address, user);
+      const qrHost = `http://localhost:5001`;
+const html = generateInvoiceHTML(order, address, user, qrHost);
 
       // Render to PNG using Puppeteer
       const browser = await puppeteer.launch({
