@@ -13,26 +13,47 @@ const MyOrders = () => {
   const token = localStorage.getItem("token");
 
   const handlePrintInvoice = (order) => {
-    const address = addresses.length > 0 ? addresses[0] : null;
-    const invoiceHTML = generateInvoiceHTML(order, address, user);
+  const address = addresses.length > 0 ? addresses[0] : null;
+  const invoiceHTML = generateInvoiceHTML(order, address, user, "http://localhost:5001");
 
-    const printWindow = window.open("", "_blank");
+  const printWindow = window.open("", "_blank");
 
-    if (printWindow) {
-     printWindow.document.write(invoiceHTML);
-printWindow.document.close();
+  if (printWindow) {
+    printWindow.document.write(invoiceHTML);
+    printWindow.document.close();
 
-// Wait until all content (including QR <img>) is loaded
-printWindow.onload = () => {
-  printWindow.focus();
-  printWindow.print();
-  setTimeout(() => printWindow.close(), 1000);
+    // ✅ Wrap in a promise to wait for all images
+    const waitForImages = () => {
+      const images = Array.from(printWindow.document.images);
+
+      if (images.length === 0) {
+        return Promise.resolve();
+      }
+
+      return Promise.all(
+        images.map(
+          (img) =>
+            new Promise((resolve) => {
+              if (img.complete) {
+                resolve();
+              } else {
+                img.onload = () => resolve();
+                img.onerror = () => resolve();
+              }
+            })
+        )
+      );
+    };
+
+    waitForImages().then(() => {
+      printWindow.focus();
+      printWindow.print();
+      setTimeout(() => printWindow.close(), 1000);
+    });
+  } else {
+    alert("Pop-up blocked! Please allow pop-ups for this site.");
+  }
 };
-
-    } else {
-      alert("Pop-up blocked! Please allow pop-ups for this site.");
-    }
-  };
 
 
   const [user, setUser] = useState(null);
