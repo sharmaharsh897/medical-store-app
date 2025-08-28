@@ -1,0 +1,182 @@
+import logoBase64 from "./logoBase64.js";
+
+// ⬇️ Added an extra param `host` (default localhost:5001)
+export const generateInvoiceHTML = (order, address, user, host = "http://localhost:5001") => {
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
+  const total = parseFloat(order.total_amount); // e.g. 99.20
+  const totalGSTPercent = 0.24; // 12% SGST + 12% CGST
+  const subtotal = parseFloat((total / (1 + totalGSTPercent)).toFixed(2)); // ₹80.00
+  const gstAmount = parseFloat((total - subtotal).toFixed(2)); // ₹19.20
+  const sgst = parseFloat((gstAmount / 2).toFixed(2)); // ₹9.60
+  const cgst = parseFloat((gstAmount / 2).toFixed(2)); // ₹9.60
+  const grandTotal = total.toFixed(2); // ₹99.20
+
+  // 👇 use the passed host instead of hardcoded IP
+  const QR_HOST = host;
+
+  return `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Invoice - ${order.order_code}</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            color: #333;
+            border: 2px solid #32aeb1;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+          }
+          .header {
+            text-align: center;
+            padding: 10px 0 20px;
+            border-bottom: 2px solid #32aeb1;
+            background-color: #f8ffff;
+          }
+          .header img {
+            height: 60px;
+            margin-bottom: 10px;
+          }
+          .user-details {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+          }
+          h2 {
+            color: #32aeb1;
+            margin-top: 30px;
+          }
+          .summary, .address {
+            margin-top: 20px;
+            font-size: 15px;
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+          }
+          th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+          }
+          th {
+            background-color: #f0f8f8;
+          }
+          .totals {
+            margin-top: 20px;
+            font-size: 15px;
+            text-align: right;
+          }
+          .totals p {
+            margin: 4px 0;
+          }
+          .grand-total {
+            font-size: 18px;
+            font-weight: bold;
+            padding-top: 10px;
+            border-top: 2px solid #32aeb1;
+            margin-top: 10px;
+          }
+          .tax-note {
+            font-size: 11px;
+            font-style: italic;
+            color: #777;
+            margin-top: 4px;
+            text-align: right;
+          }
+          .thank-you {
+            margin-top: 40px;
+            font-size: 16px;
+            text-align: center;
+            color: #32aeb1;
+          }
+          /* NEW: scoped QR styles */
+          .qr-section {
+            text-align: right;
+            margin-top: 10px;
+          }
+          .qr-section img {
+            width: 120px;
+            height: 120px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <img src="${logoBase64}" alt="Gurudev Logo" />
+        </div>
+
+        <!-- 👇 QR uses dynamic host -->
+        <div class="qr-section">
+          <img src="${QR_HOST}/qr/invoice/${encodeURIComponent(order.order_code)}" alt="Invoice QR Code" />
+        </div>
+
+        <div class="user-details">
+          <strong>Customer Name:</strong> ${user?.name || "N/A"}<br/>
+          <strong>Phone:</strong> ${user?.phone || "N/A"}<br/>
+        </div>
+
+        <h2>Invoice</h2>
+        <div class="summary">
+          <p><strong>Order Code:</strong> ${order.order_code}</p>
+          <p><strong>Order Date:</strong> ${formatDate(order.created_at)}</p>
+          <p><strong>Payment Method:</strong> ${order.payment_method}</p>
+        </div>
+
+        ${
+          address
+            ? `<div class="address">
+                <strong>Delivery Address:</strong>
+                <p>${address.line1}, ${address.city}, ${address.state} - ${address.pincode}</p>
+              </div>`
+            : ""
+        }
+
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Qty</th>
+              <th>Price (₹)</th>
+              <th>Amount Paid (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${order.items
+              .map(
+                (item) => `
+              <tr>
+                <td>${item.product_name}</td>
+                <td>${item.quantity}</td>
+                <td>${item.price}</td>
+                <td>${order.total_amount}</td>
+              </tr>
+            `
+              )
+              .join("")}
+          </tbody>
+        </table>
+
+        <div class="totals">
+          <p><strong>Subtotal:</strong> ₹${subtotal}</p>
+          <p><strong>SGST (12%):</strong> ₹${sgst}</p>
+          <p><strong>CGST (12%):</strong> ₹${cgst}</p>
+          <p class="grand-total">Grand Total: ₹${grandTotal}</p>
+          <p class="tax-note">Amount includes all applicable taxes</p>
+        </div>
+
+        <p class="thank-you">Thank you for your purchase!</p>
+      </body>
+    </html>
+  `;
+};
