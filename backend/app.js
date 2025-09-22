@@ -27,4 +27,7 @@ app.use("/api/addresses", addressRoutes);
 const orderRoutes = require("./routes/orderRoutes"); // Import your order routes
 app.use("/api", orderRoutes); // Mount the order routes under /api
 
+const geminiRoutes = require("./routes/geminiRoutes");
+app.use("/api/gemini", geminiRoutes);
+
 module.exports = app; // Make sure you export the app
