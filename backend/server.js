@@ -3,21 +3,36 @@ const cors = require("cors");
 
 const app = express();
 
-// Allow requests from your frontend
-app.use(
-  cors({
-    origin: "http://localhost:3000", // Replace with your frontend URL
-    credentials: true, // Allow credentials (cookies, headers, etc.)
-  })
-);
-app.use((req, res, next) => {
-  res.setHeader("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
-  res.setHeader("Cross-Origin-Embedder-Policy", "credentialless"); // Use `credentialless` instead
-  next();
-});
-app.use(express.json()); // To parse JSON bodies
+// CORS whitelist
+const allowedOrigins = [
+  "http://localhost:3000", 
+  "https://sharmaharsh897.github.io"
+];
 
-// Your existing routes
+// Apply CORS
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); // allow non-browser requests
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = "The CORS policy for this site does not allow access from the specified Origin.";
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true
+}));
+
+// Handle preflight OPTIONS requests
+app.options("*", cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
+// JSON parser
+app.use(express.json());
+
+// ===== ROUTES =====
+// Keep your imports and mounts exactly as before
 const userRoutes = require("./routes/userRoutes");
 app.use("/api", userRoutes);
 
@@ -30,9 +45,12 @@ app.use("/api/register", registerRoutes);
 const addressRoutes = require("./routes/addressRoutes");
 app.use("/api/addresses", addressRoutes);
 
-const orderRoutes = require("./routes/orderRoutes"); // Import your order routes
-app.use("/api", orderRoutes); // Mount the order routes under /api
+const orderRoutes = require("./routes/orderRoutes");
+app.use("/api", orderRoutes);
 
-// Start the server
+const geminiRoutes = require("./routes/geminiRoutes");
+app.use("/api/gemini", geminiRoutes);
+
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
