@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: medical-mysql
+    env: docker
+    dockerfilePath: ./backend/Dockerfile.mysql
+    autoDeploy: false
+    plan: free
+    disk:
+      name: mysql-data
+      mountPath: /var/lib/mysql
+      sizeGB: 1

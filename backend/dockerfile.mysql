@@ -1,0 +1,9 @@
+# Use MySQL 8 official image
+FROM mysql:8.0
+
+# Set root password and database name
+ENV MYSQL_ROOT_PASSWORD=rootpassword
+ENV MYSQL_DATABASE=medical
+
+# Optional: load schema automatically on first run
+COPY ./init.sql /docker-entrypoint-initdb.d/
