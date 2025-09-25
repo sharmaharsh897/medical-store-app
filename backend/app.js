@@ -4,7 +4,10 @@ const cors = require("cors");
 const app = express();
 
 // Enable CORS
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({
+  origin: ["http://localhost:3000", "https://sharmaharsh897.github.io"],
+  credentials: true,
+}));
 
 // Middleware to parse JSON
 app.use(express.json());
