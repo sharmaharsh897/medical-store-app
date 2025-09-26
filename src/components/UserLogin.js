@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
+import API_BASE from "../config";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +21,7 @@ const LoginForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/login", {
+      const response = await fetch(`${API_BASE}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +66,7 @@ const LoginForm = () => {
     console.log("Google Token Response:", credentialResponse);
 
     try {
-      const res = await fetch("http://localhost:5000/api/google-login", {
+      const res = await fetch(`${API_BASE}/google-login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: credentialResponse.credential }),
